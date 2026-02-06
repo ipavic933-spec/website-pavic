@@ -1,9 +1,17 @@
+import AboutSection from "./components/home/AboutSection";
+import ContactSection from "./components/home/ContactSection";
+import HeroSection from "./components/home/HeroSection";
+import MapSection from "./components/home/MapSection";
+import ServicesSection from "./components/home/ServicesSection";
+
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-6xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        Home page
-      </main>
-    </div>
+    <main id="top" className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-10 lg:px-16 lg:py-24">
+      <HeroSection />
+      <AboutSection />
+      <ServicesSection />
+      <MapSection />
+      <ContactSection />
+    </main>
   );
 }

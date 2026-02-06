@@ -8,17 +8,31 @@ Terms
 - Page - A route entry such as `app/page.tsx`.
 - Global Styles - Tailwind base layer and custom CSS in `app/globals.css`.
 - Component - Reusable UI module under `app/components/`.
+- Hero CTA Anchor - A link in the hero section that scrolls to the `#contact` section.
+- Header CTA Button - Shared `CtaButton` rendered on the right side of the header and anchored to `#contact` by default.
+- Sticky Header Bar - Top-pinned header (`sticky top-0`) with subtle surface styling for persistent navigation.
+- Brand Logo Component - Shared clickable logo + office-name block (`BrandLogo`) linking to `#top` by default.
+- Accent Palette Tokens - CSS variables in `app/globals.css` (`--accent`, `--accent-hover`, `--btn-text`, `--text`, `--background`, `--surface`, `--border`) that drive consistent UI color and CTA contrast behavior.
+- Hero Split CTA Layout - Hero structure that keeps text left and CTA in a right column from tablet/desktop widths.
+- Service Card Grid - Responsive six-card services layout (`1` column mobile, `2` tablet, `3` desktop).
+- Map Section - Location block under services with a responsive placeholder for future Google Maps iframe embed.
+- Home Section Component - A reusable section module in `app/components/home/` (Hero/About/Services/Map/Contact).
+- CTA Button Component - Reusable link button (`CtaButton`) for in-page contact targeting.
 
 Related
 - [Summary](summary.md)
 - [Practices](practices.md)
 - [Current Plan](plans/current-plan.md)
+- [Home Main Content](ui/home-main-content.md)
 
 ```mermaid
 graph LR
   AppRouter --> Layout
   Layout --> Page
   Layout --> Component
+  Page --> HeroCTA
+  Page --> ContactSection
+  Page --> HomeSectionComponent
 ```
 
 ```ts
@@ -31,3 +45,14 @@ export type NavItem = {
 Contracts
 - Components under `app/components/` are intended for reuse across pages.
 - Layout owns global page chrome (header/footer).
+- The home page must preserve section IDs used by in-page anchors.
+- `CtaButton` defaults to `href="#contact"` and can override label/href/className.
+
+Invariants
+- Domain copy can be placeholder text, but section structure remains stable: Hero, About Me, Services, Contact.
+
+Rationale
+- Shared vocabulary around anchors and service rows reduces ambiguity when iterating on landing page content.
+
+Lessons
+- Naming section patterns in the Lode makes future redesign prompts faster to execute.
