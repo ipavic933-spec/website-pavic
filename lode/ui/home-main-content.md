@@ -50,7 +50,7 @@ Invariants
 - Hero section always contains a primary CTA that points to `#contact`.
 - Hero keeps a centered stack at all breakpoints, with CTA centered below subtitle copy.
 - About section is anchor-targetable via `id="about"`.
-- About content ends with a signature block (name + title) under the descriptive text.
+- About content ends with a signature block (name + title) aligned to the bottom-right of the copy column.
 - Services section is anchor-targetable via `id="services"`.
 - Map section is anchor-targetable via `id="map"`.
 - Contact section is anchor-targetable via `id="contact"`.
