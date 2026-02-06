@@ -15,6 +15,10 @@ export default function AboutSection() {
         <p className="mt-4 text-base leading-relaxed text-zinc-700">
           {t.about.paragraphTwo}
         </p>
+        <div className="mt-8">
+          <p className="text-lg font-semibold italic text-[var(--text)]">{t.about.signatureName}</p>
+          <p className="mt-1 text-sm text-zinc-600">{t.about.signatureTitle}</p>
+        </div>
       </div>
       <div className="aspect-[4/5] w-full rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6">
         <div className="flex h-full items-center justify-center rounded-lg border border-dashed border-[var(--accent)]/60 text-sm font-medium tracking-wide text-zinc-500 uppercase">

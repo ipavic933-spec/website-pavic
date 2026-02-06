@@ -15,10 +15,11 @@ flowchart TD
   HeaderNav --> ServicesId["section#services"]
   BrandLogo["Header/Footer BrandLogo"] --> TopId["main#top"]
   I18n["translations hr/en"] --> Sections["all section copy"]
-  HeroSection --> HeroGrid["md:grid-cols + md:grid-rows"]
-  HeroGrid --> CtaButton["CTA in right column, row below text"]
+  HeroSection --> HeroStack["centered text stack"]
+  HeroStack --> CtaButton["centered CTA below subtitle"]
   AboutDesktop["lg:grid-cols-[1.15fr_0.85fr]"] --> AboutMobile["single column default"]
   Services["grid-cols-1 md:grid-cols-2 lg:grid-cols-3"] --> ServiceCards["six responsive cards"]
+  ServiceCards --> CardHover["hover/focus lift + shadow"]
   Services --> Map["MapSection (Location)"]
 ```
 
@@ -47,11 +48,14 @@ Invariants
 - Main content root keeps `id="top"` as return target for brand logo links.
 - Section IDs remain constant regardless of active language.
 - Hero section always contains a primary CTA that points to `#contact`.
-- Hero keeps CTA below copy on mobile; from `md` upward CTA remains in the right column but starts on a lower grid row so it sits beneath the text block baseline.
+- Hero keeps a centered stack at all breakpoints, with CTA centered below subtitle copy.
 - About section is anchor-targetable via `id="about"`.
+- About content ends with a signature block (name + title) under the descriptive text.
 - Services section is anchor-targetable via `id="services"`.
+- Map section is anchor-targetable via `id="map"`.
 - Contact section is anchor-targetable via `id="contact"`.
 - Services render six cards with `1` column on mobile, `2` on tablet, and `3` on desktop.
+- Service cards apply minimal interaction states: `translateY(-2px)` equivalent (`-translate-y-0.5`), subtle shadow increase, and accent border on hover/focus-visible.
 - Map section appears between Services and Contact and keeps a responsive embed placeholder.
 - Contact form keeps fields: Name, Email, Message, Submit.
 - `CtaButton` is reusable and defaults to `href="#contact"` with a default label.

@@ -14,9 +14,10 @@ Terms
 - Brand Logo Component - Shared clickable logo + office-name block (`BrandLogo`) linking to `#top` by default.
 - Language Provider - Client context that stores current language (`hr`/`en`) and exposes translated copy to components.
 - Language Switcher - Header control with two buttons (`HR`, `EN`) using `aria-pressed` to indicate active selection.
-- Accent Palette Tokens - CSS variables in `app/globals.css` (`--accent`, `--accent-hover`, `--btn-text`, `--text`, `--background`, `--surface`, `--border`) that drive consistent UI color and CTA contrast behavior.
-- Hero Split CTA Layout - Hero structure that keeps text left and CTA in a right column from tablet/desktop widths.
+- Accent Palette Tokens - CSS variables in `app/globals.css` (`--accent`, `--accent-hover`, `--btn-text`, `--text`, `--background`, `--surface`, `--border`, `--footer-bg`, `--footer-text`, `--footer-link`, `--footer-border`) that drive consistent UI color and contrast behavior.
+- Hero Centered Stack - Hero structure that centers title, subtitle, and CTA in a vertical stack across breakpoints.
 - Service Card Grid - Responsive six-card services layout (`1` column mobile, `2` tablet, `3` desktop).
+- About Signature Block - Name/title sign-off shown beneath About section descriptive paragraphs.
 - Map Section - Location block under services with a responsive placeholder for future Google Maps iframe embed.
 - Home Section Component - A reusable section module in `app/components/home/` (Hero/About/Services/Map/Contact).
 - CTA Button Component - Reusable link button (`CtaButton`) for in-page contact targeting.

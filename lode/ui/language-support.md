@@ -12,7 +12,7 @@ flowchart TD
   Provider["LanguageProvider"] --> Storage["localStorage: site_lang"]
   Provider --> Header["Header + LanguageSwitcher"]
   Provider --> Sections["Hero/About/Services/Map/Contact"]
-  Provider --> Footer["Footer labels"]
+  Provider --> Footer["Footer labels + working hours"]
 ```
 
 ```tsx

@@ -1,6 +1,6 @@
 # Map Section
 
-`app/components/home/MapSection.tsx` is a dedicated location block placed directly after `ServicesSection` and before `ContactSection`, containing a heading and a responsive map-embed placeholder container.
+`app/components/home/MapSection.tsx` is a dedicated location block placed directly after `ServicesSection` and before `ContactSection`, containing a heading and a responsive map-embed placeholder container, and exposing `id="map"` for footer location linking.
 
 Related
 - [Home Main Content](home-main-content.md)
@@ -15,7 +15,7 @@ flowchart TD
 ```
 
 ```tsx
-<section aria-labelledby="location-heading">
+<section id="map" aria-labelledby="location-heading">
   <h2 id="location-heading">Location</h2>
   <div className="overflow-hidden rounded-xl border">
     <div className="aspect-video w-full">
@@ -32,6 +32,7 @@ Invariants
 Contracts
 - Section heading remains `Location` to match legal-office discoverability expectations.
 - Embed slot can be replaced by a future `<iframe>` without structural changes.
+- Footer location link targets `#map` and uses sticky-header offset via `scroll-mt-*`.
 
 Rationale
 - A dedicated map section keeps location context visible before contact conversion.

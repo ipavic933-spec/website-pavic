@@ -45,10 +45,11 @@ Invariants
 - Section order on home page is Hero -> About Me -> Services -> Location Map -> Contact.
 - Header keeps branding on the left and actions on the right.
 - Header remains sticky at top with persistent visibility.
-- Hero CTA sits in the right column on tablet/desktop and starts on a lower row to align beneath the text block; mobile keeps stacked flow.
+- Hero uses a centered stack at all breakpoints, with CTA centered beneath title/subtitle copy.
 - Services show six cards using `grid-cols-1 md:grid-cols-2 lg:grid-cols-3`.
 - Interactive states (hover/focus) use accent color tokens and shared button styles (`.btn-primary`) for contrast-safe CTA rendering.
 - UI copy is bilingual (`hr/en`) and updates immediately when language changes.
+- Service cards include minimal hover/focus lift animations for discoverability.
 
 Contracts
 - Contact section exposes `id="contact"` for in-page navigation.
@@ -58,6 +59,7 @@ Contracts
 - `HeroSection` uses `CtaButton` rather than inline anchor CTA markup.
 - Header CTA uses the shared `CtaButton` component and keeps contact anchor behavior without a duplicate plain Contact nav link.
 - `app/globals.css` is the source of palette/button tokens (`--accent`, `--accent-hover`, `--btn-text`, `--text`, `--background`, `--surface`, `--border`) and shared button utility styles.
+- Footer-specific contrast tokens (`--footer-bg`, `--footer-text`, `--footer-link`, `--footer-border`) drive dark footer readability.
 - Language persistence uses `localStorage` key `site_lang` with `hr` default.
 
 Rationale

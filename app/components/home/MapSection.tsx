@@ -6,7 +6,7 @@ export default function MapSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="mt-20" aria-labelledby="location-heading">
+    <section id="map" className="mt-20 scroll-mt-28" aria-labelledby="location-heading">
       <h2 id="location-heading" className="text-3xl font-semibold text-[var(--text)]">
         {t.map.heading}
       </h2>

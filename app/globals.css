@@ -9,6 +9,10 @@
   --background: #ffffff;
   --surface: #f7f8fa;
   --border: #e6e6e6;
+  --footer-bg: #1b1f24;
+  --footer-text: #eef2f5;
+  --footer-link: #f7fafc;
+  --footer-border: #313844;
   --foreground: var(--text);
 }
 

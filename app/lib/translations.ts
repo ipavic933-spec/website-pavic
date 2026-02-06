@@ -25,6 +25,8 @@ export const translations = {
         "Dugogodisnje iskustvo u pravnoj praksi omogucuje preciznu procjenu svakog predmeta i pripremu strategije prilagodene klijentu.",
       paragraphTwo:
         "Klijentima osiguravam transparentnu komunikaciju, pravovremene informacije i zastupanje koje stiti njihove interese u svakoj fazi postupka.",
+      signatureName: "Ime Prezime",
+      signatureTitle: "Odvjetnik/ca",
       photoPlaceholder: "Mjesto za fotografiju",
     },
     services: {
@@ -79,6 +81,9 @@ export const translations = {
       phoneLabel: "Telefon",
       locationLabel: "Lokacija",
       locationValue: "Primjer ulica 123, Grad",
+      hoursLabel: "Radno vrijeme",
+      hoursWeekdays: "Pon - Pet: 09:00 - 17:00",
+      hoursWeekend: "Sub - Ned: Zatvoreno",
     },
   },
   en: {
@@ -102,6 +107,8 @@ export const translations = {
         "Years of legal practice allow a precise assessment of every case and a strategy tailored to each client.",
       paragraphTwo:
         "Clients receive transparent communication, timely updates, and representation that protects their interests at every stage.",
+      signatureName: "Name Surname",
+      signatureTitle: "Attorney at Law",
       photoPlaceholder: "Photo Placeholder",
     },
     services: {
@@ -156,6 +163,9 @@ export const translations = {
       phoneLabel: "Phone",
       locationLabel: "Location",
       locationValue: "123 Example Street, City",
+      hoursLabel: "Working Hours",
+      hoursWeekdays: "Mon - Fri: 09:00 - 17:00",
+      hoursWeekend: "Sat - Sun: Closed",
     },
   },
 } as const;
