@@ -12,6 +12,8 @@ Terms
 - Header CTA Button - Shared `CtaButton` rendered on the right side of the header and anchored to `#contact` by default.
 - Sticky Header Bar - Top-pinned header (`sticky top-0`) with subtle surface styling for persistent navigation.
 - Brand Logo Component - Shared clickable logo + office-name block (`BrandLogo`) linking to `#top` by default.
+- Language Provider - Client context that stores current language (`hr`/`en`) and exposes translated copy to components.
+- Language Switcher - Header control with two buttons (`HR`, `EN`) using `aria-pressed` to indicate active selection.
 - Accent Palette Tokens - CSS variables in `app/globals.css` (`--accent`, `--accent-hover`, `--btn-text`, `--text`, `--background`, `--surface`, `--border`) that drive consistent UI color and CTA contrast behavior.
 - Hero Split CTA Layout - Hero structure that keeps text left and CTA in a right column from tablet/desktop widths.
 - Service Card Grid - Responsive six-card services layout (`1` column mobile, `2` tablet, `3` desktop).
@@ -47,9 +49,10 @@ Contracts
 - Layout owns global page chrome (header/footer).
 - The home page must preserve section IDs used by in-page anchors.
 - `CtaButton` defaults to `href="#contact"` and can override label/href/className.
+- Selected language persists in `localStorage` key `site_lang`.
 
 Invariants
-- Domain copy can be placeholder text, but section structure remains stable: Hero, About Me, Services, Contact.
+- Domain copy can be placeholder text, but section structure remains stable: Hero, About Me, Services, Map, Contact.
 
 Rationale
 - Shared vocabulary around anchors and service rows reduces ambiguity when iterating on landing page content.

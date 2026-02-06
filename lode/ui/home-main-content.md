@@ -1,11 +1,12 @@
 # Home Main Content
 
-`app/page.tsx` composes reusable home-body components from `app/components/home/`: `HeroSection`, `AboutSection`, `ServicesSection`, `MapSection`, and `ContactSection`; hero now uses a responsive two-column split that places CTA on the right from tablet upward, while the page root exposes `id="top"` for brand-logo scroll return.
+`app/page.tsx` composes reusable home-body components from `app/components/home/`: `HeroSection`, `AboutSection`, `ServicesSection`, `MapSection`, and `ContactSection`; each section reads bilingual copy from shared translations while preserving stable anchor IDs.
 
 Related
 - [UI Summary](summary.md)
 - [Practices](../practices.md)
 - [Terminology](../terminology.md)
+- [Language Support](language-support.md)
 
 ```mermaid
 flowchart TD
@@ -13,6 +14,7 @@ flowchart TD
   HeaderNav["Header nav links"] --> AboutId["section#about"]
   HeaderNav --> ServicesId["section#services"]
   BrandLogo["Header/Footer BrandLogo"] --> TopId["main#top"]
+  I18n["translations hr/en"] --> Sections["all section copy"]
   HeroSection --> HeroGrid["md:grid-cols + md:grid-rows"]
   HeroGrid --> CtaButton["CTA in right column, row below text"]
   AboutDesktop["lg:grid-cols-[1.15fr_0.85fr]"] --> AboutMobile["single column default"]
@@ -43,6 +45,7 @@ flowchart TD
 
 Invariants
 - Main content root keeps `id="top"` as return target for brand logo links.
+- Section IDs remain constant regardless of active language.
 - Hero section always contains a primary CTA that points to `#contact`.
 - Hero keeps CTA below copy on mobile; from `md` upward CTA remains in the right column but starts on a lower grid row so it sits beneath the text block baseline.
 - About section is anchor-targetable via `id="about"`.
@@ -61,6 +64,7 @@ Contracts
 - Services use `grid-cols-1 md:grid-cols-2 lg:grid-cols-3` for progressive density.
 - Anchor targets use `scroll-mt-*` spacing so sticky header does not obscure section headings.
 - Palette variables in `app/globals.css` (`--accent`, `--text`, `--background`, `--surface`, `--border`) are consumed via Tailwind arbitrary values.
+- Section text is sourced from `app/lib/translations.ts` through `LanguageProvider` context.
 
 Rationale
 - This structure mirrors common legal landing-page expectations while keeping implementation minimal.

@@ -6,6 +6,7 @@ Related
 - [UI Summary](summary.md)
 - [Brand Logo](brand-logo.md)
 - [Header Layout](header-layout.md)
+- [Language Support](language-support.md)
 
 ```mermaid
 flowchart LR
@@ -33,6 +34,7 @@ Invariants
 - Footer always exposes three contact segments on the left in a horizontal row that can wrap.
 - Email and phone remain clickable links.
 - Footer brand mark links to `#top`.
+- Footer labels update with active language.
 
 Contracts
 - Footer must remain responsive: stacked on mobile, split on larger breakpoints.

@@ -1,6 +1,6 @@
 # UI Summary
 
-The UI layer currently uses a shared `app/layout.tsx` shell (header/footer) with route-specific body content in `app/page.tsx`; the header is sticky with left `BrandLogo` and right actions (`About Us`, `Services`, contact `CtaButton`), hero keeps CTA in the right column but starts it below the text block on tablet/desktop, footer keeps contact items horizontal with wrap support, services render six cards in a responsive 1/2/3-column grid, and the global palette is driven by CSS variables centered on accent `#6c8ca4` plus black/neutral surfaces.
+The UI layer currently uses a shared `app/layout.tsx` shell (header/footer) with route-specific body content in `app/page.tsx`; a client `LanguageProvider` enables bilingual `hr/en` copy with `site_lang` persistence, the sticky header includes a right-side language switcher (`aria-pressed` buttons), all home/footer text reads from centralized translation keys, and anchor navigation remains stable.
 
 Related
 - [Lode Map](../lode-map.md)
@@ -10,6 +10,7 @@ Related
 - [Footer Layout](footer-layout.md)
 - [Brand Logo](brand-logo.md)
 - [Map Section](map-section.md)
+- [Language Support](language-support.md)
 
 ```mermaid
 graph TD
@@ -17,6 +18,7 @@ graph TD
   Header --> Branding["BrandLogo (#top)"]
   Header --> Nav["About Us + Services"]
   Header --> HeaderCTA["CtaButton (#contact)"]
+  Header --> LangSwitch["HR | EN"]
   Layout --> Footer["app/components/Footer.tsx"]
   Footer --> FooterContacts["Email/Phone/Location"]
   Footer --> FooterBrand["BrandLogo (#top)"]
@@ -46,6 +48,7 @@ Invariants
 - Hero CTA sits in the right column on tablet/desktop and starts on a lower row to align beneath the text block; mobile keeps stacked flow.
 - Services show six cards using `grid-cols-1 md:grid-cols-2 lg:grid-cols-3`.
 - Interactive states (hover/focus) use accent color tokens and shared button styles (`.btn-primary`) for contrast-safe CTA rendering.
+- UI copy is bilingual (`hr/en`) and updates immediately when language changes.
 
 Contracts
 - Contact section exposes `id="contact"` for in-page navigation.
@@ -55,6 +58,7 @@ Contracts
 - `HeroSection` uses `CtaButton` rather than inline anchor CTA markup.
 - Header CTA uses the shared `CtaButton` component and keeps contact anchor behavior without a duplicate plain Contact nav link.
 - `app/globals.css` is the source of palette/button tokens (`--accent`, `--accent-hover`, `--btn-text`, `--text`, `--background`, `--surface`, `--border`) and shared button utility styles.
+- Language persistence uses `localStorage` key `site_lang` with `hr` default.
 
 Rationale
 - Keeping the home page as a clean one-page flow reduces cognitive load for first-time legal-service visitors.

@@ -1,6 +1,6 @@
 # Brand Logo
 
-`app/components/BrandLogo.tsx` is a shared clickable branding component used by both header and footer, combining a logo placeholder mark and office-name text that links to `#top` by default.
+`app/components/BrandLogo.tsx` is a shared clickable branding component used by both header and footer, combining a logo placeholder mark and translated office-name text that links to `#top` by default.
 
 Related
 - [Header Layout](header-layout.md)
@@ -34,6 +34,7 @@ export default function BrandLogo({ href = "#top", className = "", size = "md" }
 Invariants
 - Component always renders mark + office name as a single clickable unit.
 - Default destination is `#top` for scroll-to-top behavior.
+- Brand text is sourced from active translation set.
 
 Contracts
 - `href` allows destination override and defaults to `#top`.

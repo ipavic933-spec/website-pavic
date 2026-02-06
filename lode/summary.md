@@ -1,6 +1,6 @@
 # Summary
 
-Website Pavic is a small Next.js 16 App Router site with a shared layout (header + footer) where a sticky header uses shared `BrandLogo` plus right-side anchor actions (About Us, Services, Contact CTA), the hero places CTA on the right at tablet/desktop widths, services render six cards in a responsive 1/2/3-column grid, and `app/globals.css` defines a project palette around accent `#6c8ca4` with black/neutral base tones.
+Website Pavic is a small Next.js 16 App Router site with a shared layout (header + footer) where a sticky header includes navigation, contact CTA, and a right-side `HR|EN` language switcher, while all visible page/footer copy is sourced from centralized `hr/en` translations persisted via `site_lang` in localStorage without changing anchor-based one-page navigation.
 
 Related
 - [Terminology](terminology.md)
@@ -63,6 +63,7 @@ Contracts
 - Header navigation links target `#about` and `#services`.
 - Brand logo defaults to `#top` in both header and footer.
 - Palette variables (`--accent`, `--accent-strong`, `--text`, `--background`, `--surface`, `--border`) live in `app/globals.css`.
+- Language defaults to `hr` and persists using `localStorage` key `site_lang`.
 
 Rationale
 - A simple layout keeps the site structure consistent while content evolves.
