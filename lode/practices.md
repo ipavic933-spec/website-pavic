@@ -44,6 +44,7 @@ Practices
 - Keep map/location placeholder section directly after services and before contact.
 - Implement about-section desktop split with mobile stacking (`lg:grid-cols-*` then single-column default).
 - When section markup grows, extract route-scoped components under `app/components/home/` and keep `app/page.tsx` as a composition layer.
+- Avoid decorative underline/divider elements directly under headings; rely on typography and spacing for section hierarchy.
 - Reuse a dedicated CTA anchor component (`CtaButton`) instead of duplicating styled anchor markup.
 - Apply shared `.btn-primary` styling for CTA-level buttons to maintain contrast on both light and dark surfaces.
 - Persist language selection using `site_lang` in localStorage and default to Croatian.

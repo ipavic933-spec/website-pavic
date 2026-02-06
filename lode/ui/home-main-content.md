@@ -55,6 +55,7 @@ Invariants
 - Map section appears between Services and Contact and keeps a responsive embed placeholder.
 - Contact form keeps fields: Name, Email, Message, Submit.
 - `CtaButton` is reusable and defaults to `href="#contact"` with a default label.
+- Service cards keep only container borders; no internal decorative divider bars render above titles.
 
 Contracts
 - Page body uses semantic containers (`<main>` and `<section>`).
@@ -65,6 +66,7 @@ Contracts
 - Anchor targets use `scroll-mt-*` spacing so sticky header does not obscure section headings.
 - Palette variables in `app/globals.css` (`--accent`, `--text`, `--background`, `--surface`, `--border`) are consumed via Tailwind arbitrary values.
 - Section text is sourced from `app/lib/translations.ts` through `LanguageProvider` context.
+- Section headings do not render decorative underline bars or divider rules directly below heading text.
 
 Rationale
 - This structure mirrors common legal landing-page expectations while keeping implementation minimal.

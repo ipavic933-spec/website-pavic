@@ -9,7 +9,6 @@ export default function AboutSection() {
     <section id="about" className="mt-20 scroll-mt-28 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
       <div>
         <h2 className="text-3xl font-semibold text-[var(--text)]">{t.about.heading}</h2>
-        <span className="mt-3 block h-1 w-20 rounded-full bg-[var(--accent)]" />
         <p className="mt-5 text-base leading-relaxed text-zinc-700">
           {t.about.paragraphOne}
         </p>

@@ -10,7 +10,6 @@ export default function MapSection() {
       <h2 id="location-heading" className="text-3xl font-semibold text-[var(--text)]">
         {t.map.heading}
       </h2>
-      <span className="mt-3 block h-1 w-20 rounded-full bg-[var(--accent)]" />
       <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-700">
         {t.map.description}
       </p>
