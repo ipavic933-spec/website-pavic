@@ -9,26 +9,26 @@ Related
 
 ```mermaid
 flowchart TD
-  Page["app/page.tsx"] -->|uses| Components["app/components/*"]
-  Components --> Styles["Tailwind + globals.css"]
+  Page["src/app/page.tsx"] -->|uses| Components["src/app/components/*"]
+  Components --> Styles["Tailwind + src/app/globals.css"]
+  Header["src/app/components/Header.tsx"] --> Toggle["useState open/close"]
+  Toggle --> OverlayNav["fixed inset-x-0 mobile menu"]
 ```
 
 ```tsx
-const Button = ({ disabled = false, onClick, text }: ButtonProps) => (
-  <button
-    className="bg-yellow-400 py-2 px-5 text-black rounded-2xl"
-    disabled={disabled}
-    onClick={onClick}
-  >
-    {text}
-  </button>
-);
+{isOpen && (
+  <nav className="fixed inset-x-0 z-50 flex w-screen flex-col items-start bg-black px-7 py-4">
+    <Navigation orijentation="col" />
+  </nav>
+)}
 ```
 
 Practices
-- Keep global layout concerns in `app/layout.tsx`.
-- Prefer Tailwind utilities for component styling; use `app/globals.css` for globals.
-- Place reusable UI in `app/components/`.
+- Keep global layout concerns in `src/app/layout.tsx`.
+- Prefer Tailwind utilities for component styling; use `src/app/globals.css` for globals.
+- Place reusable UI in `src/app/components/`.
+- Keep mobile menu links hidden by default and reveal them only when the header toggle state is open.
+- Render the opened mobile menu as a full-width overlay (`fixed inset-x-0 w-screen`) below the header.
 
 Lessons
 - Minimal scaffolding is easier to evolve than over-structured pages.
