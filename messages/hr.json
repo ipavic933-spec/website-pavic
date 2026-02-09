@@ -7,5 +7,77 @@
   },
   "NotFound": {
     "title": "Stranica koju tražite nije pronađena"
+  },
+  "AboutUs": {
+    "education":"Obrazovanje",
+    "eductaionList": [
+      {
+        "eductaion": "Završena Nadbiskupijsko klasična gimnazija 'Don Frane Bulić'",
+        "year": "2011"
+      },
+      {
+        "eductaion": "Diplomirao na Integriranom diplomskom studiju prava Pravnog fakulteta u Splitu",
+        "year": "2016"
+      },
+      {
+        "education": "Položen pravosudni ispit",
+        "year": "2022"
+      }
+    ],
+    "workExperience": "Radno iskustvo",
+    "workExperienceList": [
+      {
+        "workExperience": "Odvjetnički uredu Damira Batarelo u Splitu",
+        "years": "2018-2022"
+      },
+      {
+        "workExperience": "Samostalni odvjetnički ured",
+        "years": "Siječnj 2023 -"
+      }
+    ],
+    "workingHours": "Radno vrijeme",
+    "workingHoursDays": "Ponedjeljak - Petak",
+    "workingHoursTime": "9:00 - 17:00"
+  },
+  "Services": {
+    "services": "Usluge koje pružamo",
+    "servicesList": [
+      {
+        "title": "Stvarno pravo",
+        "description": ""
+      },
+      {
+        "title": "Zemljišnoknjižno pravo",
+        "description": ""
+      },
+      {
+        "title": "Obvezno pravo",
+        "description": ""
+      },
+      {
+        "title": "Nasljedno pravo",
+        "description": ""
+      },
+      {
+        "title": "Upravno pravo",
+        "description": ""
+      },
+      {
+        "title": "Ovršno pravo",
+        "description": ""
+      },
+      {
+        "title": "Radno pravo",
+        "description": ""
+      },
+      {
+        "title": "Prekršajno pravo",
+        "description": ""
+      },
+      {
+        "title": "Odštetno pravo",
+        "description": ""
+      }
+    ]
   }
 }

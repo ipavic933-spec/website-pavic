@@ -7,5 +7,77 @@
   },
   "NotFound": {
     "title": "Page page You're looking for is not found"
+  },
+  "AboutUs": {
+    "education":"Education",
+    "eductaionList": [
+      {
+        "eductaion": "Completed Archdiocesan Classical Gymnasium 'Don Frane Bulić'",
+        "year": "2011"
+      },
+      {
+        "eductaion": "Graduated from the Integrated Graduate Study of Law at the Faculty of Law in Split",
+        "year": "2016"
+      },
+      {
+        "education": "Passed the bar exam",
+        "year": "2022"
+      }
+    ],
+    "workExperience": "Work experience",
+    "workExperienceList": [
+      {
+        "workExperience": "The law office of Damir Batarelo in Split",
+        "years": "2018-2022"
+      },
+      {
+        "workExperience": "Independent law firm",
+        "years": "January 2023 -"
+      }
+    ],
+    "workingHours": "Working hours",
+    "workingHoursDays": "Moday - Friday",
+    "workingHoursTime": "9:00 - 17:00"
+  },
+  "Services": {
+    "services": "Services we provide",
+    "servicesList": [
+      {
+        "title": "Property law",
+        "description": ""
+      },
+      {
+        "title": "Land registry law",
+        "description": ""
+      },
+      {
+        "title": "Obligations law",
+        "description": ""
+      },
+      {
+        "title": "Inheritance law",
+        "description": ""
+      },
+      {
+        "title": "Administrative law",
+        "description": ""
+      },
+      {
+        "title": "Enforcement law",
+        "description": ""
+      },
+      {
+        "title": "Labor law",
+        "description": ""
+      },
+      {
+        "title": "Criminal law",
+        "description": ""
+      },
+      {
+        "title": "Compensation law",
+        "description": ""
+      }
+    ]
   }
 }
