@@ -15,6 +15,7 @@ Related
 - [Summary](summary.md)
 - [Practices](practices.md)
 - [Current Plan](plans/current-plan.md)
+- [Internationalization](i18n/summary.md)
 
 ```mermaid
 graph LR
@@ -25,9 +26,10 @@ graph LR
 ```
 
 ```ts
-export type NavItem = {
-  label: string;
-  href: string;
+export const routing = {
+  locales: ["hr", "en"],
+  defaultLocale: "hr",
+  localePrefix: "as-needed"
 };
 ```
 

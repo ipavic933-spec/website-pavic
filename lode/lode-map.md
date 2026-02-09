@@ -10,6 +10,9 @@ Core
 Plans
 - [Current Plan](plans/current-plan.md)
 
+Domains
+- [Internationalization](i18n/summary.md)
+
 Scratch
 - `tmp/` (session scraps, git-ignored)
 
@@ -19,6 +22,7 @@ graph TD
   LodeMap --> Terminology["terminology.md"]
   LodeMap --> Practices["practices.md"]
   LodeMap --> Plans["plans/current-plan.md"]
+  LodeMap --> I18N["i18n/summary.md"]
   LodeMap --> Tmp["tmp/"]
 ```
 

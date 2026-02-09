@@ -1,0 +1,11 @@
+{
+  "Header": {
+    "name": "Lawyer office Ivan Pavic",
+    "aboutUs": "About us",
+    "services": "Services",
+    "contactUs": "Contact us"
+  },
+  "NotFound": {
+    "title": "Page page You're looking for is not found"
+  }
+}

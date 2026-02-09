@@ -1,0 +1,11 @@
+{
+  "Header": {
+    "name": "Odvjetnicki ured Ivan Pavic",
+    "aboutUs": "O nama",
+    "services": "Servisi",
+    "contactUs": "Kontaktirajte nas"
+  },
+  "NotFound": {
+    "title": "Stranica koju tražite nije pronađena"
+  }
+}
