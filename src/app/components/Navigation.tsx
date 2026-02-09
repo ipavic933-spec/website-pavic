@@ -1,12 +1,16 @@
-import Link from "next/link"
+import Link from "next/link";
 
-const Navigation = () => {
+type NavigationProps = {
+  orijentation?: 'col' | 'row';
+}
+
+const Navigation = ({ orijentation = 'row' }: NavigationProps) => {
   return (
-    <nav className="flex gap-6">
-        <Link href="/">About us</Link>
-        <Link href="/">Services</Link>
-        <Link href="/">Contact</Link>
-      </nav>
+    <nav className={`flex gap-x-6 gap-y-2 flex-${orijentation}`}>
+      <Link href="/">About us</Link>
+      <Link href="/">Services</Link>
+      <Link href="/">Contact</Link>
+    </nav>
   )
 }
 

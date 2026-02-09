@@ -3,11 +3,13 @@
 Common project terms and their meaning.
 
 Terms
-- App Router - Next.js routing model where pages live in the `app/` directory.
-- Root Layout - The shared shell in `app/layout.tsx` that wraps all pages.
-- Page - A route entry such as `app/page.tsx`.
-- Global Styles - Tailwind base layer and custom CSS in `app/globals.css`.
-- Component - Reusable UI module under `app/components/`.
+- App Router - Next.js routing model where pages live in `src/app/`.
+- Root Layout - The shared shell in `src/app/layout.tsx` that wraps all pages.
+- Page - A route entry such as `src/app/page.tsx`.
+- Global Styles - Tailwind base layer and custom CSS in `src/app/globals.css`.
+- Component - Reusable UI module under `src/app/components/`.
+- Header Toggle Menu - Mobile-only hamburger trigger in `src/app/components/Header.tsx` that toggles a full-width overlay menu.
+- Navigation Orientation - `orijentation` prop in `Navigation` selecting `row` (desktop) or `col` (mobile overlay) layout.
 
 Related
 - [Summary](summary.md)
@@ -19,6 +21,7 @@ graph LR
   AppRouter --> Layout
   Layout --> Page
   Layout --> Component
+  HeaderToggleMenu --> NavigationOrientation
 ```
 
 ```ts
@@ -29,5 +32,5 @@ export type NavItem = {
 ```
 
 Contracts
-- Components under `app/components/` are intended for reuse across pages.
+- Components under `src/app/components/` are intended for reuse across pages.
 - Layout owns global page chrome (header/footer).
