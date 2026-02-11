@@ -1,6 +1,6 @@
 # Summary
 
-Website Pavic is a small Next.js 16 App Router site with a shared layout (header + footer) where a sticky header includes navigation, contact CTA, and a right-side `HR|EN` button pair, while all visible page/footer copy is rendered from centralized translations fixed to Croatian (`hr`) and the language buttons remain non-functional so anchor-based one-page navigation stays unchanged.
+Website Pavic is a small Next.js 16 App Router site with a shared layout (header + footer) where a sticky header includes navigation, contact CTA, and a right-side `HR|EN` button pair, while all visible page/footer copy is rendered from centralized translations fixed to Croatian (`hr`), plus a full-width highlight banner sits between Hero and About using accent-tinted tokens without changing anchor-based one-page navigation.
 
 Related
 - [Terminology](terminology.md)
@@ -16,6 +16,7 @@ graph TD
   Page --> HomeComponents["app/components/home/*"]
   Layout --> Globals["app/globals.css"]
   Page --> Hero["Hero section"]
+  Page --> Banner["Highlight banner"]
   Page --> About["About Me section"]
   Page --> Services["Services section"]
   Page --> Map["Location section"]
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 ```tsx
 <HeroSection />
+<HighlightBanner />
 <AboutSection />
 <ServicesSection />
 <MapSection />

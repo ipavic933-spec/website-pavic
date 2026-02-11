@@ -15,6 +15,7 @@ UI
 - [Brand Logo](ui/brand-logo.md)
 - [Map Section](ui/map-section.md)
 - [Language Support](ui/language-support.md)
+- [Highlight Banner](ui/highlight-banner.md)
 
 Plans
 - [Current Plan](plans/current-plan.md)
@@ -34,6 +35,7 @@ graph TD
   LodeMap --> UiBrandLogo["ui/brand-logo.md"]
   LodeMap --> UiMap["ui/map-section.md"]
   LodeMap --> UiLanguage["ui/language-support.md"]
+  LodeMap --> UiBanner["ui/highlight-banner.md"]
   LodeMap --> Plans["plans/current-plan.md"]
   LodeMap --> Tmp["tmp/"]
 ```

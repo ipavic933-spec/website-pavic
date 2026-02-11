@@ -19,7 +19,8 @@ Terms
 - Service Card Grid - Responsive six-card services layout (`1` column mobile, `2` tablet, `3` desktop).
 - About Signature Block - Name/title sign-off shown beneath About section descriptive paragraphs.
 - Map Section - Location block under services with a responsive placeholder for future Google Maps iframe embed.
-- Home Section Component - A reusable section module in `app/components/home/` (Hero/About/Services/Map/Contact).
+- Highlight Banner - Full-width interstitial section between hero and about with centered emphasized positioning copy.
+- Home Section Component - A reusable section module in `app/components/home/` (Hero/HighlightBanner/About/Services/Map/Contact).
 - CTA Button Component - Reusable link button (`CtaButton`) for in-page contact targeting.
 
 Related

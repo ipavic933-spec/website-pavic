@@ -1,6 +1,6 @@
 # UI Summary
 
-The UI layer currently uses a shared `app/layout.tsx` shell (header/footer) with route-specific body content in `app/page.tsx`; a client `LanguageProvider` exposes fixed Croatian (`hr`) copy, the sticky header includes a right-side `HR|EN` button pair rendered as non-functional controls, all home/footer text reads from centralized translation keys, and anchor navigation remains stable.
+The UI layer currently uses a shared `app/layout.tsx` shell (header/footer) with route-specific body content in `app/page.tsx`; a client `LanguageProvider` exposes fixed Croatian (`hr`) copy, the sticky header includes a right-side `HR|EN` button pair rendered as non-functional controls, a full-width highlight banner appears between hero and about, all home/footer text reads from centralized translation keys, and anchor navigation remains stable.
 
 Related
 - [Lode Map](../lode-map.md)
@@ -11,6 +11,7 @@ Related
 - [Brand Logo](brand-logo.md)
 - [Map Section](map-section.md)
 - [Language Support](language-support.md)
+- [Highlight Banner](highlight-banner.md)
 
 ```mermaid
 graph TD
@@ -23,6 +24,7 @@ graph TD
   Footer --> FooterContacts["Email/Phone/Location"]
   Footer --> FooterBrand["BrandLogo (#top)"]
   HomePage["app/page.tsx"] --> Hero
+  HomePage --> Banner["HighlightBanner"]
   HomePage --> About
   HomePage --> Services
   HomePage --> Map["Location map placeholder"]
@@ -42,7 +44,8 @@ graph TD
 
 Invariants
 - Shared layout chrome remains outside page-body implementation tasks.
-- Section order on home page is Hero -> About Me -> Services -> Location Map -> Contact.
+- Section order on home page is Hero -> Highlight Banner -> About Me -> Services -> Location Map -> Contact.
+- Highlight banner stays full-width with centered, constrained text.
 - Header keeps branding on the left and actions on the right.
 - Header remains sticky at top with persistent visibility.
 - Hero uses a centered stack at all breakpoints, with CTA centered beneath title/subtitle copy.

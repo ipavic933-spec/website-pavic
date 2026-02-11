@@ -42,6 +42,7 @@ Practices
 - Keep footer contact details as three labeled segments (Email, Phone, Location) arranged horizontally with wrapping, and keep `mailto:`/`tel:` links clickable.
 - Use responsive service grids for six-card sections: `grid-cols-1 md:grid-cols-2 lg:grid-cols-3`.
 - Keep map/location placeholder section directly after services and before contact.
+- For full-width interstitial sections, keep `main` at `w-full` and wrap regular content in shared max-width containers above and below the full-width section.
 - Implement about-section desktop split with mobile stacking (`lg:grid-cols-*` then single-column default).
 - When section markup grows, extract route-scoped components under `app/components/home/` and keep `app/page.tsx` as a composition layer.
 - Avoid decorative underline/divider elements directly under headings; rely on typography and spacing for section hierarchy.

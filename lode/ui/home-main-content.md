@@ -1,6 +1,6 @@
 # Home Main Content
 
-`app/page.tsx` composes reusable home-body components from `app/components/home/`: `HeroSection`, `AboutSection`, `ServicesSection`, `MapSection`, and `ContactSection`; each section reads centralized translation keys through `LanguageProvider`, with current runtime copy fixed to Croatian (`hr`) while preserving stable anchor IDs.
+`app/page.tsx` composes reusable home-body components from `app/components/home/`: `HeroSection`, `HighlightBanner`, `AboutSection`, `ServicesSection`, `MapSection`, and `ContactSection`; each section reads centralized translation keys through `LanguageProvider` where applicable, with current runtime copy fixed to Croatian (`hr`) while preserving stable anchor IDs.
 
 Related
 - [UI Summary](summary.md)
@@ -15,6 +15,8 @@ flowchart TD
   HeaderNav --> ServicesId["section#services"]
   BrandLogo["Header/Footer BrandLogo"] --> TopId["main#top"]
   I18n["translations (runtime: hr)"] --> Sections["all section copy"]
+  HeroSection --> HighlightBanner["full-width interstitial"]
+  HighlightBanner --> AboutSection
   HeroSection --> HeroStack["centered text stack"]
   HeroStack --> CtaButton["centered CTA below subtitle"]
   AboutDesktop["lg:grid-cols-[1.15fr_0.85fr]"] --> AboutMobile["single column default"]
@@ -25,11 +27,16 @@ flowchart TD
 
 ```tsx
 <main id="top">
-  <HeroSection />
-  <AboutSection />
-  <ServicesSection />
-  <MapSection />
-  <ContactSection />
+  <div className="mx-auto w-full max-w-6xl px-6 sm:px-10 lg:px-16">
+    <HeroSection />
+  </div>
+  <HighlightBanner />
+  <div className="mx-auto w-full max-w-6xl px-6 sm:px-10 lg:px-16">
+    <AboutSection />
+    <ServicesSection />
+    <MapSection />
+    <ContactSection />
+  </div>
 </main>
 ```
 
@@ -46,6 +53,7 @@ flowchart TD
 
 Invariants
 - Main content root keeps `id="top"` as return target for brand logo links.
+- Highlight banner remains between Hero and About in the page composition.
 - Section IDs remain constant regardless of language-control state.
 - Hero section always contains a primary CTA that points to `#contact`.
 - Hero keeps a centered stack at all breakpoints, with CTA centered below subtitle copy.
@@ -60,6 +68,7 @@ Invariants
 - Contact form keeps fields: Name, Email, Message, Submit.
 - `CtaButton` is reusable and defaults to `href="#contact"` with a default label.
 - Service cards keep only container borders; no internal decorative divider bars render above titles.
+- Full-width sections keep text width constrained with inner max-width wrappers.
 
 Contracts
 - Page body uses semantic containers (`<main>` and `<section>`).
