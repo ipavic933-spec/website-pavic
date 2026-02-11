@@ -49,7 +49,7 @@ Invariants
 - Email and phone remain clickable links.
 - Location item links to `#map`.
 - Footer brand mark links to `#top`.
-- Footer labels update with active language.
+- Footer labels are sourced from translations and currently render fixed Croatian (`hr`) copy.
 - Icons are decorative (`aria-hidden="true"`) and align with label rows through a fixed icon column + text block layout plus a consistent `-translate-y-0.5` icon adjustment.
 - Footer text and links use dedicated dark-surface tokens for contrast.
 

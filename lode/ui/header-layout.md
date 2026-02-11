@@ -1,6 +1,6 @@
 # Header Layout
 
-`app/components/Header.tsx` is a sticky top bar (`sticky top-0`) with a subtle surface (`bg-white/95`, border, shadow) that keeps left `BrandLogo` and right actions (`Navigation` + contact `CtaButton` + language switcher) visible while scrolling.
+`app/components/Header.tsx` is a sticky top bar (`sticky top-0`) with a subtle surface (`bg-white/95`, border, shadow) that keeps left `BrandLogo` and right actions (`Navigation` + contact `CtaButton` + language button pair) visible while scrolling.
 
 Related
 - [UI Summary](summary.md)
@@ -16,7 +16,7 @@ flowchart LR
   Right --> About["#about"]
   Right --> Services["#services"]
   Right --> ContactAnchor["#contact CTA"]
-  Right --> Language["aria-pressed language buttons"]
+  Right --> Language["HR|EN buttons (aria-pressed + aria-disabled)"]
 ```
 
 ```tsx
@@ -44,14 +44,14 @@ Invariants
 - Header remains visible during scroll using sticky positioning.
 - Header CTA uses the shared `CtaButton` component, not custom anchor markup.
 - Primary navigation excludes a plain `Contact` link; contact entry is CTA-only.
-- Language switcher stays on the far right and indicates active language.
+- Language buttons stay on the far right with static `HR` active styling.
 
 Contracts
 - CTA defaults to `href="#contact"` unless an explicit override is passed.
 - Brand logo defaults to `href="#top"` for scroll-to-top.
 - Navigation links target in-page anchors `#about` and `#services`.
 - Header container keeps horizontal separation via `justify-between`.
-- Language buttons expose active state using `aria-pressed`.
+- Language buttons expose active state using `aria-pressed` and are marked non-interactive using `aria-disabled`.
 
 Rationale
 - Sticky navigation keeps in-page movement fast on long one-page content.

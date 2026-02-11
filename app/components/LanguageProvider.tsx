@@ -1,7 +1,7 @@
 "use client";
 
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import { defaultLanguage, languageStorageKey, translations, type Language, type TranslationSet } from "../lib/translations";
+import { createContext, useContext, useMemo } from "react";
+import { defaultLanguage, translations, type Language, type TranslationSet } from "../lib/translations";
 
 type LanguageContextValue = {
   language: Language;
@@ -10,24 +10,15 @@ type LanguageContextValue = {
 };
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
+const noopSetLanguage: LanguageContextValue["setLanguage"] = () => undefined;
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>(() => {
-    if (typeof window === "undefined") {
-      return defaultLanguage;
-    }
-    const stored = window.localStorage.getItem(languageStorageKey);
-    return stored === "hr" || stored === "en" ? stored : defaultLanguage;
-  });
-
-  useEffect(() => {
-    window.localStorage.setItem(languageStorageKey, language);
-  }, [language]);
+  const language = defaultLanguage;
 
   const value = useMemo(
     () => ({
       language,
-      setLanguage,
+      setLanguage: noopSetLanguage,
       t: translations[language],
     }),
     [language],

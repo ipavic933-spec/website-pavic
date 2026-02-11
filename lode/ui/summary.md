@@ -1,6 +1,6 @@
 # UI Summary
 
-The UI layer currently uses a shared `app/layout.tsx` shell (header/footer) with route-specific body content in `app/page.tsx`; a client `LanguageProvider` enables bilingual `hr/en` copy with `site_lang` persistence, the sticky header includes a right-side language switcher (`aria-pressed` buttons), all home/footer text reads from centralized translation keys, and anchor navigation remains stable.
+The UI layer currently uses a shared `app/layout.tsx` shell (header/footer) with route-specific body content in `app/page.tsx`; a client `LanguageProvider` exposes fixed Croatian (`hr`) copy, the sticky header includes a right-side `HR|EN` button pair rendered as non-functional controls, all home/footer text reads from centralized translation keys, and anchor navigation remains stable.
 
 Related
 - [Lode Map](../lode-map.md)
@@ -48,7 +48,7 @@ Invariants
 - Hero uses a centered stack at all breakpoints, with CTA centered beneath title/subtitle copy.
 - Services show six cards using `grid-cols-1 md:grid-cols-2 lg:grid-cols-3`.
 - Interactive states (hover/focus) use accent color tokens and shared button styles (`.btn-primary`) for contrast-safe CTA rendering.
-- UI copy is bilingual (`hr/en`) and updates immediately when language changes.
+- UI copy is sourced from translations but rendered in fixed Croatian (`hr`).
 - Service cards include minimal hover/focus lift animations for discoverability.
 
 Contracts
@@ -60,7 +60,7 @@ Contracts
 - Header CTA uses the shared `CtaButton` component and keeps contact anchor behavior without a duplicate plain Contact nav link.
 - `app/globals.css` is the source of palette/button tokens (`--accent`, `--accent-hover`, `--btn-text`, `--text`, `--background`, `--surface`, `--border`) and shared button utility styles.
 - Footer-specific contrast tokens (`--footer-bg`, `--footer-text`, `--footer-link`, `--footer-border`) drive dark footer readability.
-- Language persistence uses `localStorage` key `site_lang` with `hr` default.
+- Language controls are presentational only and do not persist or mutate language state.
 
 Rationale
 - Keeping the home page as a clean one-page flow reduces cognitive load for first-time legal-service visitors.

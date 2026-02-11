@@ -1,6 +1,6 @@
 # Language Support
 
-The UI uses client-side bilingual support (`hr` + `en`) powered by `LanguageProvider`, where selected language is persisted in `localStorage` under `site_lang` and defaults to Croatian when missing.
+The UI keeps a language-shaped API (`LanguageProvider` + header `HR|EN` controls), but displayed copy is fixed to Croatian (`hr`); language buttons remain visible for layout continuity and do not change content.
 
 Related
 - [UI Summary](summary.md)
@@ -9,35 +9,36 @@ Related
 
 ```mermaid
 flowchart TD
-  Provider["LanguageProvider"] --> Storage["localStorage: site_lang"]
-  Provider --> Header["Header + LanguageSwitcher"]
+  Provider["LanguageProvider (fixed hr)"] --> Header["Header + LanguageSwitcher"]
+  Header --> Buttons["HR|EN buttons (non-functional)"]
   Provider --> Sections["Hero/About/Services/Map/Contact"]
   Provider --> Footer["Footer labels + working hours"]
 ```
 
 ```tsx
-const [language, setLanguage] = useState<Language>("hr");
+const language = defaultLanguage;
+const noopSetLanguage: LanguageContextValue["setLanguage"] = () => undefined;
 
-useEffect(() => {
-  const stored = window.localStorage.getItem("site_lang");
-  if (stored === "hr" || stored === "en") {
-    setLanguage(stored);
-  }
-}, []);
+const value = {
+  language,
+  setLanguage: noopSetLanguage,
+  t: translations[language],
+};
 ```
 
 Invariants
-- Supported languages are exactly `hr` and `en`.
-- Default language is Croatian (`hr`) when no persisted selection exists.
-- Section anchors (`#about`, `#services`, `#contact`, `#top`) remain stable across language switches.
+- Displayed language is always Croatian (`hr`) in current runtime behavior.
+- Header retains `HR|EN` buttons for visual consistency, but they are intentionally non-interactive.
+- Section anchors (`#about`, `#services`, `#contact`, `#top`) remain stable and independent of language controls.
 
 Contracts
 - `translations` object in `app/lib/translations.ts` is the source of all displayed copy.
-- Header language controls use button semantics with `aria-pressed` on the active language.
+- `LanguageProvider` exposes `language`, `setLanguage`, and `t`, but `setLanguage` is a no-op.
+- Header language controls use button semantics with `aria-pressed` and `aria-disabled`.
 - Language switcher is rendered on the right side of header actions.
 
 Rationale
-- Lightweight in-app translations avoid adding heavy i18n dependencies for a single-page brochure site.
+- Keeping a stable language API avoids refactoring section components while translation toggling is intentionally disabled.
 
 Lessons
-- Centralized translation keys make UI text changes safer than inline strings in each section.
+- A no-op switcher preserves the expected header layout while removing accidental language state drift.

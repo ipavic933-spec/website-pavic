@@ -1,7 +1,6 @@
 export type Language = "hr" | "en";
 
 export const defaultLanguage: Language = "hr";
-export const languageStorageKey = "site_lang";
 
 export const translations = {
   hr: {

@@ -32,11 +32,11 @@ Practices
 - Keep global layout concerns in `app/layout.tsx`.
 - Prefer Tailwind utilities for component styling; use `app/globals.css` for globals.
 - Define shared palette tokens in `app/globals.css` (`--accent`, `--text`, `--background`, `--surface`, `--border`) and consume them via utility classes.
-- Keep copy in `app/lib/translations.ts` and read it via `LanguageProvider` instead of hardcoding strings in sections.
+- Keep copy in `app/lib/translations.ts` and read it via `LanguageProvider` (currently fixed to `hr`) instead of hardcoding strings in sections.
 - Place reusable UI in `app/components/`.
 - Keep landing-page body content in `app/page.tsx` unless sections become reusable.
 - Keep header sticky with a subtle surface and left/right split: `BrandLogo` on the left, `About Us` + `Services` + contact CTA on the right.
-- Place language switcher controls (`HR | EN`) at the far right of header actions, with active-state emphasis and `aria-pressed`.
+- Place language switcher controls (`HR | EN`) at the far right of header actions as non-functional UI with active-state emphasis on `HR`, `aria-pressed`, and `aria-disabled`.
 - In hero, use a responsive two-column split from tablet upward so primary CTA sits to the right.
 - Reuse `BrandLogo` in both header and footer to keep top-link behavior consistent.
 - Keep footer contact details as three labeled segments (Email, Phone, Location) arranged horizontally with wrapping, and keep `mailto:`/`tel:` links clickable.
@@ -47,7 +47,7 @@ Practices
 - Avoid decorative underline/divider elements directly under headings; rely on typography and spacing for section hierarchy.
 - Reuse a dedicated CTA anchor component (`CtaButton`) instead of duplicating styled anchor markup.
 - Apply shared `.btn-primary` styling for CTA-level buttons to maintain contrast on both light and dark surfaces.
-- Persist language selection using `site_lang` in localStorage and default to Croatian.
+- Do not persist language selection; copy remains fixed to Croatian until multilingual behavior is intentionally reintroduced.
 
 Lessons
 - Minimal scaffolding is easier to evolve than over-structured pages.

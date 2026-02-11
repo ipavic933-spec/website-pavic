@@ -1,6 +1,6 @@
 # Home Main Content
 
-`app/page.tsx` composes reusable home-body components from `app/components/home/`: `HeroSection`, `AboutSection`, `ServicesSection`, `MapSection`, and `ContactSection`; each section reads bilingual copy from shared translations while preserving stable anchor IDs.
+`app/page.tsx` composes reusable home-body components from `app/components/home/`: `HeroSection`, `AboutSection`, `ServicesSection`, `MapSection`, and `ContactSection`; each section reads centralized translation keys through `LanguageProvider`, with current runtime copy fixed to Croatian (`hr`) while preserving stable anchor IDs.
 
 Related
 - [UI Summary](summary.md)
@@ -14,7 +14,7 @@ flowchart TD
   HeaderNav["Header nav links"] --> AboutId["section#about"]
   HeaderNav --> ServicesId["section#services"]
   BrandLogo["Header/Footer BrandLogo"] --> TopId["main#top"]
-  I18n["translations hr/en"] --> Sections["all section copy"]
+  I18n["translations (runtime: hr)"] --> Sections["all section copy"]
   HeroSection --> HeroStack["centered text stack"]
   HeroStack --> CtaButton["centered CTA below subtitle"]
   AboutDesktop["lg:grid-cols-[1.15fr_0.85fr]"] --> AboutMobile["single column default"]
@@ -46,7 +46,7 @@ flowchart TD
 
 Invariants
 - Main content root keeps `id="top"` as return target for brand logo links.
-- Section IDs remain constant regardless of active language.
+- Section IDs remain constant regardless of language-control state.
 - Hero section always contains a primary CTA that points to `#contact`.
 - Hero keeps a centered stack at all breakpoints, with CTA centered below subtitle copy.
 - About section is anchor-targetable via `id="about"`.
