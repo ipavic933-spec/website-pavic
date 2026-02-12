@@ -1,6 +1,6 @@
 # Summary
 
-Website Pavic is a Next.js 16 App Router single-page marketing site for a law office with sections for hero, banner, about, services, and contact; it uses a custom client-side i18n context (`hr`/`en`), Tailwind CSS with a brand/ink palette, and reusable section components under `components/` rendered from `app/page.tsx`.
+Website Pavic is a Next.js 16 App Router marketing site for a law office with a section-based homepage (hero, banner, about, services, contact) plus a dedicated privacy policy route at `/privacy-policy`; it uses a custom client-side i18n context (`hr`/`en`), Tailwind CSS with a brand/ink palette, and reusable section components under `components/` rendered from `app/page.tsx`.
 
 Related
 - [Terminology](terminology.md)
@@ -11,10 +11,12 @@ Related
 ```mermaid
 graph TD
   Layout["app/layout.tsx"] --> Page["app/page.tsx"]
+  Layout --> PrivacyPage["app/privacy-policy/page.tsx"]
   Page --> I18N["lib/i18n.tsx I18nProvider"]
   Page --> Header["components/header.tsx"]
   Page --> Sections["hero/banner/about/services/contact"]
   Page --> Footer["components/footer.tsx"]
+  Footer --> PrivacyLink["/privacy-policy"]
   Layout --> Globals["app/globals.css"]
 ```
 
@@ -53,7 +55,8 @@ export default function RootLayout({
 ```
 
 Invariants
-- The app entry route is `app/page.tsx` and renders a one-page section flow.
+- The app entry route is `app/page.tsx` and renders the section flow for the homepage.
+- A separate static route exists at `app/privacy-policy/page.tsx` for privacy policy content.
 - The root layout in `app/layout.tsx` only sets global HTML/body shell and imports `app/globals.css`.
 - Translations are runtime values from `useI18n()` in `lib/i18n.tsx`, not file-based locale routing.
 - Header navigation targets in-page anchors (`#about`, `#services`, `#contact`) with a mobile toggle menu.

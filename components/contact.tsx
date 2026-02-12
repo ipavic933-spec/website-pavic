@@ -29,12 +29,12 @@ export function Contact() {
       icon: MapPin,
       labelKey: "contact.address",
       value: "Svaciceva 4, 21000, Split",
-      href: undefined,
+      href: "https://share.google/IZs8SjyOjeDDpcs5K",
     },
   ]
 
   return (
-    <section id="contact" className="scroll-mt-20 bg-brand-50 py-16 md:py-20">
+    <section id="contact" className="scroll-mt-20 bg-white py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
           {/* Left - info */}
@@ -42,7 +42,7 @@ export function Contact() {
             <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.25em] text-brand-700">
               {t("contact.eyebrow")}
             </span>
-            <h2 className="mb-4 font-serif text-3xl leading-[1.12] tracking-tight text-ink-900 md:text-4xl">
+            <h2 className="mb-4 font-serif text-3xl leading-[1.12] tracking-[0.01em] text-ink-900 md:text-4xl">
               {t("contact.title")}
             </h2>
 
@@ -55,6 +55,7 @@ export function Contact() {
 
             <div className="flex flex-col gap-3">
               {contactItems.map((item) => {
+                const isExternal = Boolean(item.href?.startsWith("http"))
                 const Row = (
                   <div className="flex items-center gap-4">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white text-brand-700 ring-1 ring-brand-200">
@@ -71,7 +72,9 @@ export function Contact() {
                   <a
                     key={item.labelKey}
                     href={item.href}
-                    className="group rounded-2xl border border-brand-200 bg-white px-4 py-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noreferrer" : undefined}
+                    className="group block w-full rounded-2xl border border-brand-200 bg-white px-4 py-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
                   >
                     <div className="flex items-center justify-between gap-4">
                       {Row}
@@ -83,7 +86,7 @@ export function Contact() {
                 ) : (
                   <div
                     key={item.labelKey}
-                    className="rounded-2xl border border-brand-200 bg-white px-4 py-4 shadow-sm"
+                    className="w-full rounded-2xl border border-brand-200 bg-white px-4 py-4 shadow-sm"
                   >
                     {Row}
                   </div>

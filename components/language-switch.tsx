@@ -1,18 +1,18 @@
 "use client"
 
-import { useI18n, type Locale } from "@/lib/i18n"
+import { useI18n } from "@/lib/i18n"
 
 export function LanguageSwitch() {
   const { locale, setLocale } = useI18n()
 
   return (
-    <div className="flex items-center overflow-hidden rounded-lg border border-brand-200 text-xs">
+    <div className="flex items-center overflow-hidden rounded-lg border border-brand-900 text-xs">
       <button
         onClick={() => setLocale("hr")}
         className={`px-2.5 py-1.5 font-medium transition-colors ${
           locale === "hr"
-            ? "bg-brand-50 text-brand-900"
-            : "bg-transparent text-ink-600 hover:text-ink-900"
+            ? "bg-[#d3dce0] text-ink-900"
+            : "bg-white text-ink-600 hover:text-ink-900"
         }`}
         aria-label="Hrvatski"
       >
@@ -22,8 +22,8 @@ export function LanguageSwitch() {
         onClick={() => setLocale("en")}
         className={`px-2.5 py-1.5 font-medium transition-colors ${
           locale === "en"
-            ? "bg-brand-50 text-brand-900"
-            : "bg-transparent text-ink-600 hover:text-ink-900"
+            ? "bg-[#d3dce0] text-ink-900"
+            : "bg-white text-ink-600 hover:text-ink-900"
         }`}
         aria-label="English"
       >

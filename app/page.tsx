@@ -12,6 +12,7 @@ import { Footer } from "@/components/footer"
 export default function Page() {
   return (
     <I18nProvider>
+      <div id="top" />
       <Header />
       <main>
         <Hero />

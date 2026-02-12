@@ -153,7 +153,6 @@ const t: Translations = {
   "footer.privacy": { hr: "Pravila privatnosti", en: "Privacy policy" },
 
   // Missing keys that were falling back
-  "services.details": { hr: "Detalji", en: "Details" },
   "form.title": { hr: "Posaljite upit", en: "Send inquiry" },
   "form.subtitle": { hr: "Odgovaram u najkracem mogucem roku.", en: "I respond as soon as possible." },
   "about.focusLabel": { hr: "Fokus", en: "Focus" },
