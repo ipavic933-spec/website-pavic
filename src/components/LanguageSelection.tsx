@@ -1,5 +1,5 @@
 import { useLocale } from "next-intl";
-import { Link } from "../../i18n/navigation";
+import { Link } from "@/i18n/navigation";
 
 const LanguageSelection = () => {
   const locale = useLocale();
