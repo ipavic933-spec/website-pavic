@@ -3,13 +3,14 @@
 Common project terms and their meaning.
 
 Terms
-- App Router - Next.js routing model where pages live in `src/app/`.
-- Root Layout - The shared shell in `src/app/layout.tsx` that wraps all pages.
-- Page - A route entry such as `src/app/page.tsx`.
-- Global Styles - Tailwind base layer and custom CSS in `src/app/globals.css`.
-- Component - Reusable UI module under `src/app/components/`.
-- Header Toggle Menu - Mobile-only hamburger trigger in `src/app/components/Header.tsx` that toggles a full-width overlay menu.
-- Navigation Orientation - `orijentation` prop in `Navigation` selecting `row` (desktop) or `col` (mobile overlay) layout.
+- App Router - Next.js routing model where routes live in `app/`.
+- Root Layout - The shared shell in `app/layout.tsx` that wraps all pages.
+- Landing Page - Main route in `app/page.tsx` that composes all homepage sections.
+- Global Styles - Tailwind layers and design tokens in `app/globals.css`.
+- Section Component - Reusable block in `components/` (for example `hero.tsx`, `services.tsx`).
+- I18n Provider - Client context from `lib/i18n.tsx` that stores current locale (`hr` or `en`) and resolves translation keys.
+- Language Switch - `components/language-switch.tsx` control that updates locale in I18n context.
+- Brand/Ink Palette - Tailwind color scale in `tailwind.config.ts` used across buttons, backgrounds, and text.
 
 Related
 - [Summary](summary.md)
@@ -20,19 +21,20 @@ Related
 ```mermaid
 graph LR
   AppRouter --> Layout
-  Layout --> Page
-  Layout --> Component
-  HeaderToggleMenu --> NavigationOrientation
+  Layout --> LandingPage
+  LandingPage --> SectionComponent
+  LandingPage --> I18nProvider
+  I18nProvider --> LanguageSwitch
 ```
 
-```ts
-export const routing = {
-  locales: ["hr", "en"],
-  defaultLocale: "hr",
-  localePrefix: "as-needed"
-};
+```tsx
+const { locale, setLocale, t } = useI18n();
+
+<button onClick={() => setLocale("hr")}>HR</button>
+<button onClick={() => setLocale("en")}>EN</button>
+<span>{t("nav.about")}</span>
 ```
 
 Contracts
-- Components under `src/app/components/` are intended for reuse across pages.
-- Layout owns global page chrome (header/footer).
+- Components under `components/` are intended for composition from `app/page.tsx`.
+- Layout owns only document shell concerns; page-level chrome is composed in `app/page.tsx`.

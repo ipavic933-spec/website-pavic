@@ -1,6 +1,6 @@
 # Summary
 
-Website Pavic is a small Next.js 16 App Router site under `src/app` with a shared root layout (header + footer), a minimal home page, and Tailwind CSS v4 global styles; the header contains responsive navigation with a desktop inline menu and a mobile full-width overlay menu that toggles from a hamburger button.
+Website Pavic is a Next.js 16 App Router single-page marketing site for a law office with sections for hero, banner, about, services, and contact; it uses a custom client-side i18n context (`hr`/`en`), Tailwind CSS with a brand/ink palette, and reusable section components under `components/` rendered from `app/page.tsx`.
 
 Related
 - [Terminology](terminology.md)
@@ -10,32 +10,42 @@ Related
 
 ```mermaid
 graph TD
-  Layout["src/app/layout.tsx"] --> Header["src/app/components/Header.tsx"]
-  Layout --> Footer["src/app/components/Footer.tsx"]
-  Layout --> Page["src/app/page.tsx"]
-  Layout --> Globals["src/app/globals.css"]
-  Header --> DesktopNav["Navigation row on md+"]
-  Header --> MobileNav["Hamburger toggles overlay nav"]
+  Layout["app/layout.tsx"] --> Page["app/page.tsx"]
+  Page --> I18N["lib/i18n.tsx I18nProvider"]
+  Page --> Header["components/header.tsx"]
+  Page --> Sections["hero/banner/about/services/contact"]
+  Page --> Footer["components/footer.tsx"]
+  Layout --> Globals["app/globals.css"]
 ```
 
 ```tsx
-export default async function RootLayout({
+export default function Page() {
+  return (
+    <I18nProvider>
+      <Header />
+      <main>
+        <Hero />
+        <Banner />
+        <About />
+        <Services />
+        <Contact />
+      </main>
+      <Footer />
+    </I18nProvider>
+  );
+}
+```
+
+```tsx
+export default function RootLayout({
   children,
-  params
 }: {
   children: React.ReactNode;
-  params: Promise<{locale: string}>;
 }) {
-  const {locale} = await params;
-
   return (
-    <html lang={locale}>
-      <body>
-        <NextIntlClientProvider>
-          <Header />
-          {children}
-          <Footer />
-        </NextIntlClientProvider>
+    <html lang="hr" className="scroll-smooth">
+      <body className="bg-white text-ink-900 antialiased">
+        {children}
       </body>
     </html>
   );
@@ -43,11 +53,11 @@ export default async function RootLayout({
 ```
 
 Invariants
-- All pages render inside the shared root layout.
-- Styling uses Tailwind utility classes plus `src/app/globals.css`.
-- The home page lives at `src/app/page.tsx`.
-- Mobile navigation links render only after tapping the hamburger icon in `src/app/components/Header.tsx`.
-- Open mobile navigation is a full-width overlay dropdown and does not push page content down.
+- The app entry route is `app/page.tsx` and renders a one-page section flow.
+- The root layout in `app/layout.tsx` only sets global HTML/body shell and imports `app/globals.css`.
+- Translations are runtime values from `useI18n()` in `lib/i18n.tsx`, not file-based locale routing.
+- Header navigation targets in-page anchors (`#about`, `#services`, `#contact`) with a mobile toggle menu.
+- The main visual system is the `brand-*` and `ink-*` Tailwind palette defined in `tailwind.config.ts`.
 
 Rationale
-- A simple layout keeps the site structure consistent while content evolves.
+- A section-driven landing page with local i18n keeps copy iteration and visual tuning fast without routing complexity.
