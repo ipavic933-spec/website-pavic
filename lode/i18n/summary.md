@@ -1,6 +1,6 @@
 # Internationalization
 
-The app uses `next-intl` with locale-aware routing and message-file translations: locale behavior is defined in `i18n/routing.ts`, request-time message loading in `i18n/request.ts`, middleware/proxy matching in `proxy.ts`, and translated copy in `messages/hr.json` + `messages/en.json` under the shared `Site` namespace.
+The app uses `next-intl` with locale-aware routing and message-file translations: locale behavior is defined in `src/i18n/routing.ts`, request-time message loading in `src/i18n/request.ts`, middleware/proxy matching in `src/proxy.ts`, and translated copy in `messages/hr.json` + `messages/en.json` under the shared `Site` namespace.
 
 Related
 - [../summary.md](../summary.md)
@@ -9,13 +9,13 @@ Related
 
 ```mermaid
 flowchart TD
-  Proxy["proxy.ts"] --> Routing["i18n/routing.ts"]
-  Routing --> LocaleLayout["app/[locale]/layout.tsx"]
+  Proxy["src/proxy.ts"] --> Routing["src/i18n/routing.ts"]
+  Routing --> LocaleLayout["src/app/[locale]/layout.tsx"]
   LocaleLayout --> Provider["NextIntlClientProvider"]
-  Provider --> Components["components/*"]
-  Request["i18n/request.ts"] --> Messages["messages/hr.json + messages/en.json"]
+  Provider --> Components["src/components/*"]
+  Request["src/i18n/request.ts"] --> Messages["messages/hr.json + messages/en.json"]
   Components --> Hook["useTranslations('Site')"]
-  LanguageSwitch["components/language-switch.tsx"] --> Nav["i18n/navigation.ts Link(locale)"]
+  LanguageSwitch["src/components/language-switch.tsx"] --> Nav["src/i18n/navigation.ts Link(locale)"]
 ```
 
 ```ts
@@ -33,10 +33,10 @@ t("nav.about");
 Invariants
 - Locales are limited to `hr` and `en`.
 - Default locale is `hr` and remains unprefixed (`localePrefix: "as-needed"`).
-- Localized pages are served from `app/[locale]/...`.
+- Localized pages are served from `src/app/[locale]/...`.
 - Components resolve text via `useTranslations("Site")` from message files.
 
 Contracts
-- `proxy.ts` must use the shared `routing` object for locale matching.
-- `app/[locale]/layout.tsx` validates locale and mounts `NextIntlClientProvider`.
-- `components/language-switch.tsx` uses localized navigation links to switch locale.
+- `src/proxy.ts` must use the shared `routing` object for locale matching.
+- `src/app/[locale]/layout.tsx` validates locale and mounts `NextIntlClientProvider`.
+- `src/components/language-switch.tsx` uses localized navigation links to switch locale.
