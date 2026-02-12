@@ -6,6 +6,7 @@ Related
 - [Summary](summary.md)
 - [Terminology](terminology.md)
 - [Current Plan](plans/current-plan.md)
+- [Internationalization](i18n/summary.md)
 
 ```mermaid
 flowchart TD
@@ -32,3 +33,4 @@ Practices
 
 Lessons
 - Minimal scaffolding is easier to evolve than over-structured pages.
+- Locale routing is cleaner when default locale is unprefixed and only alternate locales are prefixed.

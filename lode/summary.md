@@ -6,6 +6,7 @@ Related
 - [Terminology](terminology.md)
 - [Practices](practices.md)
 - [Current Plan](plans/current-plan.md)
+- [Internationalization](i18n/summary.md)
 
 ```mermaid
 graph TD
@@ -18,13 +19,23 @@ graph TD
 ```
 
 ```tsx
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({
+  children,
+  params
+}: {
+  children: React.ReactNode;
+  params: Promise<{locale: string}>;
+}) {
+  const {locale} = await params;
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <NextIntlClientProvider>
+          <Header />
+          {children}
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

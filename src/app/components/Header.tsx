@@ -1,6 +1,7 @@
 "use client";
 
 import {useState} from "react";
+import LanguageSelection from "./LanguageSelection";
 import Navigation from "./Navigation";
 
 const Header = () => {
@@ -40,6 +41,7 @@ const Header = () => {
           </div>
         </div>
       </div>
+      <LanguageSelection/>
     </div>
   )
 }
