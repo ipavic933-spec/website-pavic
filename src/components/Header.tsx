@@ -33,7 +33,7 @@ const Header = () => {
               </button>
 
               {isOpen && (
-                <nav className="fixed inset-x-0 z-50 flex w-screen flex-col items-start bg-black px-7 py-4">
+                <nav className="fixed inset-x-0 z-50 flex w-full flex-col items-start bg-black px-7 py-4">
                   <Navigation orijentation="col" />
                 </nav>
               )}
