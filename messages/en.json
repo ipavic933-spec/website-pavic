@@ -18,13 +18,21 @@
     "discription": "We place special emphasis on legal support for entrepreneurs, companies and crafts in everyday business operations and dispute resolution."
   },
   "AboutMe": {
+    "sectionTitle": "About us",
+    "title": "Professional and trustworthy",
     "workingExperience": "The law firm has been operating independently since January 2023, after years of work and experience in the law firm of Damir Batarel in Split (2018 - 2022).",
-    "education": "I graduated from the Integrated Graduate Study Program in Law at the Faculty of Law in Split in 2016, and passed the bar exam in 2022, which qualified me for independent legal practice and further professional development.",
-    "aboutWayOfWork": "In my work, I am guided by the principles of responsibility and confidentiality. I provide clients with clear communication, timely information and a precise assessment of the legal situation, along with a strategy adapted to the specific case.",
-    "focusAndExperience": "Special experience and focus of work are focused on property law, land registry procedures and contract law, including drafting and analyzing contracts and representation in judicial and extrajudicial proceedings."
+    "education": "Graduated from the Faculty of Law in Split (2016)",
+    "bar": "Bar exam passed in 2022",
+    "workEthics": "My work is based on responsibility, confidentiality, and clear communication",
+    "focusLabel": "Focus",
+    "focus": "Focus: property and land registry law, contract law, drafting/analysis of contracts, and representation in court and out-of-court proceedings.",
+    "expertise": "Expertise",
+    "confidentiality": "Confidentiality",
+    "dedication": "Dedication",
+    "name": "Ivan Pavić"
   },
   "Services": {
-    "title": "Services",
+    "sectionTitle": "Services",
     "description": "The law firm provides legal services to individuals and legal entities in the following areas:",
     "servicesList": [
       {

@@ -8,7 +8,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   
   return (
-    <div className="sticky top-0 bg-black">
+    <div className="sticky top-0 bg-black z-10">
       <div className="m-auto max-w-6xl flex items-top justify-between px-7 py-3">
         <div>
           Odvjetnicki ured Ivan pavic
