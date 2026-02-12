@@ -55,7 +55,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="flex justify-between gap-4 flex-wrap">
+            <div className="flex justify-baseline gap-4 flex-wrap">
               {pillList.map((pill, index) => (
                 <Badge variant='outline' key={index} className="bg-white py-2 px-3 shadow-sm flex flex-row gap-3">
                   <div className="flex items-center justify-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-brand-200 p-1">
