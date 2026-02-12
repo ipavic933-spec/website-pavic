@@ -8,10 +8,10 @@ import {
   Gavel,
   Wrench,
 } from "lucide-react"
-import { useI18n } from "@/lib/i18n"
+import {useTranslations} from "next-intl"
 
 export function Services() {
-  const { t } = useI18n()
+  const t = useTranslations("Site")
 
   const services = [
     { icon: House, titleKey: "svc.property.title", descKey: "svc.property.desc" },

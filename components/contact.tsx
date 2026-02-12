@@ -6,11 +6,11 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
-import { useI18n } from "@/lib/i18n"
+import {useTranslations} from "next-intl"
 
 export function Contact() {
   const [agreed, setAgreed] = useState(false)
-  const { t } = useI18n()
+  const t = useTranslations("Site")
 
   const contactItems = [
     {

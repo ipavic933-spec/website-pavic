@@ -1,0 +1,113 @@
+{
+  "Site": {
+    "nav": {
+      "about": "About",
+      "services": "Services",
+      "contact": "Contact",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu"
+    },
+    "header": {
+      "subtitle": "Law Office"
+    },
+    "hero": {
+      "eyebrow": "LAW OFFICE • SPLIT",
+      "title": "Reliable legal support for individuals and businesses",
+      "subtitle": "Expert advice and representation in property and contract law — clear, discreet, and effective.",
+      "badge1": "Discreet & professional",
+      "badge2": "Clear communication",
+      "badge3": "Response in 24h",
+      "cta": "Request a consultation",
+      "cta2": "Call now",
+      "micro": "Confidential • No obligation on first contact",
+      "cardName": "Ivan Pavic",
+      "cardRole": "Attorney"
+    },
+    "about": {
+      "eyebrow": "ABOUT",
+      "title": "Professional and trustworthy",
+      "lead": "The office has been operating independently since January 2023, following years of experience in legal practice in Split.",
+      "bullet1": "Graduated from the Faculty of Law in Split (2016)",
+      "bullet2": "Bar exam passed in 2022",
+      "bullet3": "My work is based on responsibility, confidentiality, and clear communication",
+      "focusLabel": "Focus",
+      "focus": "Focus: property and land registry law, contract law, drafting/analysis of contracts, and representation in court and out-of-court proceedings.",
+      "pillar1": {
+        "title": "Expertise",
+        "desc": "Experience, precise assessment and strategy."
+      },
+      "pillar2": {
+        "title": "Confidentiality",
+        "desc": "Discretion and protection of client interests."
+      },
+      "pillar3": {
+        "title": "Dedication",
+        "desc": "Individual approach to every case."
+      },
+      "photoLabel": "Lawyer photograph",
+      "photoHint": "Portrait of Ivan Pavic",
+      "photoBottom": "A professional photo builds trust."
+    },
+    "services": {
+      "eyebrow": "SERVICES",
+      "title": "Practice areas",
+      "desc": "I provide legal services to individuals and legal entities in the following areas:"
+    },
+    "svc": {
+      "property": {
+        "title": "Property & land registry law",
+        "desc": "Ownership, co-ownership, registrations and land registry regulation."
+      },
+      "contract": {
+        "title": "Contract law",
+        "desc": "Drafting and analysis of contracts and contractual disputes."
+      },
+      "inheritance": {
+        "title": "Inheritance law",
+        "desc": "Counseling and representation in probate proceedings."
+      },
+      "admin": {
+        "title": "Administrative law",
+        "desc": "Representation in proceedings before competent authorities."
+      },
+      "enforcement": {
+        "title": "Enforcement law",
+        "desc": "Preparation and management of enforcement and debt collection."
+      },
+      "labor": {
+        "title": "Labor law",
+        "desc": "Counseling and representation of employers and employees."
+      }
+    },
+    "contact": {
+      "eyebrow": "CONTACT",
+      "title": "Request a consultation",
+      "desc": "Send a brief description of your inquiry. I respond as soon as possible, usually within 24 hours.",
+      "note": "Prior arrangement is required for client reception.",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address"
+    },
+    "form": {
+      "title": "Send inquiry",
+      "subtitle": "I respond as soon as possible.",
+      "name": "Full name",
+      "namePh": "Your full name",
+      "email": "Email",
+      "emailPh": "your@email.com",
+      "message": "Brief description",
+      "messagePh": "Describe your legal situation...",
+      "consent": "I consent to the processing of personal data for the purpose of responding to my inquiry.",
+      "submit": "Send inquiry",
+      "micro": "Confidential • No obligation on first contact"
+    },
+    "footer": {
+      "workingHours": "Working hours",
+      "hours": "Monday - Friday, 09:00 - 17:00",
+      "byAppt": "Prior arrangement is required for client reception.",
+      "contact": "Contact",
+      "copyright": "Law Office Ivan Pavic. All rights reserved.",
+      "privacy": "Privacy policy"
+    }
+  }
+}

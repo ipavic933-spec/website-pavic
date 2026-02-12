@@ -1,10 +1,10 @@
 "use client"
 
 import { Phone } from "lucide-react"
-import { useI18n } from "@/lib/i18n"
+import {useTranslations} from "next-intl"
 
 export function Hero() {
-  const { t } = useI18n()
+  const t = useTranslations("Site")
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-brand-900 via-brand-800 to-brand-900 pt-20">

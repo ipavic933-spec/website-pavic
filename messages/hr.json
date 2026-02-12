@@ -1,0 +1,113 @@
+{
+  "Site": {
+    "nav": {
+      "about": "O nama",
+      "services": "Usluge",
+      "contact": "Kontakt",
+      "openMenu": "Otvori izbornik",
+      "closeMenu": "Zatvori izbornik"
+    },
+    "header": {
+      "subtitle": "Odvjetnicki ured"
+    },
+    "hero": {
+      "eyebrow": "ODVJETNICKI URED • SPLIT",
+      "title": "Pouzdana pravna podrska za gradane i poslovne subjekte",
+      "subtitle": "Strucno savjetovanje i zastupanje u imovinskopravnim i ugovornim odnosima — jasno, diskretno i ucinkovito.",
+      "badge1": "Diskretno i profesionalno",
+      "badge2": "Jasna komunikacija",
+      "badge3": "Odgovor u 24 h",
+      "cta": "Zatrazite konzultacije",
+      "cta2": "Nazovite odmah",
+      "micro": "Povjerljivo • Bez obveze u prvom kontaktu",
+      "cardName": "Ivan Pavic",
+      "cardRole": "Odvjetnik"
+    },
+    "about": {
+      "eyebrow": "O NAMA",
+      "title": "Profesionalno i s povjerenjem",
+      "lead": "Ured djeluje samostalno od sijecnja 2023., nakon visegodisnjeg iskustva u odvjetnickoj praksi u Splitu.",
+      "bullet1": "Diplomirao na Pravnom fakultetu u Splitu (2016.)",
+      "bullet2": "Pravosudni ispit polozen 2022.",
+      "bullet3": "Rad temeljim na odgovornosti, povjerljivosti i jasnoj komunikaciji",
+      "focusLabel": "Fokus",
+      "focus": "Fokus: stvarno i zemljisnoknjizhno pravo, obvezno pravo i sastavljanje/analiza ugovora te zastupanje u sudskim i izvansudskim postupcima.",
+      "pillar1": {
+        "title": "Strucnost",
+        "desc": "Iskustvo, precizna procjena i strategija."
+      },
+      "pillar2": {
+        "title": "Povjerljivost",
+        "desc": "Diskrecija i zastita interesa klijenta."
+      },
+      "pillar3": {
+        "title": "Posvecenost",
+        "desc": "Individualan pristup svakom predmetu."
+      },
+      "photoLabel": "Fotografija odvjetnika",
+      "photoHint": "Portret Ivana Pavica",
+      "photoBottom": "Profesionalna fotografija povecava povjerenje."
+    },
+    "services": {
+      "eyebrow": "USLUGE",
+      "title": "Pravna podrucja",
+      "desc": "Pruzam pravne usluge fizickim i pravnim osobama u sljedecim podrucjima:"
+    },
+    "svc": {
+      "property": {
+        "title": "Stvarno i zemljisnoknjizhno pravo",
+        "desc": "Vlasnistvo, suvlasnistvo, uknjizhbe i uredenje zemljisnoknjizhnog stanja."
+      },
+      "contract": {
+        "title": "Obvezno pravo",
+        "desc": "Sastavljanje i analiza ugovora te sporovi iz ugovornih odnosa."
+      },
+      "inheritance": {
+        "title": "Nasljedno pravo",
+        "desc": "Savjetovanje i zastupanje u ostavinskim postupcima."
+      },
+      "admin": {
+        "title": "Upravno pravo",
+        "desc": "Zastupanje u postupcima i sporovima pred nadleznim tijelima."
+      },
+      "enforcement": {
+        "title": "Ovrsno pravo",
+        "desc": "Priprema i vodenje ovrha te naplata potrazivanja."
+      },
+      "labor": {
+        "title": "Radno pravo",
+        "desc": "Savjetovanje i zastupanje poslodavaca i radnika."
+      }
+    },
+    "contact": {
+      "eyebrow": "KONTAKT",
+      "title": "Zatrazite konzultacije",
+      "desc": "Posaljite kratak opis upita. Odgovaram u najkracem mogucem roku, najcesce unutar 24 sata.",
+      "note": "Za prijem stranaka potreban je prethodni dogovor.",
+      "email": "Email",
+      "phone": "Telefon",
+      "address": "Adresa"
+    },
+    "form": {
+      "title": "Posaljite upit",
+      "subtitle": "Odgovaram u najkracem mogucem roku.",
+      "name": "Ime i prezime",
+      "namePh": "Vase ime i prezime",
+      "email": "Email",
+      "emailPh": "vasa@email.com",
+      "message": "Kratki opis upita",
+      "messagePh": "Opisite svoju pravnu situaciju...",
+      "consent": "Pristajem na obradu osobnih podataka u svrhu odgovora na upit.",
+      "submit": "Posaljite upit",
+      "micro": "Povjerljivo • Bez obveze u prvom kontaktu"
+    },
+    "footer": {
+      "workingHours": "Radno vrijeme",
+      "hours": "Ponedjeljak - petak, 09:00 - 17:00",
+      "byAppt": "Za prijem stranaka potreban je prethodni dogovor.",
+      "contact": "Kontakt",
+      "copyright": "Odvjetnicki ured Ivan Pavic. Sva prava pridrzana.",
+      "privacy": "Pravila privatnosti"
+    }
+  }
+}

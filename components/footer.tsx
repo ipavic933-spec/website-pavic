@@ -2,10 +2,11 @@
 
 import Image from "next/image"
 import { Mail, Phone, MapPin, Clock3 } from "lucide-react"
-import { useI18n } from "@/lib/i18n"
+import {Link} from "@/i18n/navigation"
+import {useTranslations} from "next-intl"
 
 export function Footer() {
-  const { t } = useI18n()
+  const t = useTranslations("Site")
 
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-gradient-to-b from-brand-900 to-brand-800 py-12 text-white">
@@ -86,12 +87,12 @@ export function Footer() {
             &copy; {new Date().getFullYear()} {t("footer.copyright")}
           </p>
 
-          <a
+          <Link
             href="/privacy-policy"
             className="text-xs text-white/55 underline underline-offset-4 transition hover:text-white/80"
           >
             {t("footer.privacy")}
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

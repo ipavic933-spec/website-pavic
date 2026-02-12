@@ -1,6 +1,6 @@
 # Internationalization
 
-The app uses a custom client-side i18n context in `lib/i18n.tsx` with two locales (`hr`, `en`); all translatable strings are stored in a single in-memory translation object and components resolve text through `useI18n().t(key)`, while language selection updates context state via `setLocale`.
+The app uses `next-intl` with locale-aware routing and message-file translations: locale behavior is defined in `i18n/routing.ts`, request-time message loading in `i18n/request.ts`, middleware/proxy matching in `proxy.ts`, and translated copy in `messages/hr.json` + `messages/en.json` under the shared `Site` namespace.
 
 Related
 - [../summary.md](../summary.md)
@@ -9,31 +9,34 @@ Related
 
 ```mermaid
 flowchart TD
-  Provider["lib/i18n.tsx I18nProvider"] --> State["locale state hr/en"]
-  Provider --> Dict["translation key map"]
-  Components["components/*"] --> Hook["useI18n()"]
-  Hook --> State
-  Hook --> Dict
-  LanguageSwitch["components/language-switch.tsx"] --> State
+  Proxy["proxy.ts"] --> Routing["i18n/routing.ts"]
+  Routing --> LocaleLayout["app/[locale]/layout.tsx"]
+  LocaleLayout --> Provider["NextIntlClientProvider"]
+  Provider --> Components["components/*"]
+  Request["i18n/request.ts"] --> Messages["messages/hr.json + messages/en.json"]
+  Components --> Hook["useTranslations('Site')"]
+  LanguageSwitch["components/language-switch.tsx"] --> Nav["i18n/navigation.ts Link(locale)"]
 ```
 
-```tsx
-const [locale, setLocale] = useState<Locale>("hr");
+```ts
+export const routing = defineRouting({
+  locales: ["hr", "en"],
+  defaultLocale: "hr",
+  localePrefix: "as-needed",
+  localeDetection: false
+});
 
-const translate = useCallback((key: string) => {
-  const entry = t[key];
-  if (!entry) return key;
-  return entry[locale];
-}, [locale]);
+const t = useTranslations("Site");
+t("nav.about");
 ```
 
 Invariants
-- Default locale initializes to `hr`.
-- Locale state is client-side and applies immediately without route changes.
-- Components must call `useI18n()` only under `I18nProvider`.
-- Missing translation keys fall back to the key string itself.
+- Locales are limited to `hr` and `en`.
+- Default locale is `hr` and remains unprefixed (`localePrefix: "as-needed"`).
+- Localized pages are served from `app/[locale]/...`.
+- Components resolve text via `useTranslations("Site")` from message files.
 
 Contracts
-- `app/page.tsx` wraps all sections with `I18nProvider`.
-- `components/language-switch.tsx` is the canonical locale switch control.
-- `lib/i18n.tsx` is the single source of translatable copy keys.
+- `proxy.ts` must use the shared `routing` object for locale matching.
+- `app/[locale]/layout.tsx` validates locale and mounts `NextIntlClientProvider`.
+- `components/language-switch.tsx` uses localized navigation links to switch locale.

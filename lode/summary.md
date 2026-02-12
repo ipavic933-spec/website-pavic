@@ -1,6 +1,6 @@
 # Summary
 
-Website Pavic is a Next.js 16 App Router marketing site for a law office with a section-based homepage (hero, banner, about, services, contact) plus a dedicated privacy policy route at `/privacy-policy`; it uses a custom client-side i18n context (`hr`/`en`), Tailwind CSS with a brand/ink palette, and reusable section components under `components/` rendered from `app/page.tsx`.
+Website Pavic is a Next.js 16 App Router marketing site for a law office with locale-aware routing (`hr`, `en`) via `next-intl`; the homepage sections (hero, banner, about, services, contact) and privacy policy are served under `app/[locale]/`, while shared UI lives in `components/` and styling uses Tailwind with the brand/ink palette.
 
 Related
 - [Terminology](terminology.md)
@@ -10,20 +10,23 @@ Related
 
 ```mermaid
 graph TD
-  Layout["app/layout.tsx"] --> Page["app/page.tsx"]
-  Layout --> PrivacyPage["app/privacy-policy/page.tsx"]
-  Page --> I18N["lib/i18n.tsx I18nProvider"]
-  Page --> Header["components/header.tsx"]
-  Page --> Sections["hero/banner/about/services/contact"]
-  Page --> Footer["components/footer.tsx"]
-  Footer --> PrivacyLink["/privacy-policy"]
+  Layout["app/layout.tsx"] --> LocaleLayout["app/[locale]/layout.tsx"]
+  LocaleLayout --> HomePage["app/[locale]/page.tsx"]
+  LocaleLayout --> PrivacyPage["app/[locale]/privacy-policy/page.tsx"]
+  HomePage --> Header["components/header.tsx"]
+  HomePage --> Sections["hero/banner/about/services/contact"]
+  HomePage --> Footer["components/footer.tsx"]
+  Footer --> PrivacyLink["localized /privacy-policy"]
+  Proxy["proxy.ts"] --> Routing["i18n/routing.ts"]
+  Routing --> Request["i18n/request.ts"]
+  Request --> Messages["messages/hr.json + messages/en.json"]
   Layout --> Globals["app/globals.css"]
 ```
 
 ```tsx
 export default function Page() {
   return (
-    <I18nProvider>
+    <>
       <Header />
       <main>
         <Hero />
@@ -33,7 +36,7 @@ export default function Page() {
         <Contact />
       </main>
       <Footer />
-    </I18nProvider>
+    </>
   );
 }
 ```
@@ -55,12 +58,12 @@ export default function RootLayout({
 ```
 
 Invariants
-- The app entry route is `app/page.tsx` and renders the section flow for the homepage.
-- A separate static route exists at `app/privacy-policy/page.tsx` for privacy policy content.
+- The app entry route is `app/[locale]/page.tsx` and renders the section flow for the homepage.
+- A localized static route exists at `app/[locale]/privacy-policy/page.tsx` for privacy policy content.
 - The root layout in `app/layout.tsx` only sets global HTML/body shell and imports `app/globals.css`.
-- Translations are runtime values from `useI18n()` in `lib/i18n.tsx`, not file-based locale routing.
+- Translations come from `next-intl` message files in `messages/` and are resolved with `useTranslations("Site")`.
 - Header navigation targets in-page anchors (`#about`, `#services`, `#contact`) with a mobile toggle menu.
 - The main visual system is the `brand-*` and `ink-*` Tailwind palette defined in `tailwind.config.ts`.
 
 Rationale
-- A section-driven landing page with local i18n keeps copy iteration and visual tuning fast without routing complexity.
+- Locale-aware routing with `next-intl` keeps translation behavior deterministic and aligns with multilingual URL expectations.

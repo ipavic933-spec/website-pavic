@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react"
 import { Award, ShieldCheck, Briefcase, GraduationCap, Scale, MessageCircle } from "lucide-react"
-import { useI18n } from "@/lib/i18n"
+import {useTranslations} from "next-intl"
 
 export function About() {
-  const { t } = useI18n()
+  const t = useTranslations("Site")
   const [activePillarIndex, setActivePillarIndex] = useState(0)
   const [isPillarVisible, setIsPillarVisible] = useState(true)
 

@@ -1,14 +1,17 @@
 "use client"
 
-import { useI18n } from "@/lib/i18n"
+import {Link, usePathname} from "@/i18n/navigation"
+import {useLocale} from "next-intl"
 
 export function LanguageSwitch() {
-  const { locale, setLocale } = useI18n()
+  const locale = useLocale()
+  const pathname = usePathname()
 
   return (
     <div className="flex items-center overflow-hidden rounded-lg border border-brand-900 text-xs">
-      <button
-        onClick={() => setLocale("hr")}
+      <Link
+        href={pathname}
+        locale="hr"
         className={`px-2.5 py-1.5 font-medium transition-colors ${
           locale === "hr"
             ? "bg-[#d3dce0] text-ink-900"
@@ -17,9 +20,10 @@ export function LanguageSwitch() {
         aria-label="Hrvatski"
       >
         HR
-      </button>
-      <button
-        onClick={() => setLocale("en")}
+      </Link>
+      <Link
+        href={pathname}
+        locale="en"
         className={`px-2.5 py-1.5 font-medium transition-colors ${
           locale === "en"
             ? "bg-[#d3dce0] text-ink-900"
@@ -28,7 +32,7 @@ export function LanguageSwitch() {
         aria-label="English"
       >
         EN
-      </button>
+      </Link>
     </div>
   )
 }

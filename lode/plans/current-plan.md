@@ -36,5 +36,5 @@ Plan
 5. Defer design/content changes until explicitly requested.
 
 Invariants
-- `app/page.tsx` remains the main entry route.
+- `app/[locale]/page.tsx` remains the main localized entry route.
 - The section composition order stays `Hero -> Banner -> About -> Services -> Contact`.

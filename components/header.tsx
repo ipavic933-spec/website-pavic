@@ -4,11 +4,11 @@ import { useState } from "react"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { LanguageSwitch } from "@/components/language-switch"
-import { useI18n } from "@/lib/i18n"
+import {useTranslations} from "next-intl"
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const { t } = useI18n()
+  const t = useTranslations("Site")
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">

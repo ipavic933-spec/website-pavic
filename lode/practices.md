@@ -10,11 +10,11 @@ Related
 
 ```mermaid
 flowchart TD
-  Page["app/page.tsx"] -->|uses| Components["components/*"]
+  Page["app/[locale]/page.tsx"] -->|uses| Components["components/*"]
   Components --> Styles["Tailwind + app/globals.css"]
   Header["components/header.tsx"] --> Toggle["mobileOpen state"]
   Toggle --> OverlayNav["bordered mobile dropdown"]
-  Components --> I18N["useI18n() translation keys"]
+  Components --> I18N["useTranslations('Site') keys"]
 ```
 
 ```tsx
@@ -28,21 +28,21 @@ flowchart TD
 ```
 
 Practices
-- Keep global HTML/body concerns in `app/layout.tsx`; compose visible page sections in `app/page.tsx`.
+- Keep global HTML/body concerns in `app/layout.tsx`; compose visible page sections in `app/[locale]/page.tsx`.
 - Prefer Tailwind utility classes plus tokenized colors (`brand-*`, `ink-*`) from `tailwind.config.ts`.
 - Keep section content in focused components (`components/hero.tsx`, `components/about.tsx`, `components/services.tsx`, `components/contact.tsx`).
-- Use `useI18n()` in UI components and store translation keys centrally in `lib/i18n.tsx`.
+- Use `useTranslations("Site")` in UI components and store translation keys in `messages/hr.json` and `messages/en.json`.
 - Keep header fixed with desktop links on `md+` and a stateful mobile dropdown on smaller breakpoints.
 - Header contact CTA in `components/header.tsx` uses inverted brand contrast (`bg-brand-900` + `text-brand-50`) on both desktop and mobile states.
 - Language switch control in `components/language-switch.tsx` uses `border-brand-900`; the active locale pill uses `bg-[#d3dce0]` to match the header background, while inactive locale pills use `bg-white`.
 - Brand logo asset is stored at `public/images/logo.png` and reused in both `components/header.tsx` and `components/footer.tsx` via `next/image`.
-- Header and footer brand lockups (logo + adjacent name text) are clickable anchors to `#top`; `app/page.tsx` provides the `id="top"` target.
+- Header and footer brand lockups (logo + adjacent name text) are clickable anchors to `#top`; `app/[locale]/page.tsx` provides the `id="top"` target.
 - In both header and footer lockups, subtitle text (`header.subtitle`) is displayed above the person name (`Ivan Pavic`/`Ivan Pavić`).
 - Header and footer logo lockup visual scale is increased by ~30% (logo dimensions and adjacent subtitle/name typography).
 - Footer lockup name in `components/footer.tsx` uses the same sans-serif style as the header lockup name (no serif override).
 - Footer brand column does not render an additional subtitle/name text block below the clickable logo lockup.
 - Footer logo in `components/footer.tsx` renders without brightness/invert/opacity filters so the source PNG colors are preserved.
-- Footer privacy link in `components/footer.tsx` routes to `/privacy-policy`.
+- Footer privacy link in `components/footer.tsx` routes with localized navigation to `/privacy-policy`.
 - Header shell in `components/header.tsx` separates structure into a solid `#d3dce0` content bar plus a distinct vertical gradient strip (`h-[11px]`, `bg-gradient-to-b from-black/25 to-transparent`) so the fade ends in true transparency over page content.
 - Primary section titles in `components/hero.tsx`, `components/about.tsx`, `components/services.tsx`, and `components/contact.tsx` use slight letter-spacing (`tracking-[0.01em]`) to improve readability and prevent visual character crowding.
 - Hero section in `components/hero.tsx` is text-first with no image panel; content is centered (`items-center`, `text-center`) with centered badges and CTAs.
