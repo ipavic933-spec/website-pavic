@@ -18,18 +18,19 @@
     "discription": "We place special emphasis on legal support for entrepreneurs, companies and crafts in everyday business operations and dispute resolution."
   },
   "AboutMe": {
-    "sectionTitle": "About us",
+    "eyebrow": "ABOUT",
     "title": "Professional and trustworthy",
-    "workingExperience": "The law firm has been operating independently since January 2023, after years of work and experience in the law firm of Damir Batarel in Split (2018 - 2022).",
-    "education": "Graduated from the Faculty of Law in Split (2016)",
-    "bar": "Bar exam passed in 2022",
-    "workEthics": "My work is based on responsibility, confidentiality, and clear communication",
+    "lead": "The office has been operating independently since January 2023, following several years of experience at the Law Office of Damir Batarelo in Split (2018-2022).",
+    "bullet1": "Graduated from the Faculty of Law in Split 2016",
+    "bullet2": "Bar exam passed in 2022",
+    "bullet3": "My work is based on responsibility, confidentiality, and clear communication",
     "focusLabel": "Focus",
     "focus": "Focus: property and land registry law, contract law, drafting/analysis of contracts, and representation in court and out-of-court proceedings.",
     "expertise": "Expertise",
     "confidentiality": "Confidentiality",
     "dedication": "Dedication",
-    "name": "Ivan Pavić"
+    "cardName": "Ivan Pavić",
+    "cardRole": "Attorney"
   },
   "Services": {
     "sectionTitle": "Services",
