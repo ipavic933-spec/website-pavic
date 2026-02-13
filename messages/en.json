@@ -1,18 +1,27 @@
 {
   "Header": {
-    "name": "Lawyer office Ivan Pavić",
-    "aboutUs": "About us",
+    "about": "About",
     "services": "Services",
-    "contactUs": "Contact us"
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "subtitle": "Law Office"
   },
   "NotFound": {
     "title": "The page You're looking for could not be found"
   },
   "Hero": {
-    "title": "Lawyer office Ivan Pavić",
-    "moto": "Reliable legal support for citizens and businesses",
-    "description": "We provide expert legal advice and representation in property and contractual relations, as well as other key legal areas. We approach each case professionally, discreetly, and with the aim of protecting your interests and ensuring legal certainty.",
-    "consultance": "Request a consultation"
+    "eyebrow": "LAW OFFICE • SPLIT",
+    "title": "Reliable legal support for individuals and businesses",
+    "subtitle": "Expert advice and representation in property and contract law and other key legal areas.",
+    "badge1": "Discreet & professional",
+    "badge2": "Clear communication",
+    "badge3": "Response in 48h",
+    "cta": "Request a consultation",
+    "micro": "Confidential • No obligation on first contact",
+    "cardName": "Ivan Pavić",
+    "cardRole": "Attorney",
+    "imgAlt": "Hero image"
   },
   "Banner": {
     "discription": "We place special emphasis on legal support for entrepreneurs, companies and crafts in everyday business operations and dispute resolution."

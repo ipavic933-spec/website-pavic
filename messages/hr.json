@@ -1,18 +1,27 @@
 {
   "Header": {
-    "name": "Odvjetnicki ured Ivan Pavić",
-    "aboutUs": "O nama",
-    "services": "Servisi",
-    "contactUs": "Kontaktirajte nas"
+    "about": "O nama",
+    "services": "Usluge",
+    "contact": "Kontakt",
+    "openMenu": "Otvori izbornik",
+    "closeMenu": "Zatvori izbornik",
+    "subtitle": "Odvjetnički ured"
   },
   "NotFound": {
     "title": "Stranica koju tražite nije pronađena"
   },
   "Hero": {
-    "title": "Odvjetnički ured Ivan Pavić",
-    "moto": "Pouzdana pravna podrška za građane i poslovne subjekte",
-    "description": "Pružamo stručne pravne savjete i zastupanje u imovinskopravnim i ugovornim odnosima te drugim ključnim pravnim područjima. Svakom predmetu pristupamo profesionalno, diskretno i s ciljem zaštite Vaših interesa i osiguranjem pravne sigurnosti.",
-    "consultance": "Zatražite konzultacije"
+    "eyebrow": "ODVJETNIČKI URED • SPLIT",
+    "title": "Pouzdana pravna podrška za građane i poslovne subjekte",
+    "subtitle": "Stručno savjetovanje i zastupanje u imovinskopravnim i ugovornim odnosima te drugim ključnim pravnim područjima.",
+    "badge1": "Diskretno i profesionalno",
+    "badge2": "Jasna komunikacija",
+    "badge3": "Odgovor u 48 h",
+    "cta": "Zatražite konzultacije",
+    "micro": "Povjerljivo • Bez obveze u prvom kontaktu",
+    "cardName": "Ivan Pavić",
+    "cardRole": "Odvjetnik",
+    "imgAlt": "Hero slika"
   },
   "Banner": {
     "discription": "Poseban naglasak stavljamo na pravnu podršku poduzetnicima, trgovačkim društvima i obrtima u svakodnevnom poslovanju i rješavanju sporova."

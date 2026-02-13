@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import { Header } from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -11,21 +10,19 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  params
+  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{locale: string}>;
+  params: Promise<{ locale: string }>;
 }>) {
-
-  const {locale} = await params;
+  const { locale } = await params;
 
   return (
     <html lang={locale}>
       <body>
         <NextIntlClientProvider>
           <Header />
-            {children}
-          <Footer />
+          {children}
         </NextIntlClientProvider>
       </body>
     </html>
