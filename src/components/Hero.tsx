@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useTranslations } from "next-intl";
@@ -21,7 +20,7 @@ export function Hero() {
             {t("eyebrow")}
           </span>
 
-          <h1 className="mb-6 max-w-xl font-serif text-4xl leading-[1.07] tracking-tight text-white md:text-5xl lg:text-[3.35rem]">
+          <h1 className="mb-6 max-w-xl font-serif text-4xl leading-[1.07] text-white md:text-5xl lg:text-[3.35rem]">
             <span className="text-balance">{t("title")}</span>
           </h1>
 
@@ -46,18 +45,6 @@ export function Hero() {
               className="rounded-xl bg-white px-7 font-semibold text-brand-900 shadow-sm ring-1 ring-white/15 hover:bg-brand-50"
             >
               <Link href="#contact">{t("cta")}</Link>
-            </Button>
-
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="rounded-xl border-white/25 bg-white/0 px-5 font-medium text-white/90 backdrop-blur-sm hover:bg-white/10 hover:text-white"
-            >
-              <a href="tel:+385955297362" className="flex items-center gap-2">
-                <Phone className="h-4 w-4" strokeWidth={1.5} />
-                {t("cta2")}
-              </a>
             </Button>
           </div>
 
