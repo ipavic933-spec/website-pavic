@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { useTranslations } from "next-intl";
 
 export function Hero() {
-  const t = useTranslations("Hero");
+  const t = useTranslations("hero");
 
   return (
     <section className="relative overflow-hidden bg-linear-to-br from-brand-900 via-brand-800 to-brand-900 pt-20">

@@ -11,7 +11,7 @@ import {
 import {useTranslations} from "next-intl"
 
 export function Services() {
-  const t = useTranslations("Services")
+  const t = useTranslations("services")
 
   const services = [
     { icon: House, titleKey: "property.title", descKey: "property.desc" },

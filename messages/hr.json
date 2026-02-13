@@ -1,5 +1,5 @@
 {
-  "Header": {
+  "header": {
     "about": "O nama",
     "services": "Usluge",
     "contact": "Kontakt",
@@ -7,10 +7,10 @@
     "closeMenu": "Zatvori izbornik",
     "subtitle": "Odvjetnički ured"
   },
-  "NotFound": {
+  "notFound": {
     "title": "Stranica koju tražite nije pronađena"
   },
-  "Hero": {
+  "hero": {
     "eyebrow": "ODVJETNIČKI URED • SPLIT",
     "title": "Pouzdana pravna podrška za građane i poslovne subjekte",
     "subtitle": "Stručno savjetovanje i zastupanje u imovinskopravnim i ugovornim odnosima te drugim ključnim pravnim područjima.",
@@ -23,10 +23,10 @@
     "cardRole": "Odvjetnik",
     "imgAlt": "Hero slika"
   },
-  "Banner": {
+  "banner": {
     "discription": "Poseban naglasak stavljamo na pravnu podršku poduzetnicima, trgovačkim društvima i obrtima u svakodnevnom poslovanju i rješavanju sporova."
   },
-  "AboutMe": {
+  "aboutMe": {
     "eyebrow": "O NAMA",
     "title": "Profesionalno i s povjerenjem",
     "lead": "Odvjetnički ured djeluje samostalno od siječnja 2023. godine, nakon višegodišnjeg rada i stjecanja iskustva u odvjetničkom uredu Damira Batarela u Splitu (2018. – 2022.).",
@@ -41,7 +41,7 @@
     "cardName": "Ivan Pavić",
     "cardRole": "Odvjetnik"
   },
-  "Services": {
+  "services": {
     "eyebrow": "USLUGE",
     "title": "Pravna područja",
     "desc": "Pružam pravne usluge fizičkim i pravnim osobama u sljedećim područjima:",
@@ -70,13 +70,13 @@
       "desc": "Savjetovanje i zastupanje poslodavaca i radnika."
     }
   },
-  "ContactUs": {
+  "contactUs": {
     "name": "Ime i prezime",
     "email": "E-mail",
     "message": "Opis",
     "description": "Pošaljite kratki opis upita, a odgovor ćete dobiti u najkraćem mogućem roku. Na upite odgovaramo u roku od dva radna dana. Za prijem stranaka potreban je prethodni dogovor."
   },
-  "Footer": {
+  "footer": {
     "workingHours": "Radno vrijeme: Ponedjeljak - Petak, 9:00 - 17:00",
     "meetings": "(Za prijem stranaka potreban je prethodni dogovor.)",
     "emailAdress": "ipavic933@gmail.com",

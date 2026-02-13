@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl"
 import { Badge } from "./ui/badge";
 
 export function About() {
-  const t = useTranslations('AboutMe');
+  const t = useTranslations('aboutMe');
 
   const generalInformation = [
     { text: t('bullet1'), icon: GraduationCap },
