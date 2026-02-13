@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
-import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 
 export const metadata: Metadata = {
@@ -24,7 +23,6 @@ export default async function RootLayout({
         <NextIntlClientProvider>
           <Header />
           {children}
-          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>
