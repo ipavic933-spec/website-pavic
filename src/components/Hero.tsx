@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import Link from "next/link"
-import { Phone } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { useTranslations } from "next-intl"
+import Image from "next/image";
+import Link from "next/link";
+import { Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { useTranslations } from "next-intl";
 
 export function Hero() {
-  const t = useTranslations("Hero")
+  const t = useTranslations("Hero");
 
   return (
     <section className="relative overflow-hidden bg-linear-to-br from-brand-900 via-brand-800 to-brand-900 pt-20">
@@ -28,8 +28,6 @@ export function Hero() {
           <p className="mb-8 max-w-lg text-base leading-relaxed text-white/80 md:text-lg">
             {t("subtitle")}
           </p>
-
-          {/* Badges */}
           <div className="mb-9 flex flex-wrap gap-2.5">
             {(["badge1", "badge2", "badge3"] as const).map((key) => (
               <Badge
@@ -41,8 +39,6 @@ export function Hero() {
               </Badge>
             ))}
           </div>
-
-          {/* CTAs */}
           <div className="flex flex-wrap items-center gap-4">
             <Button
               asChild
@@ -84,7 +80,9 @@ export function Hero() {
                 IP
               </div>
               <div>
-                <p className="text-sm font-semibold text-white">{t("cardName")}</p>
+                <p className="text-sm font-semibold text-white">
+                  {t("cardName")}
+                </p>
                 <p className="text-xs text-white/70">{t("cardRole")}</p>
               </div>
             </div>
@@ -92,5 +90,5 @@ export function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }

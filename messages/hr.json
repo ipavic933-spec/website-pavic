@@ -1,9 +1,13 @@
 {
+
   "Header": {
-    "name": "Odvjetnicki ured Ivan Pavić",
-    "aboutUs": "O nama",
-    "services": "Servisi",
-    "contactUs": "Kontaktirajte nas"
+    "about": "O nama",
+    "services": "Usluge",
+    "contact": "Kontakt",
+    "openMenu": "Otvori izbornik",
+    "closeMenu": "Zatvori izbornik",
+    "subtitle": "Odvjetnički ured"
+
   },
   "NotFound": {
     "title": "Stranica koju tražite nije pronađena"
@@ -17,7 +21,7 @@
     "subtitle": "Stručno savjetovanje i zastupanje u imovinskopravnim i ugovornim odnosima — jasno, diskretno i učinkovito.",
     "badge1": "Diskretno i profesionalno",
     "badge2": "Jasna komunikacija",
-    "badge3": "Odgovor u 24 h",
+    "badge3": "Odgovor u 48 h",
     "cta": "Zatražite konzultacije",
     "cta2": "Nazovite odmah",
     "micro": "Povjerljivo • Bez obveze u prvom kontaktu",

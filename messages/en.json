@@ -1,9 +1,11 @@
 {
   "Header": {
-    "name": "Lawyer office Ivan Pavić",
-    "aboutUs": "About us",
+    "about": "About",
     "services": "Services",
-    "contactUs": "Contact us"
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "subtitle": "Law Office"
   },
   "NotFound": {
     "title": "The page You're looking for could not be found"
@@ -17,7 +19,7 @@
     "subtitle": "Expert advice and representation in property and contract law — clear, discreet, and effective.",
     "badge1": "Discreet & professional",
     "badge2": "Clear communication",
-    "badge3": "Response in 24h",
+    "badge3": "Response in 48h",
     "cta": "Request a consultation",
     "cta2": "Call now",
     "micro": "Confidential • No obligation on first contact",
