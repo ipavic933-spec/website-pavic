@@ -2,7 +2,7 @@ import { Award, ShieldCheck, Briefcase, GraduationCap, Scale, Handshake } from "
 import { useTranslations } from "next-intl"
 import { Badge } from "./ui/badge";
 
-const About = () => {
+export function About() {
   const t = useTranslations('AboutMe');
 
   const generalInformation = [
@@ -86,5 +86,3 @@ const About = () => {
     </section>
   )
 }
-
-export default About;
