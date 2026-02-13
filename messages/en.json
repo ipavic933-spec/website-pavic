@@ -42,34 +42,33 @@
     "cardRole": "Attorney"
   },
   "Services": {
-    "sectionTitle": "Services",
-    "description": "The law firm provides legal services to individuals and legal entities in the following areas:",
-    "servicesList": [
-      {
-        "title": "Property and land registry law",
-        "description": "Representation and advice in matters related to ownership, easements, building rights, liens and other real rights. Arrangement of the land registry status of real estate, implementation of land registry entries and resolution of property relations."
-      },
-      {
-        "title": "Obligations law",
-        "description": "Drafting, analysis and legal protection of contracts. Representation in court and out-of-court proceedings and resolution of disputes arising from contractual and other obligatory relationships."
-      },
-      {
-        "title": "Inheritance law",
-        "description": "Consulting and representation in inheritance proceedings and resolving inheritance law relationships."
-      },
-      {
-        "title": "Administrative law",
-        "description": "Representation in administrative proceedings and disputes before competent authorities."
-      },
-      {
-        "title": "Enforcement law",
-        "description": "Preparation and conduct of enforcement proceedings, protection of rights in enforcement and collection of claims."
-      },
-      {
-        "title": "Labor law",
-        "description": "Consulting and representing employers and employees in labor relations."
-      }
-    ]
+    "eyebrow": "SERVICES",
+    "title": "Practice areas",
+    "desc": "I provide legal services to individuals and legal entities in the following areas:",
+    "property": {
+      "title": "Property & land registry law",
+      "desc": "Ownership, co-ownership, registrations and land registry regulation."
+    },
+    "contract": {
+      "title": "Contract law",
+      "desc": "Drafting and analysis of contracts and contractual disputes."
+    },
+    "inheritance": {
+      "title": "Inheritance law",
+      "desc": "Counseling and representation in probate proceedings."
+    },
+    "admin": {
+      "title": "Administrative law",
+      "desc": "Representation in proceedings before competent authorities."
+    },
+    "enforcement": {
+      "title": "Enforcement law",
+      "desc": "Preparation and management of enforcement and debt collection."
+    },
+    "labor": {
+      "title": "Labor law",
+      "desc": "Counseling and representation of employers and employees."
+    }
   },
   "ContactUs": {
     "name": "Name and surname",

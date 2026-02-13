@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 
-const Footer = () => {
+export function Footer() {
   const t = useTranslations("Footer");
   
   return (
@@ -23,5 +23,3 @@ const Footer = () => {
     </footer>
   )
 }
-
-export default Footer;
