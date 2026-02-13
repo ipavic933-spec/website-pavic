@@ -42,27 +42,29 @@ Practices
 - Footer lockup name in `src/components/footer.tsx` uses the same sans-serif style as the header lockup name (no serif override).
 - Footer brand column does not render an additional subtitle/name text block below the clickable logo lockup.
 - Footer logo in `src/components/footer.tsx` renders without brightness/invert/opacity filters so the source PNG colors are preserved.
-- Footer privacy link in `src/components/footer.tsx` routes with localized navigation to `/privacy-policy`.
+- Footer privacy link in `src/components/footer.tsx` is a direct anchor to `/privacy-policy`.
 - Header shell in `src/components/header.tsx` separates structure into a solid `#d3dce0` content bar plus a distinct vertical gradient strip (`h-[11px]`, `bg-gradient-to-b from-black/25 to-transparent`) so the fade ends in true transparency over page content.
 - Primary section titles in `src/components/hero.tsx`, `src/components/about.tsx`, `src/components/services.tsx`, and `src/components/contact.tsx` use slight letter-spacing (`tracking-[0.01em]`) to improve readability and prevent visual character crowding.
 - Hero section in `src/components/hero.tsx` is text-first with no image panel; content is centered (`items-center`, `text-center`) with centered badges and CTAs.
 - Identity badge card (IP avatar + name/role) is anchored on the about photo in `src/components/about.tsx` at the bottom-right overlay position; the hero image in `src/components/hero.tsx` no longer renders this floating card.
 - Contact section container in `src/components/contact.tsx` uses a white background (`bg-white`) behind the form and info columns.
-- Contact address card in `src/components/contact.tsx` is a clickable external link to `https://share.google/IZs8SjyOjeDDpcs5K` and opens in a new tab.
-- Footer address in `src/components/footer.tsx` links to the same external map URL (`https://share.google/IZs8SjyOjeDDpcs5K`) and opens in a new tab.
+- Contact address card in `src/components/contact.tsx` is a clickable external link to `https://maps.app.goo.gl/hzKKXtUko1y1MPVo7` and opens in a new tab.
+- Footer address in `src/components/footer.tsx` links to the same external map URL (`https://maps.app.goo.gl/hzKKXtUko1y1MPVo7`) and opens in a new tab.
 - Contact and footer communication links use app-deep links (`mailto:` for email, `tel:` for phone) so clicks open the default email/phone app; only HTTP map links open in a new tab.
 - Footer contact links in `src/components/footer.tsx` include leading Lucide icons (`Mail`, `Phone`, `MapPin`) aligned inline with each contact value.
 - Footer working-hours row in `src/components/footer.tsx` includes a leading Lucide `Clock3` icon before the hours value (not in the heading).
 - Contact info cards (email/phone/address) in `src/components/contact.tsx` use `w-full` so all three cards have equal width.
 - Service cards in `src/components/services.tsx` are informational only and do not include per-card CTA labels.
-- Service cards in `src/components/services.tsx` render icon and title on the same row; the decorative accent line (`bg-brand-200`) sits directly under the title text, matches title width, and animates on hover as a left-to-right underline reveal.
+- Service cards in `src/components/services.tsx` render icon and title on the same row; the decorative accent line keeps a constant gray base (`bg-brand-200`) and on hover reveals a left-to-right blue overlay (`bg-brand-800`) matching the icon highlight tone.
 - Services grid uses a uniform 3-column desktop layout; labor law renders as a standard card alongside enforcement law in the same row.
 - Property and land registry service card in `src/components/services.tsx` uses the `House` icon from `lucide-react`.
 - Labor law service card in `src/components/services.tsx` uses the `Wrench` icon from `lucide-react`.
+- Third About bullet row (`about.bullet3`) in `src/components/about.tsx` uses the `Handshake` icon from `lucide-react`.
 - About-section bullet rows in `src/components/about.tsx` use `items-center` so icon badges and adjacent text align on the same vertical center line.
 - About content in `src/components/about.tsx` uses natural responsive wrapping (no forced equal-width or nowrap text-length constraints across lead, bullets, focus, and animated value pill).
-- About section value highlights in `src/components/about.tsx` render as one animated pill button that auto-rotates between the three value statements every ~3.6s, also advances on click, and displays title above description (no trailing colon).
-- About animated value pill in `src/components/about.tsx` uses `md:w-[62%]` (about 38% shorter than full width) while staying full-width on small screens.
+- About focus callout in `src/components/about.tsx` renders a `focusLabel` heading above the body text; the body copy omits a duplicated `Focus:` prefix.
+- About section value highlights in `src/components/about.tsx` render as one animated pill that auto-rotates between the three value statements every ~3.6s and displays title above description (no trailing colon).
+- About animated value pill in `src/components/about.tsx` spans full column width and keeps the standard left-aligned icon/text layout.
 - About photo column in `src/components/about.tsx` uses a desktop negative top offset (`lg:-mt-24`) so the portrait starts at approximately the same vertical level as the section title.
 
 Lessons

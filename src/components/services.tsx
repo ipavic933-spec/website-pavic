@@ -56,7 +56,9 @@ export function Services() {
                     <h3 className="font-serif text-lg leading-snug text-ink-900">
                       {t(service.titleKey)}
                     </h3>
-                    <div className="mt-2 h-0.5 w-full origin-left scale-x-0 rounded-full bg-brand-200 transition-transform duration-300 ease-out group-hover:scale-x-100" />
+                    <div className="relative mt-2 h-0.5 w-full overflow-hidden rounded-full bg-brand-200">
+                      <div className="absolute inset-0 origin-left scale-x-0 bg-brand-800 transition-transform duration-300 ease-out group-hover:scale-x-100" />
+                    </div>
                   </div>
                 </div>
 

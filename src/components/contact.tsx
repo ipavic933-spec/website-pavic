@@ -29,7 +29,7 @@ export function Contact() {
       icon: MapPin,
       labelKey: "contact.address",
       value: "Svaciceva 4, 21000, Split",
-      href: "https://share.google/IZs8SjyOjeDDpcs5K",
+      href: "https://maps.app.goo.gl/hzKKXtUko1y1MPVo7",
     },
   ]
 

@@ -13,6 +13,7 @@ graph TD
   Layout["src/app/layout.tsx"] --> LocaleLayout["src/app/[locale]/layout.tsx"]
   LocaleLayout --> HomePage["src/app/[locale]/page.tsx"]
   LocaleLayout --> PrivacyPage["src/app/[locale]/privacy-policy/page.tsx"]
+  Layout --> PrivacyFallback["src/app/privacy-policy/page.tsx"]
   HomePage --> Header["src/components/header.tsx"]
   HomePage --> Sections["hero/banner/about/services/contact"]
   HomePage --> Footer["src/components/footer.tsx"]
@@ -59,7 +60,7 @@ export default function RootLayout({
 
 Invariants
 - The app entry route is `src/app/[locale]/page.tsx` and renders the section flow for the homepage.
-- A localized static route exists at `src/app/[locale]/privacy-policy/page.tsx` for privacy policy content.
+- A localized static route exists at `src/app/[locale]/privacy-policy/page.tsx` for privacy policy content, with a direct fallback at `src/app/privacy-policy/page.tsx`.
 - The root layout in `src/app/layout.tsx` only sets global HTML/body shell and imports `src/app/globals.css`.
 - Translations come from `next-intl` message files in `messages/` and are resolved with `useTranslations("Site")`.
 - Header navigation targets in-page anchors (`#about`, `#services`, `#contact`) with a mobile toggle menu.

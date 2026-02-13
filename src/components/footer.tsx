@@ -2,7 +2,6 @@
 
 import Image from "next/image"
 import { Mail, Phone, MapPin, Clock3 } from "lucide-react"
-import {Link} from "@/i18n/navigation"
 import {useTranslations} from "next-intl"
 
 export function Footer() {
@@ -71,7 +70,7 @@ export function Footer() {
             </a>
 
             <a
-              href="https://share.google/IZs8SjyOjeDDpcs5K"
+              href="https://maps.app.goo.gl/hzKKXtUko1y1MPVo7"
               target="_blank"
               rel="noreferrer"
               className="inline-flex w-fit items-center gap-2 text-xs text-white/75 underline-offset-4 transition hover:text-white hover:underline"
@@ -87,12 +86,12 @@ export function Footer() {
             &copy; {new Date().getFullYear()} {t("footer.copyright")}
           </p>
 
-          <Link
+          <a
             href="/privacy-policy"
             className="text-xs text-white/55 underline underline-offset-4 transition hover:text-white/80"
           >
             {t("footer.privacy")}
-          </Link>
+          </a>
         </div>
       </div>
     </footer>

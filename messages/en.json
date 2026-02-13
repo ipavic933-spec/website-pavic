@@ -13,10 +13,10 @@
     "hero": {
       "eyebrow": "LAW OFFICE • SPLIT",
       "title": "Reliable legal support for individuals and businesses",
-      "subtitle": "Expert advice and representation in property and contract law — clear, discreet, and effective.",
+      "subtitle": "Expert advice and representation in property and contract law. Clear, discreet, and effective.",
       "badge1": "Discreet & professional",
       "badge2": "Clear communication",
-      "badge3": "Response in 24h",
+      "badge3": "Response in 48h",
       "cta": "Request a consultation",
       "cta2": "Call now",
       "micro": "Confidential • No obligation on first contact",
@@ -31,7 +31,7 @@
       "bullet2": "Bar exam passed in 2022",
       "bullet3": "My work is based on responsibility, confidentiality, and clear communication",
       "focusLabel": "Focus",
-      "focus": "Focus: property and land registry law, contract law, drafting/analysis of contracts, and representation in court and out-of-court proceedings.",
+      "focus": "Property and land registry law, contract law, drafting/analysis of contracts, and representation in court and out-of-court proceedings.",
       "pillar1": {
         "title": "Expertise",
         "desc": "Experience, precise assessment and strategy."
@@ -82,7 +82,7 @@
     "contact": {
       "eyebrow": "CONTACT",
       "title": "Request a consultation",
-      "desc": "Send a brief description of your inquiry. I respond as soon as possible, usually within 24 hours.",
+      "desc": "Send a brief description of your inquiry. I respond as soon as possible, usually within 48 hours.",
       "note": "Prior arrangement is required for client reception.",
       "email": "Email",
       "phone": "Phone",

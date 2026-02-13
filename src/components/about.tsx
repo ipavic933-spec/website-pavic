@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Award, ShieldCheck, Briefcase, GraduationCap, Scale, MessageCircle } from "lucide-react"
+import { Award, ShieldCheck, Briefcase, GraduationCap, Scale, Handshake } from "lucide-react"
 import {useTranslations} from "next-intl"
 
 export function About() {
@@ -18,7 +18,7 @@ export function About() {
   const bullets = [
     { icon: GraduationCap, key: "about.bullet1" },
     { icon: Scale, key: "about.bullet2" },
-    { icon: MessageCircle, key: "about.bullet3" },
+    { icon: Handshake, key: "about.bullet3" },
   ]
 
   useEffect(() => {
@@ -82,11 +82,7 @@ export function About() {
             </div>
 
             {/* Animated value pill */}
-            <button
-              type="button"
-              onClick={() => setActivePillarIndex((prev) => (prev + 1) % pillars.length)}
-              className="flex w-full max-w-full items-center gap-2 rounded-2xl border border-brand-200 bg-white px-4 py-3 text-left shadow-sm md:w-[62%]"
-            >
+            <div className="flex w-full max-w-full items-center gap-2 rounded-2xl border border-brand-200 bg-white px-4 py-3 text-left shadow-sm">
               <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-700 ring-1 ring-brand-200">
                 <activePillar.icon className="h-4 w-4" strokeWidth={1.5} />
               </div>
@@ -99,7 +95,7 @@ export function About() {
                 <p className="text-sm font-semibold text-ink-900">{t(activePillar.titleKey)}</p>
                 <p className="text-xs leading-relaxed text-ink-600">{t(activePillar.descKey)}</p>
               </div>
-            </button>
+            </div>
           </div>
 
           {/* Right column: portrait placeholder */}

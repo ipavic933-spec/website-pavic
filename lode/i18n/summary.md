@@ -35,6 +35,7 @@ Invariants
 - Default locale is `hr` and remains unprefixed (`localePrefix: "as-needed"`).
 - Localized pages are served from `src/app/[locale]/...`.
 - Components resolve text via `useTranslations("Site")` from message files.
+- Contact response-time copy is aligned to 48 hours in both locale message sets.
 
 Contracts
 - `src/proxy.ts` must use the shared `routing` object for locale matching.
