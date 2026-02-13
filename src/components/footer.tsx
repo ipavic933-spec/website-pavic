@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { Mail, Phone, MapPin, Clock3 } from "lucide-react"
 import {useTranslations} from "next-intl"
+import {Link} from "@/i18n/navigation"
 
 export function Footer() {
   const t = useTranslations("Site")
@@ -86,12 +87,12 @@ export function Footer() {
             &copy; {new Date().getFullYear()} {t("footer.copyright")}
           </p>
 
-          <a
+          <Link
             href="/privacy-policy"
             className="text-xs text-white/55 underline underline-offset-4 transition hover:text-white/80"
           >
             {t("footer.privacy")}
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

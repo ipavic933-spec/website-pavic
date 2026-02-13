@@ -13,21 +13,21 @@
     "hero": {
       "eyebrow": "LAW OFFICE • SPLIT",
       "title": "Reliable legal support for individuals and businesses",
-      "subtitle": "Expert advice and representation in property and contract law. Clear, discreet, and effective.",
+      "subtitle": "Expert advice and representation in property and contract law.\nClear, discreet, and effective.",
       "badge1": "Discreet & professional",
       "badge2": "Clear communication",
       "badge3": "Response in 48h",
       "cta": "Request a consultation",
       "cta2": "Call now",
       "micro": "Confidential • No obligation on first contact",
-      "cardName": "Ivan Pavic",
+      "cardName": "Ivan Pavić",
       "cardRole": "Attorney"
     },
     "about": {
       "eyebrow": "ABOUT",
       "title": "Professional and trustworthy",
       "lead": "The office has been operating independently since January 2023, following years of experience in legal practice in Split.",
-      "bullet1": "Graduated from the Faculty of Law in Split (2016)",
+      "bullet1": "Graduated from the Faculty of Law in Split 2016",
       "bullet2": "Bar exam passed in 2022",
       "bullet3": "My work is based on responsibility, confidentiality, and clear communication",
       "focusLabel": "Focus",
@@ -45,7 +45,7 @@
         "desc": "Individual approach to every case."
       },
       "photoLabel": "Lawyer photograph",
-      "photoHint": "Portrait of Ivan Pavic",
+      "photoHint": "Portrait of Ivan Pavić",
       "photoBottom": "A professional photo builds trust."
     },
     "services": {
@@ -82,7 +82,7 @@
     "contact": {
       "eyebrow": "CONTACT",
       "title": "Request a consultation",
-      "desc": "Send a brief description of your inquiry. I respond as soon as possible, usually within 48 hours.",
+      "desc": "Send a brief description of your inquiry. I respond within 48 business hours.",
       "note": "Prior arrangement is required for client reception.",
       "email": "Email",
       "phone": "Phone",
@@ -106,8 +106,55 @@
       "hours": "Monday - Friday, 09:00 - 17:00",
       "byAppt": "Prior arrangement is required for client reception.",
       "contact": "Contact",
-      "copyright": "Law Office Ivan Pavic. All rights reserved.",
+      "copyright": "Law Office Ivan Pavić. All rights reserved.",
       "privacy": "Privacy policy"
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "updated": "Last updated: February 13, 2026",
+      "sections": {
+        "controller": {
+          "title": "Data Controller",
+          "body": "This website is operated by Law Office Ivan Pavić. For privacy-related questions or requests, contact us at ipavic933@gmail.com."
+        },
+        "collectedData": {
+          "title": "What We Collect",
+          "body": "Through the contact form or direct communication, we may collect your full name, email address, phone number, and the information you provide in your message."
+        },
+        "purposeAndBasis": {
+          "title": "Purpose and Legal Basis",
+          "intro": "We process personal data to:",
+          "bullet1": "respond to inquiries and provide legal information,",
+          "bullet2": "prepare or perform legal services where applicable,",
+          "bullet3": "meet legal and professional obligations.",
+          "legalBasis": "Legal bases may include consent, pre-contractual measures, performance of a contract, legitimate interests, and compliance with legal obligations."
+        },
+        "retention": {
+          "title": "Data Retention",
+          "body": "We retain data only as long as necessary for the purpose for which it was collected, and where required by applicable legal or professional retention obligations."
+        },
+        "sharing": {
+          "title": "Sharing of Data",
+          "body": "We do not sell personal data. Data may be shared only with trusted service providers when necessary for website operation, and with competent authorities where legally required."
+        },
+        "rights": {
+          "title": "Your Rights",
+          "body1": "You may request access, correction, deletion, restriction, data portability, or object to processing.",
+          "body2": "You may also withdraw consent at any time, without affecting the lawfulness of processing based on consent before its withdrawal."
+        },
+        "security": {
+          "title": "Security",
+          "body": "We apply reasonable technical and organizational safeguards to protect personal data against unauthorized access, disclosure, alteration, or destruction."
+        },
+        "externalLinks": {
+          "title": "External Links",
+          "body": "This website may contain links to external services (for example map links). We are not responsible for the privacy practices of third-party websites."
+        },
+        "contact": {
+          "title": "Contact",
+          "body": "For any privacy request, contact us at ipavic933@gmail.com or by phone at +385 95 529 7362."
+        }
+      }
     }
   }
 }

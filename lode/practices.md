@@ -37,15 +37,16 @@ Practices
 - Language switch control in `src/components/language-switch.tsx` uses `border-brand-900`; the active locale pill uses `bg-[#d3dce0]` to match the header background, while inactive locale pills use `bg-white`.
 - Brand logo asset is stored at `public/images/logo.png` and reused in both `src/components/header.tsx` and `src/components/footer.tsx` via `next/image`.
 - Header and footer brand lockups (logo + adjacent name text) are clickable anchors to `#top`; `app/[locale]/page.tsx` provides the `id="top"` target.
-- In both header and footer lockups, subtitle text (`header.subtitle`) is displayed above the person name (`Ivan Pavic`/`Ivan Pavić`).
+- In both header and footer lockups, subtitle text (`header.subtitle`) is displayed above the person name (`Ivan Pavić`).
 - Header and footer logo lockup visual scale is increased by ~30% (logo dimensions and adjacent subtitle/name typography).
 - Footer lockup name in `src/components/footer.tsx` uses the same sans-serif style as the header lockup name (no serif override).
 - Footer brand column does not render an additional subtitle/name text block below the clickable logo lockup.
 - Footer logo in `src/components/footer.tsx` renders without brightness/invert/opacity filters so the source PNG colors are preserved.
-- Footer privacy link in `src/components/footer.tsx` is a direct anchor to `/privacy-policy`.
+- Footer privacy link in `src/components/footer.tsx` uses localized `Link` from `src/i18n/navigation.ts` to keep locale context when opening `/privacy-policy`.
 - Header shell in `src/components/header.tsx` separates structure into a solid `#d3dce0` content bar plus a distinct vertical gradient strip (`h-[11px]`, `bg-gradient-to-b from-black/25 to-transparent`) so the fade ends in true transparency over page content.
 - Primary section titles in `src/components/hero.tsx`, `src/components/about.tsx`, `src/components/services.tsx`, and `src/components/contact.tsx` use slight letter-spacing (`tracking-[0.01em]`) to improve readability and prevent visual character crowding.
 - Hero section in `src/components/hero.tsx` is text-first with no image panel; content is centered (`items-center`, `text-center`) with centered badges and CTAs.
+- Hero subtitle copy uses a manual line break from translation strings (`\n` in `messages/*.json`) and renders with `whitespace-pre-line` in `src/components/hero.tsx`.
 - Identity badge card (IP avatar + name/role) is anchored on the about photo in `src/components/about.tsx` at the bottom-right overlay position; the hero image in `src/components/hero.tsx` no longer renders this floating card.
 - Contact section container in `src/components/contact.tsx` uses a white background (`bg-white`) behind the form and info columns.
 - Contact address card in `src/components/contact.tsx` is a clickable external link to `https://maps.app.goo.gl/hzKKXtUko1y1MPVo7` and opens in a new tab.

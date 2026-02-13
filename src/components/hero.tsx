@@ -22,7 +22,7 @@ export function Hero() {
             <span className="text-balance">{t("hero.title")}</span>
           </h1>
 
-          <p className="mb-8 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg">
+          <p className="mb-8 max-w-2xl whitespace-pre-line text-base leading-relaxed text-white/80 md:text-lg">
             {t("hero.subtitle")}
           </p>
 

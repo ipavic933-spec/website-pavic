@@ -34,7 +34,8 @@ Invariants
 - Locales are limited to `hr` and `en`.
 - Default locale is `hr` and remains unprefixed (`localePrefix: "as-needed"`).
 - Localized pages are served from `src/app/[locale]/...`.
-- Components resolve text via `useTranslations("Site")` from message files.
+- Components and localized pages resolve text via `useTranslations("Site")` / `getTranslations("Site.*")` from message files.
+- Privacy policy content is defined in message-file namespace `Site.privacyPolicy` for both locales.
 - Contact response-time copy is aligned to 48 hours in both locale message sets.
 
 Contracts

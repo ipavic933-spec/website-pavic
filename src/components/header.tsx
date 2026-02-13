@@ -27,7 +27,7 @@ export function Header() {
                 {t("header.subtitle")}
               </span>
               <span className="text-[21px] font-semibold leading-tight tracking-tight text-ink-900">
-                Ivan Pavic
+                Ivan Pavić
               </span>
             </div>
           </a>

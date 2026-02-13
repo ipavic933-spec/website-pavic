@@ -60,7 +60,7 @@ export default function RootLayout({
 
 Invariants
 - The app entry route is `src/app/[locale]/page.tsx` and renders the section flow for the homepage.
-- A localized static route exists at `src/app/[locale]/privacy-policy/page.tsx` for privacy policy content, with a direct fallback at `src/app/privacy-policy/page.tsx`.
+- A localized static route exists at `src/app/[locale]/privacy-policy/page.tsx` for privacy policy content, with a direct fallback at `src/app/privacy-policy/page.tsx`; copy is sourced from `messages/hr.json` and `messages/en.json` under `Site.privacyPolicy`.
 - The root layout in `src/app/layout.tsx` only sets global HTML/body shell and imports `src/app/globals.css`.
 - Translations come from `next-intl` message files in `messages/` and are resolved with `useTranslations("Site")`.
 - Header navigation targets in-page anchors (`#about`, `#services`, `#contact`) with a mobile toggle menu.
