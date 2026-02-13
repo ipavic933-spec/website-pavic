@@ -37,6 +37,8 @@ Invariants
 - Components and localized pages resolve text via `useTranslations("Site")` / `getTranslations("Site.*")` from message files.
 - Privacy policy content is defined in message-file namespace `Site.privacyPolicy` for both locales.
 - Contact response-time copy is aligned to 48 hours in both locale message sets.
+- Contact section includes a localized call-hours etiquette note (`Site.contact.callHours`) shown before the bold prior-arrangement note.
+- Hero subtitle copy is a single sentence in both locale message sets and describes support across core legal areas.
 
 Contracts
 - `src/proxy.ts` must use the shared `routing` object for locale matching.

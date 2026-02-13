@@ -67,20 +67,25 @@ export function Header() {
         </div>
       </div>
 
-      <div className="h-[11px] w-full bg-gradient-to-b from-black/25 to-transparent" />
-
-      {mobileOpen && (
-        <nav className="flex flex-col gap-4 border-t border-brand-200/60 bg-white px-6 py-6 md:hidden">
+      <div
+        className={`origin-top overflow-hidden transition-[max-height,opacity,transform] duration-300 ease-out md:hidden ${
+          mobileOpen
+            ? "pointer-events-auto max-h-80 scale-y-100 opacity-100"
+            : "pointer-events-none max-h-0 scale-y-95 opacity-0"
+        }`}
+        aria-hidden={!mobileOpen}
+      >
+        <nav className="flex flex-col items-end gap-4 border-t border-brand-200/60 bg-[#d3dce0] px-6 py-6 text-right">
           <a
             href="#about"
-            className="text-sm font-medium text-ink-600 transition-colors hover:text-ink-900"
+            className="mr-4 text-sm font-medium text-ink-600 transition-colors hover:text-ink-900"
             onClick={() => setMobileOpen(false)}
           >
             {t("nav.about")}
           </a>
           <a
             href="#services"
-            className="text-sm font-medium text-ink-600 transition-colors hover:text-ink-900"
+            className="mr-4 text-sm font-medium text-ink-600 transition-colors hover:text-ink-900"
             onClick={() => setMobileOpen(false)}
           >
             {t("nav.services")}
@@ -93,7 +98,7 @@ export function Header() {
             {t("nav.contact")}
           </a>
         </nav>
-      )}
+      </div>
     </header>
   )
 }

@@ -49,7 +49,10 @@ export function Contact() {
             <p className="mb-2 max-w-md text-sm leading-relaxed text-ink-600">
               {t("contact.desc")}
             </p>
-            <p className="mb-10 text-xs font-semibold text-ink-900">
+            <p className="mb-2 max-w-md text-sm leading-relaxed text-ink-600">
+              {t("contact.callHours")}
+            </p>
+            <p className="mb-10 text-sm font-semibold text-ink-900">
               {t("contact.note")}
             </p>
 

@@ -1,6 +1,5 @@
 "use client"
 
-import { Phone } from "lucide-react"
 import {useTranslations} from "next-intl"
 
 export function Hero() {
@@ -38,20 +37,13 @@ export function Hero() {
             ))}
           </div>
 
-          {/* CTAs */}
+          {/* CTA */}
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a
               href="#contact"
               className="rounded-xl bg-white px-7 py-3.5 text-sm font-semibold text-brand-900 shadow-sm ring-1 ring-white/15 transition hover:bg-brand-50"
             >
               {t("hero.cta")}
-            </a>
-            <a
-              href="tel:+385955297362"
-              className="flex items-center gap-2 rounded-xl border border-white/25 bg-white/0 px-5 py-3.5 text-sm font-medium text-white/90 backdrop-blur-sm transition hover:bg-white/10"
-            >
-              <Phone className="h-4 w-4" strokeWidth={1.5} />
-              {t("hero.cta2")}
             </a>
           </div>
 

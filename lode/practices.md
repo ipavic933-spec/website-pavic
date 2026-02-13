@@ -32,7 +32,10 @@ Practices
 - Prefer Tailwind utility classes plus tokenized colors (`brand-*`, `ink-*`) from `tailwind.config.ts`.
 - Keep section content in focused components (`src/components/hero.tsx`, `src/components/about.tsx`, `src/components/services.tsx`, `src/components/contact.tsx`).
 - Use `useTranslations("Site")` in UI components and store translation keys in `messages/hr.json` and `messages/en.json` loaded through `src/i18n/request.ts`.
-- Keep header fixed with desktop links on `md+` and a stateful mobile dropdown on smaller breakpoints.
+- Keep header fixed with desktop links on `md+`; on smaller breakpoints the dropdown stays mounted and animates from the header edge using `origin-top` with `max-height` + `scale-y` expansion/collapse, with `pointer-events-none` when closed.
+- Mobile dropdown panel in `src/components/header.tsx` uses the same `#d3dce0` background as the header bar to keep one continuous surface.
+- Mobile dropdown links in `src/components/header.tsx` are right-aligned (`items-end`, `text-right`) so the link stack and CTA anchor to the right edge.
+- Mobile dropdown text columns align to the `contact` CTA label by adding `mr-4` to plain text links (`about`, `services`) to offset CTA horizontal padding.
 - Header contact CTA in `src/components/header.tsx` uses inverted brand contrast (`bg-brand-900` + `text-brand-50`) on both desktop and mobile states.
 - Language switch control in `src/components/language-switch.tsx` uses `border-brand-900`; the active locale pill uses `bg-[#d3dce0]` to match the header background, while inactive locale pills use `bg-white`.
 - Brand logo asset is stored at `public/images/logo.png` and reused in both `src/components/header.tsx` and `src/components/footer.tsx` via `next/image`.
@@ -43,9 +46,9 @@ Practices
 - Footer brand column does not render an additional subtitle/name text block below the clickable logo lockup.
 - Footer logo in `src/components/footer.tsx` renders without brightness/invert/opacity filters so the source PNG colors are preserved.
 - Footer privacy link in `src/components/footer.tsx` uses localized `Link` from `src/i18n/navigation.ts` to keep locale context when opening `/privacy-policy`.
-- Header shell in `src/components/header.tsx` separates structure into a solid `#d3dce0` content bar plus a distinct vertical gradient strip (`h-[11px]`, `bg-gradient-to-b from-black/25 to-transparent`) so the fade ends in true transparency over page content.
+- Header shell in `src/components/header.tsx` uses a single solid `#d3dce0` bar with no gradient border strip.
 - Primary section titles in `src/components/hero.tsx`, `src/components/about.tsx`, `src/components/services.tsx`, and `src/components/contact.tsx` use slight letter-spacing (`tracking-[0.01em]`) to improve readability and prevent visual character crowding.
-- Hero section in `src/components/hero.tsx` is text-first with no image panel; content is centered (`items-center`, `text-center`) with centered badges and CTAs.
+- Hero section in `src/components/hero.tsx` is text-first with no image panel; content is centered (`items-center`, `text-center`) with centered badges and a single primary contact CTA.
 - Hero subtitle copy uses a manual line break from translation strings (`\n` in `messages/*.json`) and renders with `whitespace-pre-line` in `src/components/hero.tsx`.
 - Identity badge card (IP avatar + name/role) is anchored on the about photo in `src/components/about.tsx` at the bottom-right overlay position; the hero image in `src/components/hero.tsx` no longer renders this floating card.
 - Contact section container in `src/components/contact.tsx` uses a white background (`bg-white`) behind the form and info columns.
