@@ -13,7 +13,7 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="bg-[#d3dce0]">
+      <div className="bg-surface">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <Link
             href="/"
@@ -84,17 +84,17 @@ export function Header() {
         }`}
         aria-hidden={!mobileOpen}
       >
-        <nav className="flex flex-col items-start gap-4 border-t border-brand-200/60 bg-[#d3dce0] px-6 py-6 text-left">
+        <nav className="flex flex-col items-start gap-4 border-t border-brand-200/60 bg-surface px-6 py-6 text-left">
           <a
             href="#about"
-            className="mr-4 text-sm font-medium text-ink-600 transition-colors hover:text-ink-900"
+            className="w-full mr-4 text-sm font-medium text-ink-600 transition-colors hover:text-ink-900"
             onClick={() => setMobileOpen(false)}
           >
             {t("about")}
           </a>
           <a
             href="#services"
-            className="mr-4 text-sm font-medium text-ink-600 transition-colors hover:text-ink-900"
+            className="w-full mr-4 text-sm font-medium text-ink-600 transition-colors hover:text-ink-900"
             onClick={() => setMobileOpen(false)}
           >
             {t("services")}

@@ -29,6 +29,7 @@ const config: Config = {
           600: '#44525A',
           900: '#0A0D0F',
         },
+        surface: '#D3DCE0',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
