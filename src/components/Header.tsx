@@ -87,14 +87,14 @@ export function Header() {
         <nav className="flex flex-col items-start gap-4 border-t border-brand-200/60 bg-[#d3dce0] px-6 py-6 text-left">
           <a
             href="#about"
-            className="mr-4 text-sm font-medium text-ink-600 transition-colors hover:text-ink-900"
+            className="w-full mr-4 text-sm font-medium text-ink-600 transition-colors hover:text-ink-900"
             onClick={() => setMobileOpen(false)}
           >
             {t("about")}
           </a>
           <a
             href="#services"
-            className="mr-4 text-sm font-medium text-ink-600 transition-colors hover:text-ink-900"
+            className="w-full mr-4 text-sm font-medium text-ink-600 transition-colors hover:text-ink-900"
             onClick={() => setMobileOpen(false)}
           >
             {t("services")}
