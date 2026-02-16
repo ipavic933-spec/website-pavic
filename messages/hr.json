@@ -77,11 +77,12 @@
     "description": "Pošaljite kratki opis upita, a odgovor ćete dobiti u najkraćem mogućem roku. Na upite odgovaramo u roku od dva radna dana. Za prijem stranaka potreban je prethodni dogovor."
   },
   "footer": {
-    "workingHours": "Radno vrijeme: Ponedjeljak - Petak, 9:00 - 17:00",
-    "meetings": "(Za prijem stranaka potreban je prethodni dogovor.)",
-    "emailAdress": "ipavic933@gmail.com",
-    "phoneNumber": "+38595/529-7362",
-    "address": "Svačićeva 4, 21000, Split",
-    "name": "Odvjetnicki ured Ivan Pavić"
+    "workingHours": "Radno vrijeme",
+    "hours": "Ponedjeljak - petak, 09:00 - 17:00",
+    "byAppt": "Za prijem stranaka potreban je prethodni dogovor.",
+    "contact": "Kontakt",
+    "copyright": "Odvjetnički ured Ivan Pavić. Sva prava pridržana.",
+    "privacy": "Pravila privatnosti",
+    "subtitle": "Odvjetnički ured"
   }
 }

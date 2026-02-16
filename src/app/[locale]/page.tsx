@@ -3,14 +3,14 @@ import { About } from "@/components/About";
 import { Services } from "@/components/Services";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-    
+
 export default function HomePage() {
   return (
     <>
       <Header />
       <main>
         <Hero />
-        <About/>
+        <About />
         <Services />
       </main>
       <Footer />

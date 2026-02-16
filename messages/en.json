@@ -77,11 +77,12 @@
     "description": "Send a short description of your inquiry and you will receive a response as soon as possible. We respond to inquiries within two business days. Prior arrangement is required for receiving clients."
   },
   "footer": {
-    "workingHours": "Working hours: Moday - Friday, 9:00 - 17:00",
-    "meetings": "(Prior arrangement is required for the reception of parties.)",
-    "emailAdress": "ipavic933@gmail.com",
-    "phoneNumber": "+38595/529-7362",
-    "address": "Svačićeva 4, 21000, Split",
-    "name": "Lawyer office Ivan Pavić"
+    "workingHours": "Working hours",
+    "hours": "Monday - Friday, 09:00 - 17:00",
+    "byAppt": "Prior arrangement is required for client reception.",
+    "contact": "Contact",
+    "copyright": "Law Office Ivan Pavić. All rights reserved.",
+    "privacy": "Privacy policy",
+    "subtitle": "Law Office"
   }
 }
