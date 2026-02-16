@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { LanguageSwitch } from "./LanguageSwitch";
+import Link from "next/link";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -14,8 +15,8 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="bg-[#d3dce0]">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a
-            href="#top"
+          <Link
+            href="/"
             className="flex items-center gap-3"
             aria-label="Back to top"
           >
@@ -34,7 +35,7 @@ export function Header() {
                 Ivan Pavić
               </span>
             </div>
-          </a>
+          </Link>
 
           <nav className="hidden items-center gap-8 md:flex">
             <a
