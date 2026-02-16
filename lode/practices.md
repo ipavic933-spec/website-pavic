@@ -10,9 +10,9 @@ Related
 
 ```mermaid
 flowchart TD
-  Page["src/app/page.tsx"] -->|uses| Components["src/app/components/*"]
+  Page["src/app/page.tsx"] -->|uses| Components["src/components/*"]
   Components --> Styles["Tailwind + src/app/globals.css"]
-  Header["src/app/components/Header.tsx"] --> Toggle["useState open/close"]
+  Header["src/components/Header.tsx"] --> Toggle["useState open/close"]
   Toggle --> OverlayNav["fixed inset-x-0 mobile menu"]
 ```
 
@@ -27,9 +27,11 @@ flowchart TD
 Practices
 - Keep global layout concerns in `src/app/layout.tsx`.
 - Prefer Tailwind utilities for component styling; use `src/app/globals.css` for globals.
-- Place reusable UI in `src/app/components/`.
+- Place reusable UI in `src/components/`.
 - Keep mobile menu links hidden by default and reveal them only when the header toggle state is open.
 - Render the opened mobile menu as a full-width overlay (`fixed inset-x-0 w-screen`) below the header.
+- For uncontrolled forms, use `name` attributes on inputs when reading values with `FormData`; `id` alone is not serialized.
+- In React form handlers, derive submit event type from `ComponentProps<"form">["onSubmit"]` to match JSX expectations exactly and avoid relying on potentially deprecated global aliases.
 
 Lessons
 - Minimal scaffolding is easier to evolve than over-structured pages.

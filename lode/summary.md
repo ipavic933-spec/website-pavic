@@ -1,6 +1,6 @@
 # Summary
 
-Website Pavic is a small Next.js 16 App Router site under `src/app` with a shared root layout (header + footer), a minimal home page, and Tailwind CSS v4 global styles; the header contains responsive navigation with a desktop inline menu and a mobile full-width overlay menu that toggles from a hamburger button.
+Website Pavic is a small Next.js 16 App Router site under `src/app` with a shared root layout (header + footer), a minimal home page, and Tailwind CSS v4 global styles; reusable sections live in `src/components`, and the header contains responsive navigation with a desktop inline menu and a mobile full-width overlay menu that toggles from a hamburger button.
 
 Related
 - [Terminology](terminology.md)
