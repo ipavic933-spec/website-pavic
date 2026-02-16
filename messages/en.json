@@ -91,7 +91,7 @@
     "sections": {
       "controller": {
         "title": "Data Controller",
-        "body": "This website is operated by Law Office Ivan Pavić. For privacy-related questions or requests, contact us at ipavic933@gmail.com."
+        "body": "This website is operated by Law Office Ivan Pavić. For privacy-related questions or requests, contact us at <email>ipavic933@gmail.com</email>."
       },
       "collectedData": {
         "title": "What We Collect",
@@ -128,7 +128,7 @@
       },
       "contact": {
         "title": "Contact",
-        "body": "For any privacy request, contact us at ipavic933@gmail.com or by phone at +385 95 529 7362."
+        "body": "For any privacy request, contact us at <email>ipavic933@gmail.com</email> or by phone at <phone>+385 95 529 7362</phone>."
       }
     }
   }
