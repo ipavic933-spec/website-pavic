@@ -84,5 +84,52 @@
     "copyright": "Odvjetnički ured Ivan Pavić. Sva prava pridržana.",
     "privacy": "Pravila privatnosti",
     "subtitle": "Odvjetnički ured"
+  },
+  "privacyPolicy": {
+    "title": "Pravila privatnosti",
+    "updated": "Ažurirano: 13. veljače 2026.",
+    "sections": {
+      "controller": {
+        "title": "Voditelj obrade",
+        "body": "Ovom web stranicom upravlja Odvjetnički ured Ivan Pavić. Za pitanja ili zahtjeve vezane uz privatnost kontaktirajte nas na <email>ipavic933@gmail.com</email>."
+      },
+      "collectedData": {
+        "title": "Koje podatke prikupljamo",
+        "body": "Putem kontakt obrasca ili izravne komunikacije možemo prikupljati vaše ime i prezime, adresu e-pošte, broj telefona i informacije koje navedete u poruci."
+      },
+      "purposeAndBasis": {
+        "title": "Svrha i pravna osnova obrade",
+        "intro": "Osobne podatke obrađujemo kako bismo:",
+        "bullet1": "odgovorili na upite i pružili pravne informacije,",
+        "bullet2": "pripremili ili pružili pravne usluge kada je to primjenjivo,",
+        "bullet3": "ispunili zakonske i profesionalne obveze.",
+        "legalBasis": "Pravne osnove mogu uključivati privolu, poduzimanje radnji prije sklapanja ugovora, izvršavanje ugovora, legitimne interese i ispunjavanje zakonskih obveza."
+      },
+      "retention": {
+        "title": "Rok čuvanja podataka",
+        "body": "Podatke čuvamo samo onoliko dugo koliko je potrebno za svrhu za koju su prikupljeni te kada to zahtijevaju primjenjive zakonske ili profesionalne obveze čuvanja."
+      },
+      "sharing": {
+        "title": "Dijeljenje podataka",
+        "body": "Ne prodajemo osobne podatke. Podaci se mogu dijeliti samo s pouzdanim pružateljima usluga kada je to nužno za rad web stranice te s nadležnim tijelima kada to zahtijeva zakon."
+      },
+      "rights": {
+        "title": "Vaša prava",
+        "body1": "Možete zatražiti pristup, ispravak, brisanje, ograničenje obrade, prenosivost podataka ili uložiti prigovor na obradu.",
+        "body2": "Privolu možete povući u bilo kojem trenutku, bez utjecaja na zakonitost obrade koja se temeljila na privoli prije njezina povlačenja."
+      },
+      "security": {
+        "title": "Sigurnost",
+        "body": "Primjenjujemo razumne tehničke i organizacijske mjere zaštite osobnih podataka od neovlaštenog pristupa, otkrivanja, izmjene ili uništenja."
+      },
+      "externalLinks": {
+        "title": "Vanjske poveznice",
+        "body": "Ova web stranica može sadržavati poveznice na vanjske usluge (na primjer poveznice na kartu). Ne odgovaramo za pravila privatnosti web stranica trećih strana."
+      },
+      "contact": {
+        "title": "Kontakt",
+        "body": "Za sve zahtjeve vezane uz privatnost kontaktirajte nas na <email>ipavic933@gmail.com</email> ili telefonom na <phone>+385 95 529 7362</phone>."
+      }
+    }
   }
 }
