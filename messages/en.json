@@ -92,14 +92,6 @@
     "errorMessage": "This field is required"
   },
   "footer": {
-<<<<<<< contact-section
-    "workingHours": "Working hours: Moday - Friday, 9:00 - 17:00",
-    "meetings": "(Prior arrangement is required for the reception of parties.)",
-    "emailAdress": "ipavic933@gmail.com",
-    "phoneNumber": "+38595/529-7362",
-    "address": "Svačićeva 4, 21000, Split",
-    "name": "Lawyer office Ivan Pavić"
-=======
     "workingHours": "Working hours",
     "hours": "Monday - Friday, 09:00 - 17:00",
     "byAppt": "Prior arrangement is required for client reception.",
@@ -154,6 +146,5 @@
         "body": "For any privacy request, contact us at <email>ipavic933@gmail.com</email> or by phone at <phone>+385 95 529 7362</phone>."
       }
     }
->>>>>>> development
   }
 }
