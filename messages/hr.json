@@ -88,8 +88,7 @@
     "messagePlaceholder": "Opišite svoju pravnu situaciju...",
     "consent": "Pristajem na obradu osobnih podataka u svrhu odgovora na upit.",
     "submit": "Pošaljite upit",
-    "micro": "Povjerljivo • Bez obveze u prvom kontaktu",
-    "errorMessage": "Ovo polje je obavezno"
+    "micro": "Povjerljivo • Bez obveze u prvom kontaktu"
   },
   "footer": {
     "workingHours": "Radno vrijeme",
@@ -146,5 +145,9 @@
         "body": "Za sve zahtjeve vezane uz privatnost kontaktirajte nas na <email>ipavic933@gmail.com</email> ili telefonom na <phone>+385 95 529 7362</phone>."
       }
     }
+  },
+  "errorMessages": {
+    "required": "Ovo polje je obavezno",
+    "invalidEmail": "Molimo unesite važeću email adresu"
   }
 }

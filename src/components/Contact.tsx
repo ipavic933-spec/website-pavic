@@ -1,25 +1,18 @@
 "use client"
 
-import React, { useCallback, useMemo, useState } from "react";
-import type { InputEvent, InvalidEvent, SubmitEvent } from "react";
+import { useCallback, useState } from "react";
+import type { SubmitEvent } from "react";
 import { MapPin, Mail, Phone } from "lucide-react";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import {useTranslations} from "next-intl";
 import { Spinner } from "./ui/spinner";
+import { InputField } from "./InputField";
 
 export function Contact() {
   const [agreed, setAgreed] = useState(false);
-  const [nameError, setNameError] = useState('');
-  const [emailError, setEmailError] = useState('');
-  const [messageError, setMessageError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const t = useTranslations("contact");
-  const errorMessage = useMemo(() => (
-    t('errorMessage')
-  ), [t]);
 
   const contactItems = [
     {
@@ -53,44 +46,6 @@ export function Contact() {
     console.log('Name', name, 'email', email, 'message', message);
     form.reset();
     setIsLoading(false);
-  }, []);
-
-  const handleError = useCallback((e: InvalidEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const field = e.currentTarget;
-    if (field.validity.valueMissing) {
-      field.setCustomValidity(' ');
-      switch (field.id) {
-        case 'name':
-          setNameError(errorMessage);
-          break;
-        case 'email':
-          setEmailError(errorMessage);
-          break;
-        case 'message':
-          setMessageError(errorMessage);
-          break;
-        default:
-          break;
-      }
-    }
-  }, [errorMessage]);
-
-  const resetError = useCallback((e: InputEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const field = e.currentTarget;
-    field.setCustomValidity('');
-    switch (field.id) {
-      case 'name':
-        setNameError('');
-        break;
-      case 'email':
-        setEmailError('');
-        break;
-      case 'message':
-        setMessageError('');
-        break;
-      default:
-        break;
-    }
   }, []);
 
   return (
@@ -164,71 +119,41 @@ export function Contact() {
             <div className="mb-6">
               <p className="text-sm font-semibold text-ink-900">{t("formTitle")}</p>
               <p className="mt-1 text-xs text-ink-600">
-                {t("formSubtitle") ?? "Odgovor u najkraćem mogućem roku."}
+                {t("formSubtitle")}
               </p>
             </div>
 
             <div className="flex flex-col gap-2">
               <div className="flex flex-col gap-2">
-                <Label htmlFor="name" className="text-sm font-medium text-ink-900">
-                  {t("nameLabel")}*
-                </Label>
-                <div>
-                  <Input
-                    id="name"
-                    name="name"
-                    placeholder={t("namePlaceholder")}
-                    required
-                    onInvalid={handleError}
-                    onInput={resetError}
-                    className="rounded-xl border-brand-200 bg-brand-50/60 focus-visible:ring-brand-500"
-                    />
-                  <div className="h-4 text-sm text-red-500">
-                    {nameError}
-                  </div>
-                </div>
+                <InputField
+                  id={'name'}
+                  isRequired={true}
+                  label={t("nameLabel")}
+                  name={'name'}
+                  placeholder={t("namePlaceholder")}
+                />
               </div>
 
               <div className="flex flex-col gap-2">
-                <Label htmlFor="email" className="text-sm font-medium text-ink-900">
-                  {t("emailLabel")}*
-                </Label>
-                <div>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder={t("emailPlaceholder")}
-                    required
-                    onInvalid={handleError}
-                    onInput={resetError}
-                    className="rounded-xl border-brand-200 bg-brand-50/60 focus-visible:ring-brand-500"
-                  />
-                  <div className="h-4 text-sm text-red-500">
-                    {emailError}
-                  </div>
-                </div>
+                <InputField
+                  id={'email'}
+                  isRequired={true}
+                  label={t("emailLabel")}
+                  name={'email'}
+                  placeholder={t("emailPlaceholder")}
+                  type={'email'}
+                />
               </div>
 
               <div className="flex flex-col gap-2">
-                <Label htmlFor="message" className="text-sm font-medium text-ink-900">
-                  {t("messageLabel")}*
-                </Label>
-                <div>
-                <Textarea
-                  id="message"
-                  name="message"
+                <InputField
+                  id={'message'}
+                  isRequired={true}
+                  isTextArea={true}
+                  label={t("messageLabel")}
+                  name={'message'}
                   placeholder={t("messagePlaceholder")}
-                  rows={5}
-                  required
-                  onInvalid={handleError}
-                  onInput={resetError}
-                  className="resize-none rounded-xl border-brand-200 bg-brand-50/60 focus-visible:ring-brand-500"
-                  />
-                  <div className="h-4 text-sm text-red-500">
-                    {messageError}
-                  </div>
-                </div>
+                />
               </div>
 
               <div className="flex items-start gap-3">
