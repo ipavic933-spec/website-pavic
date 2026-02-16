@@ -14,7 +14,7 @@ export function LanguageSwitch() {
         locale="hr"
         className={`px-2.5 py-1.5 font-medium transition-colors ${
           locale === "hr"
-            ? "bg-[#d3dce0] text-ink-900"
+            ? "bg-surface text-ink-900"
             : "bg-white text-ink-600 hover:text-ink-900"
         }`}
         aria-label="Hrvatski"
@@ -26,7 +26,7 @@ export function LanguageSwitch() {
         locale="en"
         className={`px-2.5 py-1.5 font-medium transition-colors ${
           locale === "en"
-            ? "bg-[#d3dce0] text-ink-900"
+            ? "bg-surface text-ink-900"
             : "bg-white text-ink-600 hover:text-ink-900"
         }`}
         aria-label="English"
