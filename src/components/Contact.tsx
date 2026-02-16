@@ -1,17 +1,25 @@
 "use client"
 
-import { useCallback, useState } from "react";
-import type { SubmitEvent } from "react";
+import React, { useCallback, useMemo, useState } from "react";
+import type { InputEvent, InvalidEvent, SubmitEvent } from "react";
 import { MapPin, Mail, Phone } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import {useTranslations} from "next-intl";
+import { Spinner } from "./ui/spinner";
 
 export function Contact() {
   const [agreed, setAgreed] = useState(false);
+  const [nameError, setNameError] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [messageError, setMessageError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const t = useTranslations("contact");
+  const errorMessage = useMemo(() => (
+    t('errorMessage')
+  ), [t]);
 
   const contactItems = [
     {
@@ -35,14 +43,54 @@ export function Contact() {
   ];
 
   const handleSubmit = useCallback((e: SubmitEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      const form = e.currentTarget;
-      const formData = new FormData(form);
-      const name = String(formData.get('name') ?? '');
-      const email = String(formData.get('email') ?? '');
-      const message = String(formData.get('message') ?? '');
-      console.log('Name', name, 'email', email, 'message', message);
-      form.reset();
+    setIsLoading(true);
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const name = String(formData.get('name') ?? '');
+    const email = String(formData.get('email') ?? '');
+    const message = String(formData.get('message') ?? '');
+    console.log('Name', name, 'email', email, 'message', message);
+    form.reset();
+    setIsLoading(false);
+  }, []);
+
+  const handleError = useCallback((e: InvalidEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const field = e.currentTarget;
+    if (field.validity.valueMissing) {
+      field.setCustomValidity(' ');
+      switch (field.id) {
+        case 'name':
+          setNameError(errorMessage);
+          break;
+        case 'email':
+          setEmailError(errorMessage);
+          break;
+        case 'message':
+          setMessageError(errorMessage);
+          break;
+        default:
+          break;
+      }
+    }
+  }, [errorMessage]);
+
+  const resetError = useCallback((e: InputEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const field = e.currentTarget;
+    field.setCustomValidity('');
+    switch (field.id) {
+      case 'name':
+        setNameError('');
+        break;
+      case 'email':
+        setEmailError('');
+        break;
+      case 'message':
+        setMessageError('');
+        break;
+      default:
+        break;
+    }
   }, []);
 
   return (
@@ -120,46 +168,67 @@ export function Contact() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-2">
               <div className="flex flex-col gap-2">
                 <Label htmlFor="name" className="text-sm font-medium text-ink-900">
-                  {t("nameLabel")}
+                  {t("nameLabel")}*
                 </Label>
-                <Input
-                  id="name"
-                  name="name"
-                  placeholder={t("namePlaceholder")}
-                  required
-                  className="rounded-xl border-brand-200 bg-brand-50/60 focus-visible:ring-brand-500"
-                />
+                <div>
+                  <Input
+                    id="name"
+                    name="name"
+                    placeholder={t("namePlaceholder")}
+                    required
+                    onInvalid={handleError}
+                    onInput={resetError}
+                    className="rounded-xl border-brand-200 bg-brand-50/60 focus-visible:ring-brand-500"
+                    />
+                  <div className="h-4 text-sm text-red-500">
+                    {nameError}
+                  </div>
+                </div>
               </div>
 
               <div className="flex flex-col gap-2">
                 <Label htmlFor="email" className="text-sm font-medium text-ink-900">
-                  {t("emailLabel")}
+                  {t("emailLabel")}*
                 </Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder={t("emailPlaceholder")}
-                  required
-                  className="rounded-xl border-brand-200 bg-brand-50/60 focus-visible:ring-brand-500"
-                />
+                <div>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder={t("emailPlaceholder")}
+                    required
+                    onInvalid={handleError}
+                    onInput={resetError}
+                    className="rounded-xl border-brand-200 bg-brand-50/60 focus-visible:ring-brand-500"
+                  />
+                  <div className="h-4 text-sm text-red-500">
+                    {emailError}
+                  </div>
+                </div>
               </div>
 
               <div className="flex flex-col gap-2">
                 <Label htmlFor="message" className="text-sm font-medium text-ink-900">
-                  {t("messageLabel")}
+                  {t("messageLabel")}*
                 </Label>
+                <div>
                 <Textarea
                   id="message"
                   name="message"
                   placeholder={t("messagePlaceholder")}
                   rows={5}
                   required
+                  onInvalid={handleError}
+                  onInput={resetError}
                   className="resize-none rounded-xl border-brand-200 bg-brand-50/60 focus-visible:ring-brand-500"
-                />
+                  />
+                  <div className="h-4 text-sm text-red-500">
+                    {messageError}
+                  </div>
+                </div>
               </div>
 
               <div className="flex items-start gap-3">
@@ -177,9 +246,9 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={!agreed}
-                className="mt-1 w-full rounded-xl bg-brand-800 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-900/15 ring-1 ring-brand-900/10 transition hover:bg-brand-900 disabled:cursor-not-allowed disabled:opacity-50"
+                className="mt-1 w-full flex justify-center rounded-xl bg-brand-800 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-900/15 ring-1 ring-brand-900/10 transition hover:bg-brand-900 disabled:cursor-not-allowed disabled:opacity-50"
               >
-                {t("submit")}
+                { isLoading ? <Spinner /> : t("submit")}
               </button>
 
               <p className="text-center text-xs text-ink-600/70">{t("micro")}</p>

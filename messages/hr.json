@@ -88,7 +88,8 @@
     "messagePlaceholder": "Opišite svoju pravnu situaciju...",
     "consent": "Pristajem na obradu osobnih podataka u svrhu odgovora na upit.",
     "submit": "Pošaljite upit",
-    "micro": "Povjerljivo • Bez obveze u prvom kontaktu"
+    "micro": "Povjerljivo • Bez obveze u prvom kontaktu",
+    "errorMessage": "Ovo polje je obavezno"
   },
   "footer": {
     "workingHours": "Radno vrijeme",
