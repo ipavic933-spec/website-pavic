@@ -7,7 +7,7 @@ type NavigationProps = {
 }  
 
 const Navigation = ({ orijentation = 'row' }: NavigationProps) => {
-  const t = useTranslations("Header");
+  const t = useTranslations("header");
   return (
     <nav className={`flex gap-x-6 gap-y-2 flex-${orijentation}`}>
       <Link href="/">{t("aboutUs")}</Link>

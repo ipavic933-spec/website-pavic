@@ -8,7 +8,7 @@ import { LanguageSwitch } from "./LanguageSwitch";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const t = useTranslations("Header");
+  const t = useTranslations("header");
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">

@@ -1,5 +1,5 @@
 {
-  "Header": {
+  "header": {
     "about": "O nama",
     "services": "Usluge",
     "contact": "Kontakt",
@@ -7,10 +7,10 @@
     "closeMenu": "Zatvori izbornik",
     "subtitle": "Odvjetnički ured"
   },
-  "NotFound": {
+  "notFound": {
     "title": "Stranica koju tražite nije pronađena"
   },
-  "Hero": {
+  "hero": {
     "eyebrow": "ODVJETNIČKI URED • SPLIT",
     "title": "Pouzdana pravna podrška za građane i poslovne subjekte",
     "subtitle": "Stručno savjetovanje i zastupanje u imovinskopravnim i ugovornim odnosima te drugim ključnim pravnim područjima.",
@@ -23,10 +23,10 @@
     "cardRole": "Odvjetnik",
     "imgAlt": "Hero slika"
   },
-  "Banner": {
+  "banner": {
     "discription": "Poseban naglasak stavljamo na pravnu podršku poduzetnicima, trgovačkim društvima i obrtima u svakodnevnom poslovanju i rješavanju sporova."
   },
-  "AboutMe": {
+  "aboutMe": {
     "eyebrow": "O NAMA",
     "title": "Profesionalno i s povjerenjem",
     "lead": "Odvjetnički ured djeluje samostalno od siječnja 2023. godine, nakon višegodišnjeg rada i stjecanja iskustva u odvjetničkom uredu Damira Batarela u Splitu (2018. – 2022.).",
@@ -41,43 +41,42 @@
     "cardName": "Ivan Pavić",
     "cardRole": "Odvjetnik"
   },
-  "Services": {
-    "sectionTitle": "Usluge",
-    "description": "Odvjetnički ured pruža pravne usluge fizičkim i pravnim osobama u sljedećim područjima:",
-    "servicesList": [
-      {
-        "title": "Stvarno i zemljišnoknjižno pravo",
-        "description": "Zastupanje i savjetovanje u predmetima vezanim uz vlasništvo, služnosti, pravo građenja, založno pravo te druga stvarna prava. Sređivanje zemljišnoknjižnog stanja nekretnina, provedba upisa u zemljišne knjige i rješavanje imovinskopravnih odnosa."
-      },
-      {
-        "title": "Obvezno pravo",
-        "description": "Sastavljanje, analiza i pravna zaštita ugovora. Zastupanje u sudskim i izvansudskim postupcima te rješavanje sporova iz ugovornih i drugih obveznih odnosa."
-      },
-      {
-        "title": "Nasljedno pravo",
-        "description": "Savjetovanje i zastupanje u ostavinskim postupcima te rješavanje nasljednopravnih odnosa."
-      },
-      {
-        "title": "Upravno pravo",
-        "description": "Zastupanje u upravnim postupcima i sporovima pred nadležnim tijelima."
-      },
-      {
-        "title": "Ovršno pravo",
-        "description": "Priprema i vođenje ovršnih postupaka, zaštita prava u ovrsi te naplata potraživanja."
-      },
-      {
-        "title": "Radno pravo",
-        "description": "Savjetovanje i zastupanje poslodavaca i radnika u radnopravnim odnosima."
-      }
-    ]
+  "services": {
+    "eyebrow": "USLUGE",
+    "title": "Pravna područja",
+    "desc": "Pružam pravne usluge fizičkim i pravnim osobama u sljedećim područjima:",
+    "property": {
+      "title": "Stvarno i zemljišnoknjižno pravo",
+      "desc": "Vlasništvo, suvlasništvo, uknjižbe i uređenje zemljišnoknjižnog stanja."
+    },
+    "contract": {
+      "title": "Obvezno pravo",
+      "desc": "Sastavljanje i analiza ugovora te sporovi iz ugovornih odnosa."
+    },
+    "inheritance": {
+      "title": "Nasljedno pravo",
+      "desc": "Savjetovanje i zastupanje u ostavinskim postupcima."
+    },
+    "admin": {
+      "title": "Upravno pravo",
+      "desc": "Zastupanje u postupcima i sporovima pred nadležnim tijelima."
+    },
+    "enforcement": {
+      "title": "Ovršno pravo",
+      "desc": "Priprema i vođenje ovrha te naplata potraživanja."
+    },
+    "labor": {
+      "title": "Radno pravo",
+      "desc": "Savjetovanje i zastupanje poslodavaca i radnika."
+    }
   },
-  "ContactUs": {
+  "contactUs": {
     "name": "Ime i prezime",
     "email": "E-mail",
     "message": "Opis",
     "description": "Pošaljite kratki opis upita, a odgovor ćete dobiti u najkraćem mogućem roku. Na upite odgovaramo u roku od dva radna dana. Za prijem stranaka potreban je prethodni dogovor."
   },
-  "Footer": {
+  "footer": {
     "workingHours": "Radno vrijeme: Ponedjeljak - Petak, 9:00 - 17:00",
     "meetings": "(Za prijem stranaka potreban je prethodni dogovor.)",
     "emailAdress": "ipavic933@gmail.com",

@@ -1,5 +1,5 @@
 {
-  "Header": {
+  "header": {
     "about": "About",
     "services": "Services",
     "contact": "Contact",
@@ -7,10 +7,10 @@
     "closeMenu": "Close menu",
     "subtitle": "Law Office"
   },
-  "NotFound": {
+  "notFound": {
     "title": "The page You're looking for could not be found"
   },
-  "Hero": {
+  "hero": {
     "eyebrow": "LAW OFFICE • SPLIT",
     "title": "Reliable legal support for individuals and businesses",
     "subtitle": "Expert advice and representation in property and contract law and other key legal areas.",
@@ -23,10 +23,10 @@
     "cardRole": "Attorney",
     "imgAlt": "Hero image"
   },
-  "Banner": {
+  "banner": {
     "discription": "We place special emphasis on legal support for entrepreneurs, companies and crafts in everyday business operations and dispute resolution."
   },
-  "AboutMe": {
+  "aboutMe": {
     "eyebrow": "ABOUT",
     "title": "Professional and trustworthy",
     "lead": "The office has been operating independently since January 2023, following several years of experience at the Law Office of Damir Batarelo in Split (2018-2022).",
@@ -41,43 +41,42 @@
     "cardName": "Ivan Pavić",
     "cardRole": "Attorney"
   },
-  "Services": {
-    "sectionTitle": "Services",
-    "description": "The law firm provides legal services to individuals and legal entities in the following areas:",
-    "servicesList": [
-      {
-        "title": "Property and land registry law",
-        "description": "Representation and advice in matters related to ownership, easements, building rights, liens and other real rights. Arrangement of the land registry status of real estate, implementation of land registry entries and resolution of property relations."
-      },
-      {
-        "title": "Obligations law",
-        "description": "Drafting, analysis and legal protection of contracts. Representation in court and out-of-court proceedings and resolution of disputes arising from contractual and other obligatory relationships."
-      },
-      {
-        "title": "Inheritance law",
-        "description": "Consulting and representation in inheritance proceedings and resolving inheritance law relationships."
-      },
-      {
-        "title": "Administrative law",
-        "description": "Representation in administrative proceedings and disputes before competent authorities."
-      },
-      {
-        "title": "Enforcement law",
-        "description": "Preparation and conduct of enforcement proceedings, protection of rights in enforcement and collection of claims."
-      },
-      {
-        "title": "Labor law",
-        "description": "Consulting and representing employers and employees in labor relations."
-      }
-    ]
+  "services": {
+    "eyebrow": "SERVICES",
+    "title": "Practice areas",
+    "desc": "I provide legal services to individuals and legal entities in the following areas:",
+    "property": {
+      "title": "Property & land registry law",
+      "desc": "Ownership, co-ownership, registrations and land registry regulation."
+    },
+    "contract": {
+      "title": "Contract law",
+      "desc": "Drafting and analysis of contracts and contractual disputes."
+    },
+    "inheritance": {
+      "title": "Inheritance law",
+      "desc": "Counseling and representation in probate proceedings."
+    },
+    "admin": {
+      "title": "Administrative law",
+      "desc": "Representation in proceedings before competent authorities."
+    },
+    "enforcement": {
+      "title": "Enforcement law",
+      "desc": "Preparation and management of enforcement and debt collection."
+    },
+    "labor": {
+      "title": "Labor law",
+      "desc": "Counseling and representation of employers and employees."
+    }
   },
-  "ContactUs": {
+  "contactUs": {
     "name": "Name and surname",
     "email": "E-mail",
     "message": "Description",
     "description": "Send a short description of your inquiry and you will receive a response as soon as possible. We respond to inquiries within two business days. Prior arrangement is required for receiving clients."
   },
-  "Footer": {
+  "footer": {
     "workingHours": "Working hours: Moday - Friday, 9:00 - 17:00",
     "meetings": "(Prior arrangement is required for the reception of parties.)",
     "emailAdress": "ipavic933@gmail.com",
