@@ -84,5 +84,52 @@
     "copyright": "Law Office Ivan Pavić. All rights reserved.",
     "privacy": "Privacy policy",
     "subtitle": "Law Office"
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "updated": "Last updated: February 13, 2026",
+    "sections": {
+      "controller": {
+        "title": "Data Controller",
+        "body": "This website is operated by Law Office Ivan Pavić. For privacy-related questions or requests, contact us at ipavic933@gmail.com."
+      },
+      "collectedData": {
+        "title": "What We Collect",
+        "body": "Through the contact form or direct communication, we may collect your full name, email address, phone number, and the information you provide in your message."
+      },
+      "purposeAndBasis": {
+        "title": "Purpose and Legal Basis",
+        "intro": "We process personal data to:",
+        "bullet1": "respond to inquiries and provide legal information,",
+        "bullet2": "prepare or perform legal services where applicable,",
+        "bullet3": "meet legal and professional obligations.",
+        "legalBasis": "Legal bases may include consent, pre-contractual measures, performance of a contract, legitimate interests, and compliance with legal obligations."
+      },
+      "retention": {
+        "title": "Data Retention",
+        "body": "We retain data only as long as necessary for the purpose for which it was collected, and where required by applicable legal or professional retention obligations."
+      },
+      "sharing": {
+        "title": "Sharing of Data",
+        "body": "We do not sell personal data. Data may be shared only with trusted service providers when necessary for website operation, and with competent authorities where legally required."
+      },
+      "rights": {
+        "title": "Your Rights",
+        "body1": "You may request access, correction, deletion, restriction, data portability, or object to processing.",
+        "body2": "You may also withdraw consent at any time, without affecting the lawfulness of processing based on consent before its withdrawal."
+      },
+      "security": {
+        "title": "Security",
+        "body": "We apply reasonable technical and organizational safeguards to protect personal data against unauthorized access, disclosure, alteration, or destruction."
+      },
+      "externalLinks": {
+        "title": "External Links",
+        "body": "This website may contain links to external services (for example map links). We are not responsible for the privacy practices of third-party websites."
+      },
+      "contact": {
+        "title": "Contact",
+        "body": "For any privacy request, contact us at ipavic933@gmail.com or by phone at +385 95 529 7362."
+      }
+    }
   }
 }
