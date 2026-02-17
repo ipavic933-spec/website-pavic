@@ -70,11 +70,25 @@
       "desc": "Counseling and representation of employers and employees."
     }
   },
-  "contactUs": {
-    "name": "Name and surname",
-    "email": "E-mail",
-    "message": "Description",
-    "description": "Send a short description of your inquiry and you will receive a response as soon as possible. We respond to inquiries within two business days. Prior arrangement is required for receiving clients."
+  "contact": {
+    "eyebrow": "CONTACT",
+    "title": "Request a consultation",
+    "desc": "Send a brief description of your inquiry. I respond within 48 business hours.",
+    "note": "Prior arrangement is required for client reception.",
+    "callHours": "Outside working hours, we are available by phone exclusively for urgent cases.",
+    "formTitle": "Send inquiry",
+    "formSubtitle": "I respond as soon as possible.",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "addressLabel": "Address",
+    "nameLabel": "Full name",
+    "messageLabel": "Brief description",
+    "namePlaceholder": "Your full name",
+    "emailPlaceholder": "your@email.com",
+    "messagePlaceholder": "Describe your legal situation...",
+    "consent": "I consent to the processing of personal data for the purpose of responding to my inquiry.",
+    "submit": "Send inquiry",
+    "micro": "Confidential • No obligation on first contact"
   },
   "footer": {
     "workingHours": "Working hours",
@@ -131,5 +145,9 @@
         "body": "For any privacy request, contact us at <email>ipavic933@gmail.com</email> or by phone at <phone>+385 95 529 7362</phone>."
       }
     }
+    },
+  "errorMessages": {
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email address"
   }
 }

@@ -70,11 +70,25 @@
       "desc": "Savjetovanje i zastupanje poslodavaca i radnika."
     }
   },
-  "contactUs": {
-    "name": "Ime i prezime",
-    "email": "E-mail",
-    "message": "Opis",
-    "description": "Pošaljite kratki opis upita, a odgovor ćete dobiti u najkraćem mogućem roku. Na upite odgovaramo u roku od dva radna dana. Za prijem stranaka potreban je prethodni dogovor."
+  "contact": {
+    "eyebrow": "KONTAKT",
+    "title": "Zatražite konzultacije",
+    "desc": "Pošaljite kratak opis upita. Odgovaram unutar 48 sati radnim danom.",
+    "note": "Za prijem stranaka potreban je prethodni dogovor.",
+    "callHours": "Izvan radnog vremena telefonski smo dostupni isključivo za hitne slučajeve.",
+    "formTitle": "Pošaljite upit",
+    "formSubtitle": "Odgovaram u najkraćem mogućem roku.",
+    "emailLabel": "Email",
+    "phoneLabel": "Telefon",
+    "addressLabel": "Adresa",
+    "nameLabel": "Ime i prezime",
+    "messageLabel": "Kratki opis upita",
+    "namePlaceholder": "Vaše ime i prezime",
+    "emailPlaceholder": "vasa@email.com",
+    "messagePlaceholder": "Opišite svoju pravnu situaciju...",
+    "consent": "Pristajem na obradu osobnih podataka u svrhu odgovora na upit.",
+    "submit": "Pošaljite upit",
+    "micro": "Povjerljivo • Bez obveze u prvom kontaktu"
   },
   "footer": {
     "workingHours": "Radno vrijeme",
@@ -131,5 +145,9 @@
         "body": "Za sve zahtjeve vezane uz privatnost kontaktirajte nas na <email>ipavic933@gmail.com</email> ili telefonom na <phone>+385 95 529 7362</phone>."
       }
     }
+  },
+  "errorMessages": {
+    "required": "Ovo polje je obavezno",
+    "invalidEmail": "Molimo unesite važeću email adresu"
   }
 }

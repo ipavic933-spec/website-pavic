@@ -7,8 +7,8 @@ Terms
 - Root Layout - The shared shell in `src/app/layout.tsx` that wraps all pages.
 - Page - A route entry such as `src/app/page.tsx`.
 - Global Styles - Tailwind base layer and custom CSS in `src/app/globals.css`.
-- Component - Reusable UI module under `src/app/components/`.
-- Header Toggle Menu - Mobile-only hamburger trigger in `src/app/components/Header.tsx` that toggles a full-width overlay menu.
+- Component - Reusable UI module under `src/components/`.
+- Header Toggle Menu - Mobile-only hamburger trigger in `src/components/Header.tsx` that toggles a full-width overlay menu.
 - Navigation Orientation - `orijentation` prop in `Navigation` selecting `row` (desktop) or `col` (mobile overlay) layout.
 
 Related
@@ -34,5 +34,5 @@ export const routing = {
 ```
 
 Contracts
-- Components under `src/app/components/` are intended for reuse across pages.
+- Components under `src/components/` are intended for reuse across pages.
 - Layout owns global page chrome (header/footer).
