@@ -1,0 +1,153 @@
+{
+  "header": {
+    "about": "O nama",
+    "services": "Usluge",
+    "contact": "Kontakt",
+    "openMenu": "Otvori izbornik",
+    "closeMenu": "Zatvori izbornik",
+    "subtitle": "Odvjetnički ured"
+  },
+  "notFound": {
+    "title": "Stranica koju tražite nije pronađena"
+  },
+  "hero": {
+    "eyebrow": "ODVJETNIČKI URED • SPLIT",
+    "title": "Pouzdana pravna podrška za građane i poslovne subjekte",
+    "subtitle": "Stručno savjetovanje i zastupanje u imovinskopravnim i ugovornim odnosima te drugim ključnim pravnim područjima.",
+    "badge1": "Diskretno i profesionalno",
+    "badge2": "Jasna komunikacija",
+    "badge3": "Odgovor u 48 h",
+    "cta": "Zatražite konzultacije",
+    "micro": "Povjerljivo • Bez obveze u prvom kontaktu",
+    "cardName": "Ivan Pavić",
+    "cardRole": "Odvjetnik",
+    "imgAlt": "Hero slika"
+  },
+  "banner": {
+    "discription": "Poseban naglasak stavljamo na pravnu podršku poduzetnicima, trgovačkim društvima i obrtima u svakodnevnom poslovanju i rješavanju sporova."
+  },
+  "aboutMe": {
+    "eyebrow": "O NAMA",
+    "title": "Profesionalno i s povjerenjem",
+    "lead": "Odvjetnički ured djeluje samostalno od siječnja 2023. godine, nakon višegodišnjeg rada i stjecanja iskustva u odvjetničkom uredu Damira Batarela u Splitu (2018. – 2022.).",
+    "bullet1": "Diplomirao na Pravnom fakultetu u Splitu 2016.",
+    "bullet2": "Pravosudni ispit položen 2022.",
+    "bullet3": "Rad temeljim na odgovornosti, povjerljivosti i jasnoj komunikaciji",
+    "focusLabel": "Fokus",
+    "focus": "Fokus: stvarno i zemljisnoknjizhno pravo, obvezno pravo i sastavljanje/analiza ugovora te zastupanje u sudskim i izvansudskim postupcima.",
+    "expertise": "Strucnost",
+    "confidentiality": "Povjerljivost",
+    "dedication": "Posvecenost",
+    "cardName": "Ivan Pavić",
+    "cardRole": "Odvjetnik"
+  },
+  "services": {
+    "eyebrow": "USLUGE",
+    "title": "Pravna područja",
+    "desc": "Pružam pravne usluge fizičkim i pravnim osobama u sljedećim područjima:",
+    "property": {
+      "title": "Stvarno i zemljišnoknjižno pravo",
+      "desc": "Vlasništvo, suvlasništvo, uknjižbe i uređenje zemljišnoknjižnog stanja."
+    },
+    "contract": {
+      "title": "Obvezno pravo",
+      "desc": "Sastavljanje i analiza ugovora te sporovi iz ugovornih odnosa."
+    },
+    "inheritance": {
+      "title": "Nasljedno pravo",
+      "desc": "Savjetovanje i zastupanje u ostavinskim postupcima."
+    },
+    "admin": {
+      "title": "Upravno pravo",
+      "desc": "Zastupanje u postupcima i sporovima pred nadležnim tijelima."
+    },
+    "enforcement": {
+      "title": "Ovršno pravo",
+      "desc": "Priprema i vođenje ovrha te naplata potraživanja."
+    },
+    "labor": {
+      "title": "Radno pravo",
+      "desc": "Savjetovanje i zastupanje poslodavaca i radnika."
+    }
+  },
+  "contact": {
+    "eyebrow": "KONTAKT",
+    "title": "Zatražite konzultacije",
+    "desc": "Pošaljite kratak opis upita. Odgovaram unutar 48 sati radnim danom.",
+    "note": "Za prijem stranaka potreban je prethodni dogovor.",
+    "callHours": "Izvan radnog vremena telefonski smo dostupni isključivo za hitne slučajeve.",
+    "formTitle": "Pošaljite upit",
+    "formSubtitle": "Odgovaram u najkraćem mogućem roku.",
+    "emailLabel": "Email",
+    "phoneLabel": "Telefon",
+    "addressLabel": "Adresa",
+    "nameLabel": "Ime i prezime",
+    "messageLabel": "Kratki opis upita",
+    "namePlaceholder": "Vaše ime i prezime",
+    "emailPlaceholder": "vasa@email.com",
+    "messagePlaceholder": "Opišite svoju pravnu situaciju...",
+    "consent": "Pristajem na obradu osobnih podataka u svrhu odgovora na upit.",
+    "submit": "Pošaljite upit",
+    "micro": "Povjerljivo • Bez obveze u prvom kontaktu"
+  },
+  "footer": {
+    "workingHours": "Radno vrijeme",
+    "hours": "Ponedjeljak - petak, 09:00 - 17:00",
+    "byAppt": "Za prijem stranaka potreban je prethodni dogovor.",
+    "contact": "Kontakt",
+    "copyright": "Odvjetnički ured Ivan Pavić. Sva prava pridržana.",
+    "privacy": "Pravila privatnosti",
+    "subtitle": "Odvjetnički ured"
+  },
+  "privacyPolicy": {
+    "title": "Pravila privatnosti",
+    "updated": "Ažurirano: 13. veljače 2026.",
+    "sections": {
+      "controller": {
+        "title": "Voditelj obrade",
+        "body": "Ovom web stranicom upravlja Odvjetnički ured Ivan Pavić. Za pitanja ili zahtjeve vezane uz privatnost kontaktirajte nas na <email>ipavic933@gmail.com</email>."
+      },
+      "collectedData": {
+        "title": "Koje podatke prikupljamo",
+        "body": "Putem kontakt obrasca ili izravne komunikacije možemo prikupljati vaše ime i prezime, adresu e-pošte, broj telefona i informacije koje navedete u poruci."
+      },
+      "purposeAndBasis": {
+        "title": "Svrha i pravna osnova obrade",
+        "intro": "Osobne podatke obrađujemo kako bismo:",
+        "bullet1": "odgovorili na upite i pružili pravne informacije,",
+        "bullet2": "pripremili ili pružili pravne usluge kada je to primjenjivo,",
+        "bullet3": "ispunili zakonske i profesionalne obveze.",
+        "legalBasis": "Pravne osnove mogu uključivati privolu, poduzimanje radnji prije sklapanja ugovora, izvršavanje ugovora, legitimne interese i ispunjavanje zakonskih obveza."
+      },
+      "retention": {
+        "title": "Rok čuvanja podataka",
+        "body": "Podatke čuvamo samo onoliko dugo koliko je potrebno za svrhu za koju su prikupljeni te kada to zahtijevaju primjenjive zakonske ili profesionalne obveze čuvanja."
+      },
+      "sharing": {
+        "title": "Dijeljenje podataka",
+        "body": "Ne prodajemo osobne podatke. Podaci se mogu dijeliti samo s pouzdanim pružateljima usluga kada je to nužno za rad web stranice te s nadležnim tijelima kada to zahtijeva zakon."
+      },
+      "rights": {
+        "title": "Vaša prava",
+        "body1": "Možete zatražiti pristup, ispravak, brisanje, ograničenje obrade, prenosivost podataka ili uložiti prigovor na obradu.",
+        "body2": "Privolu možete povući u bilo kojem trenutku, bez utjecaja na zakonitost obrade koja se temeljila na privoli prije njezina povlačenja."
+      },
+      "security": {
+        "title": "Sigurnost",
+        "body": "Primjenjujemo razumne tehničke i organizacijske mjere zaštite osobnih podataka od neovlaštenog pristupa, otkrivanja, izmjene ili uništenja."
+      },
+      "externalLinks": {
+        "title": "Vanjske poveznice",
+        "body": "Ova web stranica može sadržavati poveznice na vanjske usluge (na primjer poveznice na kartu). Ne odgovaramo za pravila privatnosti web stranica trećih strana."
+      },
+      "contact": {
+        "title": "Kontakt",
+        "body": "Za sve zahtjeve vezane uz privatnost kontaktirajte nas na <email>ipavic933@gmail.com</email> ili telefonom na <phone>+385 95 529 7362</phone>."
+      }
+    }
+  },
+  "errorMessages": {
+    "required": "Ovo polje je obavezno",
+    "invalidEmail": "Molimo unesite važeću email adresu"
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "header": {
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "subtitle": "Law Office"
+  },
+  "notFound": {
+    "title": "The page You're looking for could not be found"
+  },
+  "hero": {
+    "eyebrow": "LAW OFFICE • SPLIT",
+    "title": "Reliable legal support for individuals and businesses",
+    "subtitle": "Expert advice and representation in property and contract law and other key legal areas.",
+    "badge1": "Discreet & professional",
+    "badge2": "Clear communication",
+    "badge3": "Response in 48h",
+    "cta": "Request a consultation",
+    "micro": "Confidential • No obligation on first contact",
+    "cardName": "Ivan Pavić",
+    "cardRole": "Attorney",
+    "imgAlt": "Hero image"
+  },
+  "banner": {
+    "discription": "We place special emphasis on legal support for entrepreneurs, companies and crafts in everyday business operations and dispute resolution."
+  },
+  "aboutMe": {
+    "eyebrow": "ABOUT",
+    "title": "Professional and trustworthy",
+    "lead": "The office has been operating independently since January 2023, following several years of experience at the Law Office of Damir Batarelo in Split (2018-2022).",
+    "bullet1": "Graduated from the Faculty of Law in Split 2016",
+    "bullet2": "Bar exam passed in 2022",
+    "bullet3": "My work is based on responsibility, confidentiality, and clear communication",
+    "focusLabel": "Focus",
+    "focus": "Focus: property and land registry law, contract law, drafting/analysis of contracts, and representation in court and out-of-court proceedings.",
+    "expertise": "Expertise",
+    "confidentiality": "Confidentiality",
+    "dedication": "Dedication",
+    "cardName": "Ivan Pavić",
+    "cardRole": "Attorney"
+  },
+  "services": {
+    "eyebrow": "SERVICES",
+    "title": "Practice areas",
+    "desc": "I provide legal services to individuals and legal entities in the following areas:",
+    "property": {
+      "title": "Property & land registry law",
+      "desc": "Ownership, co-ownership, registrations and land registry regulation."
+    },
+    "contract": {
+      "title": "Contract law",
+      "desc": "Drafting and analysis of contracts and contractual disputes."
+    },
+    "inheritance": {
+      "title": "Inheritance law",
+      "desc": "Counseling and representation in probate proceedings."
+    },
+    "admin": {
+      "title": "Administrative law",
+      "desc": "Representation in proceedings before competent authorities."
+    },
+    "enforcement": {
+      "title": "Enforcement law",
+      "desc": "Preparation and management of enforcement and debt collection."
+    },
+    "labor": {
+      "title": "Labor law",
+      "desc": "Counseling and representation of employers and employees."
+    }
+  },
+  "contact": {
+    "eyebrow": "CONTACT",
+    "title": "Request a consultation",
+    "desc": "Send a brief description of your inquiry. I respond within 48 business hours.",
+    "note": "Prior arrangement is required for client reception.",
+    "callHours": "Outside working hours, we are available by phone exclusively for urgent cases.",
+    "formTitle": "Send inquiry",
+    "formSubtitle": "I respond as soon as possible.",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "addressLabel": "Address",
+    "nameLabel": "Full name",
+    "messageLabel": "Brief description",
+    "namePlaceholder": "Your full name",
+    "emailPlaceholder": "your@email.com",
+    "messagePlaceholder": "Describe your legal situation...",
+    "consent": "I consent to the processing of personal data for the purpose of responding to my inquiry.",
+    "submit": "Send inquiry",
+    "micro": "Confidential • No obligation on first contact"
+  },
+  "footer": {
+    "workingHours": "Working hours",
+    "hours": "Monday - Friday, 09:00 - 17:00",
+    "byAppt": "Prior arrangement is required for client reception.",
+    "contact": "Contact",
+    "copyright": "Law Office Ivan Pavić. All rights reserved.",
+    "privacy": "Privacy policy",
+    "subtitle": "Law Office"
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "updated": "Last updated: February 13, 2026",
+    "sections": {
+      "controller": {
+        "title": "Data Controller",
+        "body": "This website is operated by Law Office Ivan Pavić. For privacy-related questions or requests, contact us at <email>ipavic933@gmail.com</email>."
+      },
+      "collectedData": {
+        "title": "What We Collect",
+        "body": "Through the contact form or direct communication, we may collect your full name, email address, phone number, and the information you provide in your message."
+      },
+      "purposeAndBasis": {
+        "title": "Purpose and Legal Basis",
+        "intro": "We process personal data to:",
+        "bullet1": "respond to inquiries and provide legal information,",
+        "bullet2": "prepare or perform legal services where applicable,",
+        "bullet3": "meet legal and professional obligations.",
+        "legalBasis": "Legal bases may include consent, pre-contractual measures, performance of a contract, legitimate interests, and compliance with legal obligations."
+      },
+      "retention": {
+        "title": "Data Retention",
+        "body": "We retain data only as long as necessary for the purpose for which it was collected, and where required by applicable legal or professional retention obligations."
+      },
+      "sharing": {
+        "title": "Sharing of Data",
+        "body": "We do not sell personal data. Data may be shared only with trusted service providers when necessary for website operation, and with competent authorities where legally required."
+      },
+      "rights": {
+        "title": "Your Rights",
+        "body1": "You may request access, correction, deletion, restriction, data portability, or object to processing.",
+        "body2": "You may also withdraw consent at any time, without affecting the lawfulness of processing based on consent before its withdrawal."
+      },
+      "security": {
+        "title": "Security",
+        "body": "We apply reasonable technical and organizational safeguards to protect personal data against unauthorized access, disclosure, alteration, or destruction."
+      },
+      "externalLinks": {
+        "title": "External Links",
+        "body": "This website may contain links to external services (for example map links). We are not responsible for the privacy practices of third-party websites."
+      },
+      "contact": {
+        "title": "Contact",
+        "body": "For any privacy request, contact us at <email>ipavic933@gmail.com</email> or by phone at <phone>+385 95 529 7362</phone>."
+      }
+    }
+    },
+  "errorMessages": {
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email address"
+  }
+}
