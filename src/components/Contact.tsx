@@ -2,40 +2,19 @@
 
 import { useCallback, useState } from "react";
 import type { SubmitEvent } from "react";
-import { MapPin, Mail, Phone } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import {useTranslations} from "next-intl";
 import { Spinner } from "./ui/spinner";
 import { InputField } from "./InputField";
 import { toast } from "sonner";
+import { contactItems } from "@/data/contactItems";
 
 export function Contact() {
   const [agreed, setAgreed] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const t = useTranslations("contact");
   const gm = useTranslations("generalMessages");
-
-  const contactItems = [
-    {
-      icon: Mail,
-      labelKey: t("emailLabel"),
-      value: "ipavic933@gmail.com",
-      href: "mailto:ipavic933@gmail.com",
-    },
-    {
-      icon: Phone,
-      labelKey: t("phoneLabel"),
-      value: "+385 95 529 7362",
-      href: "tel:+385955297362",
-    },
-    {
-      icon: MapPin,
-      labelKey: t("addressLabel"),
-      value: "Svaciceva 4, 21000, Split",
-      href: "https://maps.app.goo.gl/hzKKXtUko1y1MPVo7",
-    },
-  ];
 
   const handleSubmit = useCallback(async (e: SubmitEvent<HTMLFormElement>) => {
     setIsLoading(true);
@@ -101,7 +80,7 @@ export function Contact() {
                       <item.icon className="h-4 w-4" strokeWidth={1.5} />
                     </div>
                     <div>
-                      <p className="text-xs text-ink-600">{item.labelKey}</p>
+                      <p className="text-xs text-ink-600">{t(item.labelKey)}</p>
                       <p className="text-sm font-medium text-ink-900">{item.value}</p>
                     </div>
                   </div>

@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { Mail, Phone, MapPin, Clock3 } from "lucide-react";
+import { Clock3 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { contactItems } from "@/data/contactItems";
 
 export function Footer() {
   const t = useTranslations("footer");
@@ -52,29 +53,21 @@ export function Footer() {
           <div className="flex flex-col gap-3">
             <h4 className="text-sm font-semibold text-white">{t("contact")}</h4>
 
-            <a
-              href="mailto:ipavic933@gmail.com"
-              className="inline-flex w-fit items-center gap-2 text-xs text-white/75 underline-offset-4 transition hover:text-white hover:underline"
-            >
-              <Mail className="h-3.5 w-3.5" strokeWidth={1.75} />
-              ipavic933@gmail.com
-            </a>
-            <a
-              href="tel:+385955297362"
-              className="inline-flex w-fit items-center gap-2 text-xs text-white/75 underline-offset-4 transition hover:text-white hover:underline"
-            >
-              <Phone className="h-3.5 w-3.5" strokeWidth={1.75} />
-              +385 95 529 7362
-            </a>
-            <a
-              href="https://maps.app.goo.gl/hzKKXtUko1y1MPVo7"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex w-fit items-center gap-2 text-xs text-white/75 underline-offset-4 transition hover:text-white hover:underline"
-            >
-              <MapPin className="h-3.5 w-3.5" strokeWidth={1.75} />
-              Svaciceva 4, 21000, Split
-            </a>
+            {contactItems.map((item) => {
+              const isExternal = Boolean(item.href?.startsWith("http"))
+              return (
+                <a
+                  key={item.labelKey}
+                  href={item.href}
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noreferrer" : undefined}
+                  className="inline-flex w-fit items-center gap-2 text-xs text-white/75 underline-offset-4 transition hover:text-white hover:underline"
+                >
+                  <item.icon className="h-3.5 w-3.5" strokeWidth={1.75} />
+                  {item.value}
+                </a>
+              );
+            })}
           </div>
         </div>
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 sm:flex-row">
