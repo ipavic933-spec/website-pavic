@@ -24,11 +24,10 @@ export const sendEmail = async ({name, email, message}: SendEmailProps) => {
 
   const emailHtml = await render(template);
 
-  const info = await transporter.sendMail({
+  await transporter.sendMail({
     from: `"Contact form" <${process.env.SMTP_USER}>`,
     to: process.env.EMAIL_TO,
     subject: "Message from a client",
     html: emailHtml,
   });
-  console.log('INFO', info);
 }
