@@ -8,11 +8,13 @@ import { Checkbox } from "@/components/ui/checkbox";
 import {useTranslations} from "next-intl";
 import { Spinner } from "./ui/spinner";
 import { InputField } from "./InputField";
+import { toast } from "sonner";
 
 export function Contact() {
   const [agreed, setAgreed] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const t = useTranslations("contact");
+  const gm = useTranslations("generalMessages");
 
   const contactItems = [
     {
@@ -35,18 +37,38 @@ export function Contact() {
     },
   ];
 
-  const handleSubmit = useCallback((e: SubmitEvent<HTMLFormElement>) => {
+  const handleSubmit = useCallback(async (e: SubmitEvent<HTMLFormElement>) => {
     setIsLoading(true);
     e.preventDefault();
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const name = String(formData.get('name') ?? '');
-    const email = String(formData.get('email') ?? '');
-    const message = String(formData.get('message') ?? '');
-    console.log('Name', name, 'email', email, 'message', message);
-    form.reset();
-    setIsLoading(false);
-  }, []);
+    const payload = {
+      name: String(formData.get('name')),
+      email: String(formData.get('email')),
+      message: String(formData.get('message')),
+    }
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+      if (res.status !== 200) {
+        const data = await res.json();
+        throw new Error(JSON.stringify(data.message));
+      }
+      toast.success(gm('succesTitle'), { description: gm('succesDescription') });
+      form.reset();
+      setAgreed(false);
+    } catch (error) {
+      console.error('ERROR', error);
+      toast.error(gm('errorTitle'), { description: gm('errorDescription') });
+    } finally {
+      setIsLoading(false);
+    }
+  }, [gm]);
 
   return (
     <section id="contact" className="scroll-mt-20 bg-white py-16 md:py-20">
@@ -171,7 +193,7 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={!agreed}
-                className="mt-1 w-full flex justify-center rounded-xl bg-brand-800 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-900/15 ring-1 ring-brand-900/10 transition hover:bg-brand-900 disabled:cursor-not-allowed disabled:opacity-50"
+                className="min-h-12 mt-1 w-full flex justify-center rounded-xl bg-brand-800 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-900/15 ring-1 ring-brand-900/10 transition hover:bg-brand-900 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 { isLoading ? <Spinner /> : t("submit")}
               </button>
