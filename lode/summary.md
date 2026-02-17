@@ -65,6 +65,9 @@ Invariants
 - Translations come from `next-intl` message files in `messages/` and are resolved with `useTranslations("Site")`.
 - Header navigation targets in-page anchors (`#about`, `#services`, `#contact`) with a mobile toggle menu.
 - The main visual system is the `brand-*` and `ink-*` Tailwind palette defined in `tailwind.config.ts`.
+- Primary CTA interactions in `src/components/hero.tsx`, `src/components/header.tsx`, and `src/components/contact.tsx` use the app-level `Button` from `src/components/button.tsx`, which wraps the shadcn primitive from `src/components/ui/button.tsx` (including `asChild` anchor links).
+- The active app UI primitive set under `src/components/ui/` is intentionally minimal and currently includes `button`, `input`, `label`, `textarea`, and `checkbox`.
+- Package management is npm-first with a committed `package-lock.json`; `next.config.mjs` sets `turbopack.root` to `process.cwd()` to keep root detection aligned to this repository.
 
 Rationale
 - Locale-aware routing with `next-intl` keeps translation behavior deterministic and aligns with multilingual URL expectations.

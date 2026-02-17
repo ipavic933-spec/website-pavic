@@ -4,6 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { LanguageSwitch } from "@/components/language-switch"
+import { Button } from "@/components/button"
 import {useTranslations} from "next-intl"
 
 export function Header() {
@@ -45,24 +46,26 @@ export function Header() {
             >
               {t("nav.services")}
             </a>
-            <a
-              href="#contact"
-              className="rounded-lg bg-brand-900 px-4 py-2 text-sm font-semibold text-brand-50 ring-1 ring-brand-200 transition-colors hover:bg-brand-800"
+            <Button
+              asChild
+              className="h-auto rounded-lg bg-brand-900 px-4 py-2 text-sm font-semibold text-brand-50 ring-1 ring-brand-200 transition-colors hover:bg-brand-800"
             >
-              {t("nav.contact")}
-            </a>
+              <a href="#contact">{t("nav.contact")}</a>
+            </Button>
             <LanguageSwitch />
           </nav>
 
           <div className="flex items-center gap-3 md:hidden">
             <LanguageSwitch />
-            <button
-              className="text-ink-900"
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-auto w-auto p-0 text-ink-900 hover:bg-transparent"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label={mobileOpen ? t("nav.closeMenu") : t("nav.openMenu")}
             >
               {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -90,13 +93,14 @@ export function Header() {
           >
             {t("nav.services")}
           </a>
-          <a
-            href="#contact"
-            className="w-fit rounded-lg bg-brand-900 px-4 py-2 text-sm font-semibold text-brand-50"
-            onClick={() => setMobileOpen(false)}
+          <Button
+            asChild
+            className="h-auto w-fit rounded-lg bg-brand-900 px-4 py-2 text-sm font-semibold text-brand-50"
           >
-            {t("nav.contact")}
-          </a>
+            <a href="#contact" onClick={() => setMobileOpen(false)}>
+              {t("nav.contact")}
+            </a>
+          </Button>
         </nav>
       </div>
     </header>

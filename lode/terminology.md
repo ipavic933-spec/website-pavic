@@ -13,6 +13,8 @@ Terms
 - Request Config - Message loader in `src/i18n/request.ts` that resolves locale and imports `messages/<locale>.json`.
 - Language Switch - `src/components/language-switch.tsx` control that uses localized navigation links with `locale` override.
 - Brand/Ink Palette - Tailwind color scale in `tailwind.config.ts` used across buttons, backgrounds, and text.
+- App Button - Shared app-level button in `src/components/button.tsx` that wraps shadcn `src/components/ui/button.tsx` and is the preferred import for section/components code.
+- NPM Lockfile - Dependency snapshot in `package-lock.json` used as the single package-manager lockfile for this repo.
 
 Related
 - [Summary](summary.md)

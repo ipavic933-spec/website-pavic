@@ -2,6 +2,9 @@ import createNextIntlPlugin from "next-intl/plugin"
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  turbopack: {
+    root: process.cwd(),
+  },
   typescript: {
     ignoreBuildErrors: true,
   },

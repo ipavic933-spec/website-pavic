@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
+import { Button } from "@/components/button"
 import {useTranslations} from "next-intl"
 
 export function Contact() {
@@ -161,13 +162,13 @@ export function Contact() {
                 </Label>
               </div>
 
-              <button
+              <Button
                 type="submit"
                 disabled={!agreed}
-                className="mt-1 w-full rounded-xl bg-brand-800 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-900/15 ring-1 ring-brand-900/10 transition hover:bg-brand-900 disabled:cursor-not-allowed disabled:opacity-50"
+                className="mt-1 h-auto w-full rounded-xl bg-brand-800 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-900/15 ring-1 ring-brand-900/10 transition hover:bg-brand-900 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {t("form.submit")}
-              </button>
+              </Button>
 
               <p className="text-center text-xs text-ink-600/70">{t("form.micro")}</p>
             </div>

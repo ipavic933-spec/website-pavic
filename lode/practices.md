@@ -37,6 +37,11 @@ Practices
 - Mobile dropdown links in `src/components/header.tsx` are right-aligned (`items-end`, `text-right`) so the link stack and CTA anchor to the right edge.
 - Mobile dropdown text columns align to the `contact` CTA label by adding `mr-4` to plain text links (`about`, `services`) to offset CTA horizontal padding.
 - Header contact CTA in `src/components/header.tsx` uses inverted brand contrast (`bg-brand-900` + `text-brand-50`) on both desktop and mobile states.
+- Hero, header CTA, and contact form submit actions in `src/components/hero.tsx`, `src/components/header.tsx`, and `src/components/contact.tsx` import `Button` from `src/components/button.tsx` (app-level wrapper over `src/components/ui/button.tsx`) with tailored `className` overrides to preserve the brand look.
+- Link-like CTAs that navigate to in-page anchors (for example `#contact`) use `Button` with `asChild` wrapping an `<a>` so behavior stays semantic while sharing button styles.
+- Keep `src/components/ui/` lean: retain only primitives used by app sections/forms and remove scaffolded shadcn files that are not imported by the current route tree.
+- Use npm as the package manager for this repository and keep only `package-lock.json` as the committed lockfile.
+- Keep `next.config.mjs` pinned to repository root detection by setting `turbopack.root` to `process.cwd()`.
 - Language switch control in `src/components/language-switch.tsx` uses `border-brand-900`; the active locale pill uses `bg-[#d3dce0]` to match the header background, while inactive locale pills use `bg-white`.
 - Brand logo asset is stored at `public/images/logo.png` and reused in both `src/components/header.tsx` and `src/components/footer.tsx` via `next/image`.
 - Header and footer brand lockups (logo + adjacent name text) are clickable anchors to `#top`; `app/[locale]/page.tsx` provides the `id="top"` target.

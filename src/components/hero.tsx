@@ -1,6 +1,7 @@
 "use client"
 
 import {useTranslations} from "next-intl"
+import { Button } from "@/components/button"
 
 export function Hero() {
   const t = useTranslations("Site")
@@ -39,12 +40,12 @@ export function Hero() {
 
           {/* CTA */}
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="#contact"
-              className="rounded-xl bg-white px-7 py-3.5 text-sm font-semibold text-brand-900 shadow-sm ring-1 ring-white/15 transition hover:bg-brand-50"
+            <Button
+              asChild
+              className="h-auto rounded-xl bg-white px-7 py-3.5 text-sm font-semibold text-brand-900 shadow-sm ring-1 ring-white/15 transition hover:bg-brand-50"
             >
-              {t("hero.cta")}
-            </a>
+              <a href="#contact">{t("hero.cta")}</a>
+            </Button>
           </div>
 
           <p className="mt-4 text-xs text-white/60">{t("hero.micro")}</p>

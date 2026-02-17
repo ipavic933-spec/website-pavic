@@ -30,7 +30,7 @@ export default function Home() {
 
 Plan
 1. Verify imported app matches source visuals and section order exactly.
-2. Keep dependency/tooling parity (`pnpm-lock.yaml`, Next/Tailwind config alignment).
+2. Keep dependency/tooling parity (`package-lock.json`, Next/Tailwind config alignment).
 3. Run build and runtime smoke checks for independent operation in this repo.
 4. Address only critical regressions (broken imports, missing assets, config mismatches).
 5. Defer design/content changes until explicitly requested.
