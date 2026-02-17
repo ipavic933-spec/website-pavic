@@ -58,7 +58,7 @@ export function InputField({
             required={isRequired}
             onInvalid={handleError}
             onInput={resetError}
-            className="resize-none rounded-xl border-brand-200 bg-brand-50/60 focus-visible:ring-brand-500"
+            className="resize-none field-sizing-fixed rounded-xl border-brand-200 bg-brand-50/60 focus-visible:ring-brand-500"
           />
           <div className="h-4 text-sm text-red-500">
             {error}
