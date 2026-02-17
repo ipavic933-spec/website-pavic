@@ -146,8 +146,12 @@
       }
     }
     },
-  "errorMessages": {
+  "generalMessages": {
     "required": "This field is required",
-    "invalidEmail": "Please enter a valid email address"
+    "invalidEmail": "Please enter a valid email address",
+    "successTitle": "Success",
+    "successDescription": "Your request was sent successfully.",
+    "errorTitle": "An error occurred",
+    "errorDescription": "There was an error submitting Your form, please try again later."
   }
 }

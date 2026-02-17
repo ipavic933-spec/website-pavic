@@ -40,8 +40,6 @@ export async function POST(request: NextRequest) {
       },
     );
   } catch (error) {
-    console.log('ERROR', error);
-    console.log('ERROR', error.code);
       return new Response(
       JSON.stringify({
         message: error || 'Unknown error',

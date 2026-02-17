@@ -24,7 +24,7 @@ export function InputField({
   type,
 }: FormInputProps) {
   const [error, setError] = useState('');
-  const t = useTranslations("errorMessages");
+  const t = useTranslations("generalMessages");
 
   const handleError = useCallback((e: InvalidEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const field = e.currentTarget;
@@ -60,7 +60,7 @@ export function InputField({
             onInput={resetError}
             className="resize-none rounded-xl border-brand-200 bg-brand-50/60 focus-visible:ring-brand-500"
           />
-          <div className="h-4 text-sm text-red-500">
+          <div className="h-4 text-sm text-red-500 p-1">
             {error}
           </div>
         </div>
@@ -84,7 +84,7 @@ export function InputField({
           required={isRequired}
           type={type}
         />
-        <div className="h-4 text-sm text-red-500">
+        <div className="h-4 text-sm text-red-500 py-1">
           {error}
         </div>
     </div>
