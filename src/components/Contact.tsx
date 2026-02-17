@@ -55,15 +55,16 @@ export function Contact() {
         },
         body: JSON.stringify(payload),
       });
-      const data = await res.json();
       if (res.status !== 200) {
-        throw new Error(data.message);
+        const data = await res.json();
+        throw new Error(JSON.stringify(data.message));
       }
-      toast.success(gm('succesTitle'), {description: gm('succesDescription')});
+      toast.success(gm('succesTitle'), { description: gm('succesDescription') });
       form.reset();
       setAgreed(false);
-    } catch {
-      toast.error(gm('errorTitle'), {description: gm('errorDescription')});
+    } catch (error) {
+      console.error('ERROR', error);
+      toast.error(gm('errorTitle'), { description: gm('errorDescription') });
     } finally {
       setIsLoading(false);
     }

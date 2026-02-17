@@ -40,13 +40,13 @@ export async function POST(request: NextRequest) {
       },
     );
   } catch (error) {
-      return new Response(
+    return new Response(
       JSON.stringify({
         message: error || 'Unknown error',
       }),
       {
         status: 500,
       },
-    ) 
+    );
   }
 }
