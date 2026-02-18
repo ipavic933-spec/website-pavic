@@ -66,7 +66,7 @@ export function Header() {
             </a>
             <a
               href="#contact"
-              className={`rounded-lg px-4 py-2 text-sm font-semibold text-brand-900 transition-colors ${activeSection === "contact" ? "underline underline-offset-4" : ""} ring-1 ring-brand-200 bg-white hover:bg-brand-900 hover:text-brand-50`}
+              className={`rounded-lg px-4 py-2 text-sm font-semibold text-brand-900 transition-colors ring-1 ring-brand-200 bg-white hover:bg-brand-900 hover:text-brand-50`}
             >
               {t("header.contact")}
             </a>
@@ -100,27 +100,33 @@ export function Header() {
         }`}
         aria-hidden={!mobileOpen}
       >
-        <nav className="flex flex-col items-start gap-4 px-6 py-6 text-left">
+        <nav className="flex flex-col items-center gap-4 px-6 py-6 text-left">
           <a
             href="#about"
-            className="w-full mr-4 text-sm font-medium text-white/55 transition-colors"
+            className="w-full text-sm font-medium text-white/55 transition-colors"
             onClick={() => setMobileOpen(false)}
           >
+            <div className="m-auto w-fit">
             {t("header.about")}
+            </div>
           </a>
           <a
             href="#services"
-            className="w-full mr-4 text-sm font-medium text-white/55 transition-colors"
+            className="w-full text-sm font-medium text-white/55 transition-colors"
             onClick={() => setMobileOpen(false)}
           >
+            <div className="m-auto w-fit">
             {t("header.services")}
+            </div>
           </a>
           <a
             href="#contact"
-            className="w-fit rounded-lg bg-white text-brand-900 px-4 py-2 text-sm font-semibold"
+            className="w-full text-brand-900 text-sm font-semibold"
             onClick={() => setMobileOpen(false)}
           >
+            <div className="m-auto w-fit rounded-lg bg-white px-4 py-2">
             {t("header.contact")}
+            </div>
           </a>
         </nav>
       </div>

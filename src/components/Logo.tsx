@@ -21,7 +21,7 @@ export function Logo({ hideText = false }: LogoProps) {
         height={42}
         className="h-10.5 w-auto"
       />
-      <div className={`flex flex-col ${hideText && "hidden sm:flex"}`}>
+      <div className={`flex flex-col ${hideText && "hidden xs:flex"}`}>
         <span className="text-[13px] uppercase tracking-[0.15em] text-white/70">
           {t("logo.subtitle")}
         </span>
