@@ -4,7 +4,9 @@
     "services": "Services",
     "contact": "Contact",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu",
+    "closeMenu": "Close menu"
+  },
+  "logo": {
     "subtitle": "Law Office",
     "name": "Ivan Pavić"
   },

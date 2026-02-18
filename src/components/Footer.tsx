@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { Clock3 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { contactItems } from "@/data/contactItems";
+import { Logo } from "./Logo";
 
 export function Footer() {
   const t = useTranslations();
@@ -16,27 +16,7 @@ export function Footer() {
       <div className="relative mx-auto max-w-6xl px-6">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           <div className="flex flex-col gap-4">
-            <a
-              href="#top"
-              className="flex items-center gap-3"
-              aria-label="Back to top"
-            >
-              <Image
-                src="/logo.png"
-                alt="IP logo"
-                width={47}
-                height={36}
-                className="h-9 w-auto"
-              />
-              <div className="flex flex-col">
-                <span className="text-[13px] uppercase tracking-[0.15em] text-white/70">
-                  {t("footer.subtitle")}
-                </span>
-                <span className="text-[23px] font-semibold leading-tight tracking-tight text-white">
-                  {t('footer.name')}
-                </span>
-              </div>
-            </a>
+            <Logo />
           </div>
           <div className="flex flex-col gap-3">
             <h4 className="text-sm font-semibold text-white">

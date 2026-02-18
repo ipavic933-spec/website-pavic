@@ -14,8 +14,8 @@ export function LanguageSwitch() {
         locale="hr"
         className={`px-2.5 py-1.5 font-medium transition-colors ${
           locale === "hr"
-            ? "bg-surface text-ink-900"
-            : "bg-white text-ink-600 hover:text-ink-900"
+            ? "bg-white text-ink-900"
+            : "bg-brand-800 text-white/55 hover:text-ink-900"
         }`}
         aria-label="Hrvatski"
       >
@@ -26,8 +26,8 @@ export function LanguageSwitch() {
         locale="en"
         className={`px-2.5 py-1.5 font-medium transition-colors ${
           locale === "en"
-            ? "bg-surface text-ink-900"
-            : "bg-white text-ink-600 hover:text-ink-900"
+            ? "bg-white text-ink-900"
+            : "bg-brand-800 text-white/55 hover:text-ink-900"
         }`}
         aria-label="English"
       >
