@@ -49,7 +49,10 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="border-b border-white/10 bg-[#29546d] text-white" style={{ backgroundColor: "#29546d" }}>
+      <div
+        className="border-b-0 bg-[#29546d] text-white md:border-b md:border-white/10"
+        style={{ backgroundColor: "#29546d" }}
+      >
 
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a href="#top" className="flex items-center gap-3" aria-label="Back to top">
@@ -114,14 +117,17 @@ export function Header() {
       </div>
 
       <div
-        className={`origin-top overflow-hidden transition-[max-height,opacity,transform] duration-300 ease-out md:hidden ${
+        className={`-mt-px overflow-hidden transition-[max-height] duration-300 ease-out md:hidden ${
           mobileOpen
-            ? "pointer-events-auto max-h-80 scale-y-100 opacity-100"
-            : "pointer-events-none max-h-0 scale-y-95 opacity-0"
+            ? "pointer-events-auto max-h-80"
+            : "pointer-events-none max-h-0"
         }`}
         aria-hidden={!mobileOpen}
       >
-        <nav className="border-t border-white/10 bg-[#29546d] px-6 py-6 text-right text-white" style={{ backgroundColor: "#29546d" }}>
+        <nav
+          className="bg-[#29546d] px-6 py-6 text-right text-white"
+          style={{ backgroundColor: "#29546d" }}
+        >
           <div className="flex flex-col items-end gap-4">
             <a
               href="#about"

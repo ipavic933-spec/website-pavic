@@ -32,9 +32,10 @@ Practices
 - Prefer Tailwind utility classes plus tokenized colors (`brand-*`, `ink-*`) from `tailwind.config.ts`.
 - Keep section content in focused components (`src/components/hero.tsx`, `src/components/about.tsx`, `src/components/services.tsx`, `src/components/contact.tsx`).
 - Use `useTranslations("Site")` in UI components and store translation keys in `messages/hr.json` and `messages/en.json` loaded through `src/i18n/request.ts`.
-- Keep header fixed with desktop links on `md+`; on smaller breakpoints the dropdown stays mounted and animates from the header edge using `origin-top` with `max-height` + `scale-y` expansion/collapse, with `pointer-events-none` when closed.
+- Keep header fixed with desktop links on `md+`; on smaller breakpoints the dropdown stays mounted and animates from the header edge using `max-height` expansion/collapse only (no scale transform or opacity fade), with `pointer-events-none` when closed.
 - Header section links (`#about`, `#services`) in `src/components/header.tsx` use scroll-aware active state and underline the currently active section on both desktop and mobile; the contact CTA button does not use this underline state.
 - Mobile dropdown panel in `src/components/header.tsx` uses the same solid `#29546d` surface as the header bar to keep one continuous surface.
+- On mobile, the divider between the top header bar and dropdown is permanently removed and the dropdown container is slightly overlapped (`-mt-px`) so the menu and bar read as one continuous `#29546d` block with no seam during open/close.
 - Mobile dropdown links in `src/components/header.tsx` are right-aligned (`items-end`, `text-right`) so the link stack and CTA anchor to the right edge.
 - Mobile dropdown text columns align to the `contact` CTA label by adding `mr-4` to plain text links (`about`, `services`) to offset CTA horizontal padding.
 - Header contact CTA in `src/components/header.tsx` uses an inverted light button (`bg-white` + `text-brand-900`) on both desktop and mobile states to stay readable on the solid `#29546d` header.
