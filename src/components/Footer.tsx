@@ -7,7 +7,7 @@ import { Link } from "@/i18n/navigation";
 import { contactItems } from "@/data/contactItems";
 
 export function Footer() {
-  const t = useTranslations("footer");
+  const t = useTranslations();
 
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-linear-to-b from-brand-900 to-brand-800 py-12 text-white">
@@ -30,31 +30,33 @@ export function Footer() {
               />
               <div className="flex flex-col">
                 <span className="text-[13px] uppercase tracking-[0.15em] text-white/70">
-                  {t("subtitle")}
+                  {t("footer.subtitle")}
                 </span>
                 <span className="text-[23px] font-semibold leading-tight tracking-tight text-white">
-                  Ivan Pavić
+                  {t('footer.name')}
                 </span>
               </div>
             </a>
           </div>
           <div className="flex flex-col gap-3">
             <h4 className="text-sm font-semibold text-white">
-              {t("workingHours")}
+              {t("footer.workingHours")}
             </h4>
             <p className="inline-flex items-center gap-2 text-xs text-white/75">
               <Clock3 className="h-3.5 w-3.5" strokeWidth={1.75} />
-              {t("hours")}
+              {t("footer.hours")}
             </p>
             <span className="inline-flex w-fit items-center rounded-full bg-white/10 px-3 py-1 text-[11px] font-medium text-white/75 ring-1 ring-white/10">
-              {t("byAppt")}
+              {t("footer.byAppt")}
             </span>
           </div>
           <div className="flex flex-col gap-3">
-            <h4 className="text-sm font-semibold text-white">{t("contact")}</h4>
+            <h4 className="text-sm font-semibold text-white">
+              {t("footer.contact")}
+            </h4>
 
             {contactItems.map((item) => {
-              const isExternal = Boolean(item.href?.startsWith("http"))
+              const isExternal = Boolean(item.href?.startsWith("http"));
               return (
                 <a
                   key={item.labelKey}
@@ -72,13 +74,13 @@ export function Footer() {
         </div>
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 sm:flex-row">
           <p className="text-xs text-white/55">
-            &copy; {new Date().getFullYear()} {t("copyright")}
+            &copy; {new Date().getFullYear()} {t("footer.copyright")}
           </p>
           <Link
             href="/privacy-policy"
             className="text-xs text-white/55 underline underline-offset-4 transition hover:text-white/80"
           >
-            {t("privacy")}
+            {t("footer.privacy")}
           </Link>
         </div>
       </div>

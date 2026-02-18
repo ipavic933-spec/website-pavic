@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const t = useTranslations("header");
+  const t = useTranslations();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
@@ -29,10 +29,10 @@ export function Header() {
             />
             <div className="hidden flex-col sm:flex">
               <span className="text-[13px] uppercase tracking-[0.15em] text-ink-600">
-                {t("subtitle")}
+                {t("header.subtitle")}
               </span>
               <span className="text-[21px] font-semibold leading-tight tracking-tight text-ink-900">
-                Ivan Pavić
+                {t("header.name")}
               </span>
             </div>
           </Link>
@@ -42,19 +42,19 @@ export function Header() {
               href="#about"
               className="rounded-lg px-3 py-1.5 text-sm font-medium text-ink-600 transition-colors hover:bg-brand-50 hover:text-brand-900 hover:ring-1 hover:ring-brand-200"
             >
-              {t("about")}
+              {t("header.about")}
             </a>
             <a
               href="#services"
               className="rounded-lg px-3 py-1.5 text-sm font-medium text-ink-600 transition-colors hover:bg-brand-50 hover:text-brand-900 hover:ring-1 hover:ring-brand-200"
             >
-              {t("services")}
+              {t("header.services")}
             </a>
             <a
               href="#contact"
               className="rounded-lg bg-brand-900 px-4 py-2 text-sm font-semibold text-brand-50 ring-1 ring-brand-200 transition-colors hover:bg-brand-800"
             >
-              {t("contact")}
+              {t("header.contact")}
             </a>
             <LanguageSwitch />
           </nav>
@@ -64,7 +64,9 @@ export function Header() {
             <button
               className="text-ink-900"
               onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label={mobileOpen ? t("closeMenu") : t("openMenu")}
+              aria-label={
+                mobileOpen ? t("header.closeMenu") : t("header.openMenu")
+              }
             >
               {mobileOpen ? (
                 <X className="h-6 w-6" />
@@ -90,21 +92,21 @@ export function Header() {
             className="w-full mr-4 text-sm font-medium text-ink-600 transition-colors hover:text-ink-900"
             onClick={() => setMobileOpen(false)}
           >
-            {t("about")}
+            {t("header.about")}
           </a>
           <a
             href="#services"
             className="w-full mr-4 text-sm font-medium text-ink-600 transition-colors hover:text-ink-900"
             onClick={() => setMobileOpen(false)}
           >
-            {t("services")}
+            {t("header.services")}
           </a>
           <a
             href="#contact"
             className="w-fit rounded-lg bg-brand-900 px-4 py-2 text-sm font-semibold text-brand-50"
             onClick={() => setMobileOpen(false)}
           >
-            {t("contact")}
+            {t("header.contact")}
           </a>
         </nav>
       </div>
