@@ -44,17 +44,19 @@ export function About() {
   return (
     <section id="about" className="scroll-mt-20 bg-white py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-6">
-        {/* Eyebrow + title */}
-        <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.25em] text-brand-700">
-          {t("about.eyebrow")}
-        </span>
-        <h2 className="mb-12 max-w-md font-serif text-3xl leading-[1.12] tracking-[0.01em] text-ink-900 md:text-4xl">
-          {t("about.title")}
-        </h2>
-
         <div className="grid gap-14 lg:grid-cols-2 lg:items-start">
-          {/* Left column */}
-          <div className="flex flex-col gap-7">
+          {/* Text column */}
+          <div className="order-1 flex flex-col gap-7 lg:order-2">
+            {/* Eyebrow + title */}
+            <div>
+              <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.25em] text-brand-700">
+                {t("about.eyebrow")}
+              </span>
+              <h2 className="max-w-md font-serif text-3xl leading-[1.12] tracking-[0.01em] text-ink-900 md:text-4xl">
+                {t("about.title")}
+              </h2>
+            </div>
+
             <p className="max-w-lg text-base leading-relaxed text-ink-600">
               {t("about.lead")}
             </p>
@@ -98,8 +100,8 @@ export function About() {
             </div>
           </div>
 
-          {/* Right column: portrait placeholder */}
-          <div className="flex items-start justify-center lg:-mt-24 lg:justify-end">
+          {/* Photo column */}
+          <div className="order-2 flex items-start justify-center lg:order-1 lg:justify-start">
             <div className="relative aspect-[3/4] w-full max-w-sm overflow-hidden rounded-3xl border border-brand-200 bg-gradient-to-br from-brand-50 to-white shadow-sm ring-1 ring-brand-200/50">
               {/* radial gradient overlays */}
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(46,93,122,0.06),transparent_70%)]" />
@@ -134,14 +136,9 @@ export function About() {
                 {t("about.photoBottom")}
               </div>
 
-              <div className="absolute bottom-14 right-4 flex items-center gap-3 rounded-2xl border border-brand-200/60 bg-white/75 px-4 py-3 backdrop-blur-md">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-900 text-xs font-bold text-white">
-                  IP
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-ink-900">{t("hero.cardName")}</p>
-                  <p className="text-xs text-ink-600">{t("hero.cardRole")}</p>
-                </div>
+              <div className="absolute bottom-14 right-4 rounded-2xl border border-brand-200/60 bg-white/75 px-4 py-3 backdrop-blur-md">
+                <p className="text-sm font-semibold text-ink-900">{t("hero.cardName")}</p>
+                <p className="text-xs text-ink-600">{t("hero.cardRole")}</p>
               </div>
             </div>
           </div>

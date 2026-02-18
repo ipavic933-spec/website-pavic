@@ -8,14 +8,14 @@ export function LanguageSwitch() {
   const pathname = usePathname()
 
   return (
-    <div className="flex items-center overflow-hidden rounded-lg border border-brand-900 text-xs">
+    <div className="flex items-center overflow-hidden rounded-lg border border-white/70 text-xs">
       <Link
         href={pathname}
         locale="hr"
         className={`px-2.5 py-1.5 font-medium transition-colors ${
           locale === "hr"
-            ? "bg-[#d3dce0] text-ink-900"
-            : "bg-white text-ink-600 hover:text-ink-900"
+            ? "bg-gradient-to-b from-brand-900 to-brand-800 text-white"
+            : "bg-white text-brand-900 hover:bg-white/95"
         }`}
         aria-label="Hrvatski"
       >
@@ -26,8 +26,8 @@ export function LanguageSwitch() {
         locale="en"
         className={`px-2.5 py-1.5 font-medium transition-colors ${
           locale === "en"
-            ? "bg-[#d3dce0] text-ink-900"
-            : "bg-white text-ink-600 hover:text-ink-900"
+            ? "bg-gradient-to-b from-brand-900 to-brand-800 text-white"
+            : "bg-white text-brand-900 hover:bg-white/95"
         }`}
         aria-label="English"
       >
