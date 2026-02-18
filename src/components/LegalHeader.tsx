@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import { LanguageSwitch } from "./LanguageSwitch";
 
 export function LegalHeader() {
-  const t = useTranslations("header");
+  const t = useTranslations();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
@@ -27,10 +27,10 @@ export function LegalHeader() {
 
             <div className="hidden flex-col sm:flex">
               <span className="text-[13px] uppercase tracking-[0.15em] text-ink-600">
-                {t("subtitle")}
+                {t("header.subtitle")}
               </span>
               <span className="text-[21px] font-semibold leading-tight tracking-tight text-ink-900">
-                Ivan Pavić
+                {t("header.name")}
               </span>
             </div>
           </Link>

@@ -5,7 +5,8 @@
     "contact": "Kontakt",
     "openMenu": "Otvori izbornik",
     "closeMenu": "Zatvori izbornik",
-    "subtitle": "Odvjetnički ured"
+    "subtitle": "Odvjetnički ured",
+    "name": "Ivan Pavić"
   },
   "notFound": {
     "title": "Stranica koju tražite nije pronađena"
@@ -97,7 +98,8 @@
     "contact": "Kontakt",
     "copyright": "Odvjetnički ured Ivan Pavić. Sva prava pridržana.",
     "privacy": "Pravila privatnosti",
-    "subtitle": "Odvjetnički ured"
+    "subtitle": "Odvjetnički ured",
+    "name": "Ivan Pavić"
   },
   "privacyPolicy": {
     "title": "Pravila privatnosti",

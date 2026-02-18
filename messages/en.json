@@ -5,7 +5,8 @@
     "contact": "Contact",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "subtitle": "Law Office"
+    "subtitle": "Law Office",
+    "name": "Ivan Pavić"
   },
   "notFound": {
     "title": "The page You're looking for could not be found"
@@ -97,7 +98,8 @@
     "contact": "Contact",
     "copyright": "Law Office Ivan Pavić. All rights reserved.",
     "privacy": "Privacy policy",
-    "subtitle": "Law Office"
+    "subtitle": "Law Office",
+    "name": "Ivan Pavić"
   },
   "privacyPolicy": {
     "title": "Privacy Policy",
@@ -145,7 +147,7 @@
         "body": "For any privacy request, contact us at <email>ipavic933@gmail.com</email> or by phone at <phone>+385 95 529 7362</phone>."
       }
     }
-    },
+  },
   "generalMessages": {
     "required": "This field is required",
     "invalidEmail": "Please enter a valid email address",
