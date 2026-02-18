@@ -25,9 +25,6 @@
     "cardRole": "Attorney",
     "imgAlt": "Hero image"
   },
-  "banner": {
-    "discription": "We place special emphasis on legal support for entrepreneurs, companies and crafts in everyday business operations and dispute resolution."
-  },
   "aboutMe": {
     "eyebrow": "ABOUT",
     "title": "Professional and trustworthy",
@@ -36,7 +33,7 @@
     "bullet2": "Bar exam passed in 2022",
     "bullet3": "My work is based on responsibility, confidentiality, and clear communication",
     "focusLabel": "Focus",
-    "focus": "Focus: property and land registry law, contract law, drafting/analysis of contracts, and representation in court and out-of-court proceedings.",
+    "focus": "Property and land registry law, contract law, drafting/analysis of contracts, and representation in court and out-of-court proceedings.",
     "expertise": "Expertise",
     "confidentiality": "Confidentiality",
     "dedication": "Dedication",
@@ -150,11 +147,11 @@
     }
   },
   "generalMessages": {
-    "required": "This field is required",
-    "invalidEmail": "Please enter a valid email address",
-    "successTitle": "Success",
+    "required": "This field is required.",
+    "invalidEmail": "Please enter a valid email address.",
+    "successTitle": "Success!",
     "successDescription": "Your request was sent successfully.",
-    "errorTitle": "An error occurred",
+    "errorTitle": "An error occurred.",
     "errorDescription": "There was an error submitting Your form, please try again later."
   }
 }

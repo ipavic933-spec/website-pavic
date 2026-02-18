@@ -25,9 +25,6 @@
     "cardRole": "Odvjetnik",
     "imgAlt": "Hero slika"
   },
-  "banner": {
-    "discription": "Poseban naglasak stavljamo na pravnu podršku poduzetnicima, trgovačkim društvima i obrtima u svakodnevnom poslovanju i rješavanju sporova."
-  },
   "aboutMe": {
     "eyebrow": "O NAMA",
     "title": "Profesionalno i s povjerenjem",
@@ -36,10 +33,10 @@
     "bullet2": "Pravosudni ispit položen 2022.",
     "bullet3": "Rad temeljim na odgovornosti, povjerljivosti i jasnoj komunikaciji",
     "focusLabel": "Fokus",
-    "focus": "Fokus: stvarno i zemljisnoknjizhno pravo, obvezno pravo i sastavljanje/analiza ugovora te zastupanje u sudskim i izvansudskim postupcima.",
-    "expertise": "Strucnost",
+    "focus": "Stvarno i zemljisnoknjižno pravo, obvezno pravo i sastavljanje/analiza ugovora te zastupanje u sudskim i izvansudskim postupcima.",
+    "expertise": "Stručnost",
     "confidentiality": "Povjerljivost",
-    "dedication": "Posvecenost",
+    "dedication": "Posvećenost",
     "cardName": "Ivan Pavić",
     "cardRole": "Odvjetnik"
   },
@@ -150,9 +147,9 @@
     }
   },
   "generalMessages": {
-    "required": "Ovo polje je obavezno",
-    "invalidEmail": "Molimo unesite važeću email adresu",
-    "succesTitle": "Uspjeh",
+    "required": "Ovo polje je obavezno.",
+    "invalidEmail": "Molimo unesite važeću email adresu.",
+    "succesTitle": "Uspjeh!",
     "succesDescription": "Vaš zahtjev je uspješno poslan.",
     "errorTitle": "Došlo je do pogreške",
     "errorDescription": "Došlo je do pogreške prilikom slanja vašeg obrasca, pokušajte ponovno kasnije."
