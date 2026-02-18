@@ -47,6 +47,7 @@ Practices
 - Brand logo asset is stored at `public/images/logo.png` and reused in both `src/components/header.tsx` and `src/components/footer.tsx` via `next/image`.
 - Header and footer brand lockups (logo + adjacent name text) are clickable anchors to `#top`; `app/[locale]/page.tsx` provides the `id="top"` target.
 - In both header and footer lockups, subtitle text (`header.subtitle`) is displayed above the person name (`Ivan Pavić`).
+- Header brand lockup text (subtitle + name) stays visible next to the logo on mobile and desktop; the full lockup remains a single clickable `#top` anchor.
 - Header and footer logo lockup visual scale is increased by ~30% (logo dimensions and adjacent subtitle/name typography).
 - Footer lockup name in `src/components/footer.tsx` uses the same sans-serif style as the header lockup name (no serif override).
 - Footer brand column does not render an additional subtitle/name text block below the clickable logo lockup.

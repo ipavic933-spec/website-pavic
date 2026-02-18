@@ -60,7 +60,7 @@ export function Header() {
               height={42}
               className="h-[42px] w-auto"
             />
-            <div className="hidden flex-col sm:flex">
+            <div className="flex flex-col">
               <span className="text-[13px] uppercase tracking-[0.15em] text-white/70">
                 {t("header.subtitle")}
               </span>
