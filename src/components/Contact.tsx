@@ -89,7 +89,7 @@ export function Contact() {
                     <div>
                       <p className="text-xs text-ink-600">{t(item.labelKey)}</p>
                       <p className="text-sm font-medium text-ink-900">
-                        {t(item.value)}
+                        {item.value}
                       </p>
                     </div>
                   </div>
