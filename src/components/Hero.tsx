@@ -65,7 +65,7 @@ export function Hero() {
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.18),transparent_55%)]" />
             <div className="absolute bottom-4 left-4 flex items-center gap-3 rounded-2xl border border-white/15 bg-white/12 px-4 py-3 backdrop-blur-md">
               <div className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-900/70 ring-1 ring-white/15 text-xs font-bold text-white">
-                IP
+                {t('hero.initials')}
               </div>
               <div>
                 <p className="text-sm font-semibold text-white">
