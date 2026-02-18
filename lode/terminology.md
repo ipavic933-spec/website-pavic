@@ -4,12 +4,13 @@ Common project terms and their meaning.
 
 Terms
 - App Router - Next.js routing model where pages live in `src/app/`.
-- Root Layout - The shared shell in `src/app/layout.tsx` that wraps all pages.
-- Page - A route entry such as `src/app/page.tsx`.
-- Global Styles - Tailwind base layer and custom CSS in `src/app/globals.css`.
+- Locale Layout - Per-locale shell in `src/app/[locale]/layout.tsx`.
+- Localized Page - Route entry under `src/app/[locale]/`, such as `src/app/[locale]/page.tsx`.
+- Global Styles - Tailwind base layer and custom CSS in `src/app/[locale]/globals.css`.
 - Component - Reusable UI module under `src/components/`.
 - Header Toggle Menu - Mobile-only hamburger trigger in `src/components/Header.tsx` that toggles a full-width overlay menu.
 - Navigation Orientation - `orijentation` prop in `Navigation` selecting `row` (desktop) or `col` (mobile overlay) layout.
+- Message Catalog - Locale JSON files `messages/hr.json` and `messages/en.json` that hold website copy.
 
 Related
 - [Summary](summary.md)
@@ -19,9 +20,10 @@ Related
 
 ```mermaid
 graph LR
-  AppRouter --> Layout
-  Layout --> Page
-  Layout --> Component
+  AppRouter --> LocaleLayout
+  LocaleLayout --> LocalizedPage
+  LocalizedPage --> Component
+  LocalizedPage --> MessageCatalog
   HeaderToggleMenu --> NavigationOrientation
 ```
 

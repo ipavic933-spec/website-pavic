@@ -6,6 +6,7 @@ Related
 - [../summary.md](../summary.md)
 - [../terminology.md](../terminology.md)
 - [../practices.md](../practices.md)
+- [copy-editing.md](copy-editing.md)
 
 ```mermaid
 flowchart TD
@@ -13,7 +14,7 @@ flowchart TD
   Routing --> LocaleLayout["src/app/[locale]/layout.tsx"]
   LocaleLayout --> Request["src/i18n/request.ts"]
   Request --> Messages["messages/hr.json + messages/en.json"]
-  LocaleLayout --> Navigation["src/app/components/Navigation.tsx"]
+  LocaleLayout --> Navigation["src/components/Navigation.tsx"]
 ```
 
 ```ts
@@ -33,4 +34,4 @@ Invariants
 Contracts
 - `src/proxy.ts` applies `next-intl` routing using the shared `routing` config.
 - `src/i18n/request.ts` resolves a valid locale and loads matching messages.
-- `Navigation.tsx` provides explicit `HR` and `EN` locale switch links.
+- Locale switch UI uses localized navigation helpers from `src/i18n/navigation.ts`.

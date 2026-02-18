@@ -7,46 +7,40 @@ Related
 - [Practices](practices.md)
 - [Current Plan](plans/current-plan.md)
 - [Internationalization](i18n/summary.md)
+- [Copy Editing](i18n/copy-editing.md)
 
 ```mermaid
 graph TD
-  Layout["src/app/layout.tsx"] --> Header["src/app/components/Header.tsx"]
-  Layout --> Footer["src/app/components/Footer.tsx"]
-  Layout --> Page["src/app/page.tsx"]
-  Layout --> Globals["src/app/globals.css"]
-  Header --> DesktopNav["Navigation row on md+"]
-  Header --> MobileNav["Hamburger toggles overlay nav"]
+  Layout["src/app/[locale]/layout.tsx"] --> Page["src/app/[locale]/page.tsx"]
+  Layout --> Globals["src/app/[locale]/globals.css"]
+  Page --> Header["src/components/Header.tsx"]
+  Page --> Sections["Hero/About/Services/Contact"]
+  Page --> Footer["src/components/Footer.tsx"]
+  Layout --> Messages["messages/hr.json + messages/en.json"]
 ```
 
 ```tsx
-export default async function RootLayout({
-  children,
-  params
-}: {
-  children: React.ReactNode;
-  params: Promise<{locale: string}>;
-}) {
-  const {locale} = await params;
-
+export default function HomePage() {
   return (
-    <html lang={locale}>
-      <body>
-        <NextIntlClientProvider>
-          <Header />
-          {children}
-          <Footer />
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <>
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }
 ```
 
 Invariants
-- All pages render inside the shared root layout.
-- Styling uses Tailwind utility classes plus `src/app/globals.css`.
-- The home page lives at `src/app/page.tsx`.
-- Mobile navigation links render only after tapping the hamburger icon in `src/app/components/Header.tsx`.
+- All localized pages render under `src/app/[locale]/`.
+- Styling uses Tailwind utility classes plus `src/app/[locale]/globals.css`.
+- The home page lives at `src/app/[locale]/page.tsx`.
+- Mobile navigation links render only after tapping the hamburger icon in `src/components/Header.tsx`.
 - Open mobile navigation is a full-width overlay dropdown and does not push page content down.
 - Hero carousel rotates three assets from `public/`: `sv-duje.png`, `lady-justice.jpg`, and `document-signing.jpg`; users can change slides with dot clicks and image left/right click zones, and dot clicks are isolated so they do not bubble into the zone-click navigation.
 - Hero pills (badge chips under the headline) are scaled up about 5% via custom `px/py/text` sizing.
