@@ -1,6 +1,6 @@
 # Internationalization
 
-The app uses `next-intl` with `localePrefix: "as-needed"`, so Croatian (`hr`) is the default locale at unprefixed URLs (for example `/`) while English uses an explicit `/en` prefix; locale routing is applied through `src/proxy.ts` and users switch language from header locale links.
+The app uses `next-intl` with `localePrefix: "as-needed"`, so Croatian (`hr`) is the default locale at unprefixed URLs (for example `/`) while English uses an explicit `/en` prefix; locale routing is applied through `src/proxy.ts`, request-time message loading is handled by `src/i18n/request.ts`, and language switching is provided by `src/components/LanguageSwitch.tsx` via helpers from `src/i18n/navigation.ts`.
 
 Related
 - [../summary.md](../summary.md)
@@ -14,14 +14,16 @@ flowchart TD
   Routing --> LocaleLayout["src/app/[locale]/layout.tsx"]
   LocaleLayout --> Request["src/i18n/request.ts"]
   Request --> Messages["messages/hr.json + messages/en.json"]
-  LocaleLayout --> Navigation["src/components/Navigation.tsx"]
+  LanguageSwitch["src/components/LanguageSwitch.tsx"] --> NavigationHelpers["src/i18n/navigation.ts"]
+  NavigationHelpers --> Routing
 ```
 
 ```ts
 export const routing = defineRouting({
   locales: ["hr", "en"],
   defaultLocale: "hr",
-  localePrefix: "as-needed"
+  localePrefix: "as-needed",
+  localeDetection: false
 });
 ```
 

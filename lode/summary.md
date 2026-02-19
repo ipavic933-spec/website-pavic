@@ -11,11 +11,13 @@ Related
 
 ```mermaid
 graph TD
-  Layout["src/app/[locale]/layout.tsx"] --> Page["src/app/[locale]/page.tsx"]
+  Layout["src/app/[locale]/layout.tsx"] --> HomePage["src/app/[locale]/page.tsx"]
+  Layout --> PrivacyPage["src/app/[locale]/privacy-policy/page.tsx"]
   Layout --> Globals["src/app/[locale]/globals.css"]
-  Page --> Header["src/components/Header.tsx"]
-  Page --> Sections["Hero/About/Services/Contact"]
-  Page --> Footer["src/components/Footer.tsx"]
+  HomePage --> Header["src/components/Header.tsx"]
+  HomePage --> Sections["Hero/About/Services/Contact"]
+  HomePage --> Footer["src/components/Footer.tsx"]
+  HomePage --> SendApi["src/app/api/send/route.tsx"]
   Layout --> Messages["messages/hr.json + messages/en.json"]
 ```
 

@@ -10,30 +10,31 @@ Related
 
 ```mermaid
 flowchart TD
-  Page["src/app/page.tsx"] -->|uses| Components["src/components/*"]
-  Components --> Styles["Tailwind + src/app/globals.css"]
-  Header["src/components/Header.tsx"] --> Toggle["useState open/close"]
-  Toggle --> OverlayNav["fixed inset-x-0 mobile menu"]
+  HomePage["src/app/[locale]/page.tsx"] -->|uses| Sections["src/components/Hero/About/Services/Contact"]
+  LocaleLayout["src/app/[locale]/layout.tsx"] --> IntlProvider["NextIntlClientProvider"]
+  Header["src/components/Header.tsx"] --> Toggle["useState mobileOpen"]
+  Toggle --> OverlayNav["max-height animated mobile menu"]
+  Contact["src/components/Contact.tsx"] --> SendApi["/api/send"]
 ```
 
 ```tsx
-{isOpen && (
-  <nav className="fixed inset-x-0 z-50 flex w-screen flex-col items-start bg-black px-7 py-4">
-    <Navigation orijentation="col" />
-  </nav>
-)}
+const res = await fetch("/api/send", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ name, email, message })
+});
 ```
 
 Practices
-- Keep global layout concerns in `src/app/layout.tsx`.
-- Prefer Tailwind utilities for component styling; use `src/app/globals.css` for globals.
+- Keep global layout concerns in `src/app/[locale]/layout.tsx`.
+- Prefer Tailwind utilities for component styling; use `src/app/[locale]/globals.css` for globals.
 - Place reusable UI in `src/components/`.
 - Keep the hero section in `src/components/Hero.tsx` on a solid dark brand background (`bg-brand-900`) with high-contrast white foreground text.
 - Keep the hero photo treatment minimal: image + gradient overlays only, without bottom-left identity badges or name chips.
 - In `src/components/About.tsx`, render the portrait with `next/image` using `/ivan-pavic-photo.jpg` from `public/` and remove placeholder-only layers once a real photo exists.
 - Keep the About name badge in `src/components/About.tsx` on a near-white translucent background (`bg-white/70`) with dark text (`text-ink-900`, `text-ink-700`) so it stays readable over dark photo areas.
 - Keep mobile menu links hidden by default and reveal them only when the header toggle state is open.
-- Render the opened mobile menu as a full-width overlay (`fixed inset-x-0 w-screen`) below the header.
+- Keep locale message files symmetric: routine copy edits should update values, not keys.
 - For uncontrolled forms, use `name` attributes on inputs when reading values with `FormData`; `id` alone is not serialized.
 - In React form handlers, derive submit event type from `ComponentProps<"form">["onSubmit"]` to match JSX expectations exactly and avoid relying on potentially deprecated global aliases.
 - In `@react-email/components`, keep block-level wrappers (`div`, `h1`, sections) outside `Text` because `Text` renders a `<p>` element and cannot contain nested block elements without hydration errors.

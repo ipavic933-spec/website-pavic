@@ -9,8 +9,10 @@ Terms
 - Global Styles - Tailwind base layer and custom CSS in `src/app/[locale]/globals.css`.
 - Component - Reusable UI module under `src/components/`.
 - Header Toggle Menu - Mobile-only hamburger trigger in `src/components/Header.tsx` that toggles a full-width overlay menu.
-- Navigation Orientation - `orijentation` prop in `Navigation` selecting `row` (desktop) or `col` (mobile overlay) layout.
+- Language Switch - Locale toggle in `src/components/LanguageSwitch.tsx` that links the current pathname to `hr` and `en` using `next-intl` navigation helpers.
 - Message Catalog - Locale JSON files `messages/hr.json` and `messages/en.json` that hold website copy.
+- Contact API - `POST /api/send` endpoint in `src/app/api/send/route.tsx` that validates request body with Zod and sends mail.
+- SMTP Transport - `nodemailer` transporter in `src/app/helper/email.tsx` configured via `.env` variables.
 
 Related
 - [Summary](summary.md)
@@ -23,8 +25,10 @@ graph LR
   AppRouter --> LocaleLayout
   LocaleLayout --> LocalizedPage
   LocalizedPage --> Component
+  LocalizedPage --> ContactAPI
   LocalizedPage --> MessageCatalog
-  HeaderToggleMenu --> NavigationOrientation
+  HeaderToggleMenu --> LanguageSwitch
+  ContactAPI --> SMTPTransport
 ```
 
 ```ts
@@ -38,3 +42,4 @@ export const routing = {
 Contracts
 - Components under `src/components/` are intended for reuse across pages.
 - Layout owns global page chrome (header/footer).
+- Contact API expects JSON with `name`, `email`, and `message`.
