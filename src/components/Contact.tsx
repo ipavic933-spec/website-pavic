@@ -39,8 +39,8 @@ export function Contact() {
           const data = await res.json();
           throw new Error(JSON.stringify(data.message));
         }
-        toast.success(t("generalMessages.succesTitle"), {
-          description: t("generalMessages.succesDescription"),
+        toast.success(t("generalMessages.successTitle"), {
+          description: t("generalMessages.successDescription"),
         });
         form.reset();
         setAgreed(false);
