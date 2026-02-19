@@ -4,13 +4,14 @@ import Link from "next/link";
 
 type LogoProps = {
   hideText?: boolean;
+  href?: string;
 };
 
-export function Logo({ hideText = false }: LogoProps) {
+export function Logo({ hideText = false, href = "#top" }: LogoProps) {
   const t = useTranslations();
   return (
     <Link
-      href="#top"
+      href={href}
       className="flex items-center gap-3"
       aria-label="Back to top"
     >
