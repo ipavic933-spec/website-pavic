@@ -1,12 +1,22 @@
 "use client";
 
-import { services } from "@/data/services";
+import { services, type ServiceId } from "@/data/services";
 import { Link } from "@/i18n/navigation";
 import { slugify } from "@/lib/slugify";
 import { useTranslations } from "next-intl";
 
-export function Services() {
+type ServicesProps = {
+  serviceId?: ServiceId;
+};
+
+export function Services({ serviceId }: ServicesProps) {
   const t = useTranslations();
+  const currentService = serviceId
+    ? services.find((service) => service.id === serviceId)
+    : null;
+  const orderedServices = currentService
+    ? [currentService, ...services.filter((service) => service.id !== serviceId)]
+    : services;
 
   return (
     <section id="services" className="scroll-mt-20 bg-brand-50 py-16 md:py-20">
@@ -24,7 +34,7 @@ export function Services() {
         </p>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => {
+          {orderedServices.map((service) => {
             const slug = slugify(t(service.titleKey));
 
             return (

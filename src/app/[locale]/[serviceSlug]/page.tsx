@@ -63,7 +63,7 @@ export default async function ServicePage({ params }: PageProps) {
       <main>
         <Hero serviceId={serviceId} />
         <About />
-        <Services />
+        <Services serviceId={serviceId} />
         <Contact />
       </main>
       <Footer />
