@@ -122,7 +122,6 @@ export function Contact() {
           </div>
 
           <form
-          onInvalid={(e) => console.log('EE', e)}
             onSubmit={handleSubmit}
             className="rounded-2xl border border-brand-200 bg-white p-6 shadow-sm md:p-8"
           >
