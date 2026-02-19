@@ -38,3 +38,5 @@ export const services = [
     descKey: "services.labor.desc",
   },
 ] as const;
+
+export type ServiceId = (typeof services)[number]["id"];

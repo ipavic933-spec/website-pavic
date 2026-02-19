@@ -1,30 +1,14 @@
 import type { MetadataRoute } from "next";
-import hr from "./../../messages/hr.json";
-import en from "./../../messages/en.json";
-import { services } from "@/data/services";
-import { slugify } from "@/lib/slugify";
+import { getServiceSlugs } from "@/lib/service-slugs";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://website-pavic.vercel.app";
 
 const staticPaths = ["", "privacy-policy"];
 
-type Messages = typeof hr;
-type ServiceId = (typeof services)[number]["id"];
-
-function slugForService(messages: Messages, serviceId: ServiceId): string {
-  const title = messages?.services?.[serviceId]?.title;
-
-  if (typeof title !== "string" || !title.trim()) {
-    return slugify(serviceId);
-  }
-
-  return slugify(title);
-}
-
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const hrServiceSlugs = services.map((s) => slugForService(hr, s.id));
-  const enServiceSlugs = services.map((s) => slugForService(en, s.id));
+  const hrServiceSlugs = getServiceSlugs("hr");
+  const enServiceSlugs = getServiceSlugs("en");
 
   const hrPaths = [...staticPaths, ...hrServiceSlugs];
   const enPaths = [...staticPaths, ...enServiceSlugs];

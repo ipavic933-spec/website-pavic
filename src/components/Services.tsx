@@ -1,6 +1,8 @@
 "use client";
 
 import { services } from "@/data/services";
+import { Link } from "@/i18n/navigation";
+import { slugify } from "@/lib/slugify";
 import { useTranslations } from "next-intl";
 
 export function Services() {
@@ -23,9 +25,12 @@ export function Services() {
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => {
+            const slug = slugify(t(service.titleKey));
+
             return (
-              <div
+              <Link
                 key={service.titleKey}
+                href={`/${slug}`}
                 className={
                   "group flex flex-col gap-4 rounded-2xl border border-brand-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md hover:ring-1 hover:ring-brand-200"
                 }
@@ -48,7 +53,7 @@ export function Services() {
                 <p className="text-sm leading-relaxed text-ink-600">
                   {t(service.descKey)}
                 </p>
-              </div>
+              </Link>
             );
           })}
         </div>

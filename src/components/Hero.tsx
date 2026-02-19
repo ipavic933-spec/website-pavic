@@ -6,9 +6,18 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useTranslations } from "next-intl";
 import { heroBadges } from "@/data/heroBadges";
+import { type ServiceId } from "@/data/services";
 
-export function Hero() {
+type HeroProps = {
+  serviceId?: ServiceId;
+};
+
+export function Hero({ serviceId }: HeroProps) {
   const t = useTranslations();
+  const title = serviceId ? t(`services.${serviceId}.title`) : t("hero.title");
+  const subtitle = serviceId
+    ? t(`services.${serviceId}.desc`)
+    : t("hero.subtitle");
 
   return (
     <section className="relative overflow-hidden bg-linear-to-br from-brand-900 via-brand-800 to-brand-900 pt-20">
@@ -22,11 +31,11 @@ export function Hero() {
           </span>
 
           <h1 className="mb-6 max-w-xl font-serif text-4xl leading-[1.07] text-white md:text-5xl lg:text-[3.35rem]">
-            <span className="text-balance">{t("hero.title")}</span>
+            <span className="text-balance">{title}</span>
           </h1>
 
           <p className="mb-8 max-w-lg text-base leading-relaxed text-white/80 md:text-lg">
-            {t("hero.subtitle")}
+            {subtitle}
           </p>
           <div className="mb-9 flex flex-wrap gap-2.5">
             {heroBadges.map((key) => (
