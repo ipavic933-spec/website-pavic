@@ -149,10 +149,10 @@
     }
   },
   "generalMessages": {
-    "required": "Ovo polje je obavezno.",
-    "invalidEmail": "Molimo unesite važeću email adresu.",
-    "succesTitle": "Uspjeh!",
-    "succesDescription": "Vaš zahtjev je uspješno poslan.",
+    "required": "Ovo polje je obavezno",
+    "invalidEmail": "Molimo unesite važeću email adresu",
+    "successTitle": "Uspjeh",
+    "successDescription": "Vaš zahtjev je uspješno poslan.",
     "errorTitle": "Došlo je do pogreške",
     "errorDescription": "Došlo je do pogreške prilikom slanja vašeg obrasca, pokušajte ponovno kasnije."
   }
