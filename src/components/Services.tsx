@@ -1,8 +1,6 @@
 "use client";
 
 import { services, type ServiceId } from "@/data/services";
-import { Link } from "@/i18n/navigation";
-import { slugify } from "@/lib/slugify";
 import { useTranslations } from "next-intl";
 
 type ServicesProps = {
@@ -35,12 +33,9 @@ export function Services({ serviceId }: ServicesProps) {
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {orderedServices.map((service) => {
-            const slug = slugify(t(service.titleKey));
-
             return (
-              <Link
+              <div
                 key={service.titleKey}
-                href={`/${slug}`}
                 className={
                   "group flex flex-col gap-4 rounded-2xl border border-brand-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md hover:ring-1 hover:ring-brand-200"
                 }
@@ -63,7 +58,7 @@ export function Services({ serviceId }: ServicesProps) {
                 <p className="text-sm leading-relaxed text-ink-600">
                   {t(service.descKey)}
                 </p>
-              </Link>
+              </div>
             );
           })}
         </div>
