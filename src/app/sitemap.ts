@@ -6,8 +6,9 @@ import {
 } from "@/lib/service-slugs";
 
 const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://website-pavic.vercel.app";
+process.env.NEXT_PUBLIC_SITE_URL ?? "https://website-pavic.vercel.app";
 
+const now = new Date();
 const staticPaths = ["", "privacy-policy"];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -22,7 +23,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     return {
       url: hrUrl,
-      lastModified: new Date(),
+      lastModified: now,
       alternates: {
         languages: {
           hr: hrUrl,
@@ -38,7 +39,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     return {
       url: enUrl,
-      lastModified: new Date(),
+      lastModified: now,
       alternates: {
         languages: {
           hr: hrUrl,
@@ -54,7 +55,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       if (!entry.serviceId) {
         return {
           url: hrUrl,
-          lastModified: new Date(),
+          lastModified: now,
           alternates: {
             languages: {
               hr: hrUrl,
@@ -68,7 +69,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
       return {
         url: hrUrl,
-        lastModified: new Date(),
+        lastModified: now,
         alternates: {
           languages: {
             hr: hrUrl,
@@ -85,7 +86,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       if (!entry.serviceId) {
         return {
           url: enUrl,
-          lastModified: new Date(),
+          lastModified: now,
           alternates: {
             languages: {
               en: enUrl,
@@ -99,7 +100,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
       return {
         url: enUrl,
-        lastModified: new Date(),
+        lastModified: now,
         alternates: {
           languages: {
             hr: hrUrl,
