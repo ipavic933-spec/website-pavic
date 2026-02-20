@@ -2,14 +2,13 @@
 
 import { useCallback, useState } from "react";
 import type { SubmitEvent } from "react";
-import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
 import { useTranslations } from "next-intl";
 import { Spinner } from "./ui/spinner";
 import { InputField } from "./InputField";
 import { toast } from "sonner";
 import { contactItems } from "@/data/contactItems";
 import { MoveUpRight } from "lucide-react";
+import { CustomCheckbox } from "./CustomCheckbox";
 
 export function Contact() {
   const [agreed, setAgreed] = useState(false);
@@ -168,24 +167,17 @@ export function Contact() {
                 />
               </div>
 
-              <div className="flex items-start gap-3">
-                <Checkbox
-                  id="consent"
-                  checked={agreed}
-                  onCheckedChange={(v) => setAgreed(v === true)}
-                  className="mt-0.5"
-                />
-                <Label
-                  htmlFor="consent"
-                  className="text-xs leading-relaxed text-ink-600"
-                >
-                  {t("contact.consent")}
-                </Label>
-              </div>
+              <CustomCheckbox
+                setAgreed={setAgreed}
+                agreed={agreed}
+                name="consent"
+                label={t("contact.consent")}
+                id="consent"
+                isRequired={true}
+              />
 
               <button
                 type="submit"
-                disabled={!agreed}
                 className="min-h-12 mt-1 w-full flex justify-center rounded-xl bg-brand-800 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-900/15 ring-1 ring-brand-900/10 transition hover:bg-brand-900 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {isLoading ? <Spinner /> : t("contact.submit")}
