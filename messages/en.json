@@ -4,8 +4,11 @@
     "services": "Services",
     "contact": "Contact",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu",
-    "subtitle": "Law Office"
+    "closeMenu": "Close menu"
+  },
+  "logo": {
+    "subtitle": "Law Office",
+    "name": "Ivan Pavić"
   },
   "notFound": {
     "title": "The page You're looking for could not be found"
@@ -20,11 +23,9 @@
     "cta": "Request a consultation",
     "micro": "Confidential • No obligation on first contact",
     "cardName": "Ivan Pavić",
+    "initials": "IP",
     "cardRole": "Attorney",
     "imgAlt": "Hero image"
-  },
-  "banner": {
-    "discription": "We place special emphasis on legal support for entrepreneurs, companies and crafts in everyday business operations and dispute resolution."
   },
   "aboutMe": {
     "eyebrow": "ABOUT",
@@ -34,7 +35,7 @@
     "bullet2": "Bar exam passed in 2022",
     "bullet3": "My work is based on responsibility, confidentiality, and clear communication",
     "focusLabel": "Focus",
-    "focus": "Focus: property and land registry law, contract law, drafting/analysis of contracts, and representation in court and out-of-court proceedings.",
+    "focus": "Property and land registry law, contract law, drafting/analysis of contracts, and representation in court and out-of-court proceedings.",
     "expertise": "Expertise",
     "confidentiality": "Confidentiality",
     "dedication": "Dedication",
@@ -97,7 +98,8 @@
     "contact": "Contact",
     "copyright": "Law Office Ivan Pavić. All rights reserved.",
     "privacy": "Privacy policy",
-    "subtitle": "Law Office"
+    "subtitle": "Law Office",
+    "name": "Ivan Pavić"
   },
   "privacyPolicy": {
     "title": "Privacy Policy",
@@ -145,9 +147,13 @@
         "body": "For any privacy request, contact us at <email>ipavic933@gmail.com</email> or by phone at <phone>+385 95 529 7362</phone>."
       }
     }
-    },
-  "errorMessages": {
-    "required": "This field is required",
-    "invalidEmail": "Please enter a valid email address"
+  },
+  "generalMessages": {
+    "required": "This field is required.",
+    "invalidEmail": "Please enter a valid email address.",
+    "successTitle": "Success!",
+    "successDescription": "Your request was sent successfully.",
+    "errorTitle": "An error occurred.",
+    "errorDescription": "There was an error submitting Your form, please try again later."
   }
 }

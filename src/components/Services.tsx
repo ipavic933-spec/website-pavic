@@ -1,44 +1,38 @@
-"use client"
+"use client";
 
-import {
-  House,
-  FileText,
-  Users,
-  Landmark,
-  Gavel,
-  Wrench,
-} from "lucide-react"
-import {useTranslations} from "next-intl"
+import { services, type ServiceId } from "@/data/services";
+import { useTranslations } from "next-intl";
 
-export function Services() {
-  const t = useTranslations("services")
+type ServicesProps = {
+  serviceId?: ServiceId;
+};
 
-  const services = [
-    { icon: House, titleKey: "property.title", descKey: "property.desc" },
-    { icon: FileText, titleKey: "contract.title", descKey: "contract.desc" },
-    { icon: Users, titleKey: "inheritance.title", descKey: "inheritance.desc" },
-    { icon: Landmark, titleKey: "admin.title", descKey: "admin.desc" },
-    { icon: Gavel, titleKey: "enforcement.title", descKey: "enforcement.desc" },
-    { icon: Wrench, titleKey: "labor.title", descKey: "labor.desc" },
-  ]
+export function Services({ serviceId }: ServicesProps) {
+  const t = useTranslations();
+  const currentService = serviceId
+    ? services.find((service) => service.id === serviceId)
+    : null;
+  const orderedServices = currentService
+    ? [currentService, ...services.filter((service) => service.id !== serviceId)]
+    : services;
 
   return (
     <section id="services" className="scroll-mt-20 bg-brand-50 py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-6">
         <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.25em] text-brand-700">
-          {t("eyebrow")}
+          {t("services.eyebrow")}
         </span>
 
         <h2 className="mb-4 max-w-md font-serif text-3xl leading-[1.12] tracking-[0.01em] text-ink-900 md:text-4xl">
-          {t("title")}
+          {t("services.title")}
         </h2>
 
         <p className="mb-12 max-w-xl text-sm leading-relaxed text-ink-600">
-          {t("desc")}
+          {t("services.desc")}
         </p>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => {
+          {orderedServices.map((service) => {
             return (
               <div
                 key={service.titleKey}
@@ -65,10 +59,10 @@ export function Services() {
                   {t(service.descKey)}
                 </p>
               </div>
-            )
+            );
           })}
         </div>
       </div>
     </section>
-  )
+  );
 }

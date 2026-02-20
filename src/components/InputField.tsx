@@ -4,15 +4,15 @@ import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
 import { useTranslations } from "next-intl";
 
-type FormInputProps = {
+type InputFieldProps = {
   id: string;
   isRequired?: boolean;
-  isTextArea?: boolean
+  isTextArea?: boolean;
   label: string;
   name: string;
   placeholder: string;
-  type?: string
-}
+  type?: string;
+};
 
 export function InputField({
   id,
@@ -22,32 +22,39 @@ export function InputField({
   name,
   placeholder,
   type,
-}: FormInputProps) {
-  const [error, setError] = useState('');
-  const t = useTranslations("errorMessages");
+}: InputFieldProps) {
+  const [error, setError] = useState("");
+  const t = useTranslations();
 
-  const handleError = useCallback((e: InvalidEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const field = e.currentTarget;
-    field.setCustomValidity(' ');
-    if (field.validity.valueMissing) {
-      setError(t('required'));
-    }
-    if (field.validity.typeMismatch && field.type === 'email') {
-      setError(t('invalidEmail'));
-    }
-  }, [t]);
+  const handleError = useCallback(
+    (e: InvalidEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const field = e.currentTarget;
+      field.setCustomValidity(" ");
+      if (field.validity.valueMissing) {
+        setError(t("generalMessages.required"));
+      }
+      if (field.validity.typeMismatch && field.type === "email") {
+        setError(t("generalMessages.invalidEmail"));
+      }
+    },
+    [t],
+  );
 
-  const resetError = useCallback((e: InputEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const field = e.currentTarget;
-    field.setCustomValidity('');
-    setError('');
-  }, []);
+  const resetError = useCallback(
+    (e: InputEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const field = e.currentTarget;
+      field.setCustomValidity("");
+      setError("");
+    },
+    [],
+  );
 
   if (isTextArea) {
     return (
       <>
         <Label htmlFor={name} className="text-sm font-medium text-ink-900">
-          {label}{isRequired && '*'}
+          {label}
+          {isRequired && "*"}
         </Label>
         <div>
           <Textarea
@@ -60,18 +67,17 @@ export function InputField({
             onInput={resetError}
             className="resize-none field-sizing-fixed rounded-xl border-brand-200 bg-brand-50/60 focus-visible:ring-brand-500"
           />
-          <div className="h-4 text-sm text-red-500">
-            {error}
-          </div>
+          <div className="h-4 text-sm text-red-500 p-1">{error}</div>
         </div>
       </>
-    )
+    );
   }
 
   return (
     <>
       <Label htmlFor={name} className="text-sm font-medium text-ink-900">
-        {label}{isRequired && '*'}
+        {label}
+        {isRequired && "*"}
       </Label>
       <div>
         <Input
@@ -84,10 +90,8 @@ export function InputField({
           required={isRequired}
           type={type}
         />
-        <div className="h-4 text-sm text-red-500">
-          {error}
-        </div>
-    </div>
+        <div className="h-4 text-sm text-red-500 py-1">{error}</div>
+      </div>
     </>
   );
 }

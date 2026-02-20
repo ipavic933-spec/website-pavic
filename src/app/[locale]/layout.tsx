@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Odvjetnički ured Ivan Pavić | Split",
   description:
     "Pouzdana pravna podrška za građane i poslovne subjekte. Pružamo stručne pravne savjete i zastupanje u imovinskopravnim i ugovornim odnosima.",
+  icons: {
+    icon: '/favicon.png',
+    apple: '/favicon.png',
+  }
 }
 
 export default async function RootLayout({
@@ -22,6 +27,7 @@ export default async function RootLayout({
       <body>
         <NextIntlClientProvider>
           {children}
+          <Toaster richColors position="bottom-right"/>
         </NextIntlClientProvider>
       </body>
     </html>
