@@ -8,8 +8,8 @@ import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
 import { routing } from "@/i18n/routing";
 import {
-  getServiceIdBySlug,
   getServiceMessages,
+  getServiceSlugEntry,
   getServiceSlugs,
 } from "@/lib/service-slugs";
 
@@ -32,16 +32,22 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { locale, serviceSlug } = await params;
-  const serviceId = getServiceIdBySlug(locale, serviceSlug);
+  const entry = getServiceSlugEntry(locale, serviceSlug);
 
-  if (!serviceId) {
+  if (!entry) {
     return {};
   }
 
   const messages = getServiceMessages(locale);
-  const title = messages?.services?.[serviceId]?.title ?? serviceId;
-  const description =
-    messages?.services?.[serviceId]?.desc ?? messages?.services?.desc;
+
+  const baseTitle = entry.serviceId
+    ? messages?.services?.[entry.serviceId]?.title ?? entry.serviceId
+    : messages?.hero?.title ?? serviceSlug;
+  const baseDescription = entry.serviceId
+    ? messages?.services?.[entry.serviceId]?.desc ?? messages?.services?.desc
+    : messages?.hero?.subtitle ?? messages?.services?.desc;
+  const title = entry.seoTitle ?? baseTitle;
+  const description = entry.seoDescription ?? baseDescription;
 
   return {
     title,
@@ -51,11 +57,13 @@ export async function generateMetadata({
 
 export default async function ServicePage({ params }: PageProps) {
   const { locale, serviceSlug } = await params;
-  const serviceId = getServiceIdBySlug(locale, serviceSlug);
+  const entry = getServiceSlugEntry(locale, serviceSlug);
 
-  if (!serviceId) {
+  if (!entry) {
     notFound();
   }
+
+  const serviceId = entry.serviceId ?? undefined;
 
   return (
     <>
