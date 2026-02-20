@@ -60,9 +60,6 @@ export function Hero() {
               priority
               className="object-cover"
             />
-
-            <div className="absolute inset-0 bg-linear-to-t from-brand-900/45 via-brand-900/15 to-transparent" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.18),transparent_55%)]" />
           </div>
         </div>
       </div>
