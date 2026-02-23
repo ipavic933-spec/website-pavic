@@ -1,0 +1,117 @@
+{
+  "hr": [
+    {
+      "serviceId": "inheritance",
+      "keyword": "ostavinska rasprava",
+      "seoTitleTemplate": "Ostavinska rasprava {city} | Odvjetnicki ured Ivan Pavic",
+      "seoDescriptionTemplate": "Savjetovanje i zastupanje u ostavinskim raspravama u {city}. Kontaktirajte ured.",
+      "cities": [
+        "Trogir",
+        "Omis",
+        "Imotski",
+        "Makarska",
+        "Split",
+        "Solin",
+        "Kastela",
+        "Sinj"
+      ]
+    },
+    {
+      "serviceId": "inheritance",
+      "keyword": "ostavina",
+      "seoTitleTemplate": "Ostavina {city} | Odvjetnicki ured Ivan Pavic",
+      "seoDescriptionTemplate": "Pravna pomoc oko ostavine u {city}. Savjetovanje i zastupanje u ostavinskim pitanjima.",
+      "cities": [
+        "Trogir",
+        "Omis",
+        "Imotski",
+        "Makarska",
+        "Split",
+        "Solin",
+        "Kastela",
+        "Sinj"
+      ]
+    },
+    {
+      "serviceId": "inheritance",
+      "keyword": "ostavinski postupak",
+      "seoTitleTemplate": "Ostavinski postupak {city} | Odvjetnicki ured Ivan Pavic",
+      "seoDescriptionTemplate": "Vodjenje i zastupanje u ostavinskom postupku u {city}. Kontaktirajte ured.",
+      "cities": [
+        "Trogir",
+        "Omis",
+        "Imotski",
+        "Makarska",
+        "Split",
+        "Solin",
+        "Kastela",
+        "Sinj"
+      ]
+    },
+    {
+      "serviceId": "inheritance",
+      "keyword": "nasljedstvo",
+      "seoTitleTemplate": "Nasljedstvo {city} | Odvjetnicki ured Ivan Pavic",
+      "seoDescriptionTemplate": "Savjetovanje u nasljednim pitanjima u {city}. Kontaktirajte ured.",
+      "cities": [
+        "Trogir",
+        "Omis",
+        "Imotski",
+        "Makarska",
+        "Split",
+        "Solin",
+        "Kastela",
+        "Sinj"
+      ]
+    },
+    {
+      "serviceId": "inheritance",
+      "keyword": "nasljedno pravo",
+      "seoTitleTemplate": "Nasljedno pravo {city} | Odvjetnicki ured Ivan Pavic",
+      "seoDescriptionTemplate": "Pravna pomoc za nasljedno pravo u {city}. Savjetovanje i zastupanje po potrebi.",
+      "cities": [
+        "Trogir",
+        "Omis",
+        "Imotski",
+        "Makarska",
+        "Split",
+        "Solin",
+        "Kastela",
+        "Sinj"
+      ]
+    },
+    {
+      "serviceId": "inheritance",
+      "keyword": "odvjetnik ostavinska rasprava",
+      "seoTitleTemplate": "Odvjetnik ostavinska rasprava {city} | Odvjetnicki ured Ivan Pavic",
+      "seoDescriptionTemplate": "Odvjetnik za ostavinsku raspravu u {city}. Savjetovanje i zastupanje po potrebi.",
+      "cities": [
+        "Trogir",
+        "Omis",
+        "Imotski",
+        "Makarska",
+        "Split",
+        "Solin",
+        "Kastela",
+        "Sinj"
+      ]
+    },
+    {
+      "serviceId": null,
+      "keyword": "odvjetnik",
+      "seoTitleTemplate": "Odvjetnik {city} | Odvjetnicki ured Ivan Pavic",
+      "seoDescriptionTemplate": "Pravna pomoc i zastupanje u {city}. Savjetovanje u imovinskim, ugovornim i ostavinskim pitanjima. Kontaktirajte ured.",
+      "cities": [
+        "Trogir",
+        "Omis",
+        "Imotski",
+        "Makarska",
+        "Split",
+        "Solin",
+        "Kastela",
+        "Sinj"
+      ]
+    }
+  ],
+  "en": []
+}

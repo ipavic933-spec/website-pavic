@@ -1,55 +1,120 @@
 import type { MetadataRoute } from "next";
-import hr from "./../../messages/hr.json";
-import en from "./../../messages/en.json";
-import { services } from "@/data/services";
-import { slugify } from "@/lib/slugify";
+import {
+  getServiceMessages,
+  getServiceSlugEntries,
+  slugForService,
+} from "@/lib/service-slugs";
 
 const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://website-pavic.vercel.app";
+process.env.NEXT_PUBLIC_SITE_URL ?? "https://website-pavic.vercel.app";
 
+const now = new Date();
 const staticPaths = ["", "privacy-policy"];
 
-type Messages = typeof hr;
-type ServiceId = (typeof services)[number]["id"];
-
-function slugForService(messages: Messages, serviceId: ServiceId): string {
-  const title = messages?.services?.[serviceId]?.title;
-
-  if (typeof title !== "string" || !title.trim()) {
-    return slugify(serviceId);
-  }
-
-  return slugify(title);
-}
-
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const hrServiceSlugs = services.map((s) => slugForService(hr, s.id));
-  const enServiceSlugs = services.map((s) => slugForService(en, s.id));
+  const hrMessages = getServiceMessages("hr");
+  const enMessages = getServiceMessages("en");
+  const hrServiceEntries = getServiceSlugEntries("hr");
+  const enServiceEntries = getServiceSlugEntries("en");
 
-  const hrPaths = [...staticPaths, ...hrServiceSlugs];
-  const enPaths = [...staticPaths, ...enServiceSlugs];
+  const hrStaticEntries: MetadataRoute.Sitemap = staticPaths.map((path) => {
+    const hrUrl = `${BASE_URL}${path ? `/${path}` : ""}`;
+    const enUrl = `${BASE_URL}/en${path ? `/${path}` : ""}`;
 
-  const hrEntries: MetadataRoute.Sitemap = hrPaths.map((path, i) => ({
-    url: `${BASE_URL}${path ? `/${path}` : ""}`,
-    lastModified: new Date(),
-    alternates: {
-      languages: {
-        hr: `${BASE_URL}${path ? `/${path}` : ""}`,
-        en: `${BASE_URL}/en${enPaths[i] ? `/${enPaths[i]}` : ""}`,
+    return {
+      url: hrUrl,
+      lastModified: now,
+      alternates: {
+        languages: {
+          hr: hrUrl,
+          en: enUrl,
+        },
       },
-    },
-  }));
+    };
+  });
 
-  const enEntries: MetadataRoute.Sitemap = enPaths.map((path, i) => ({
-    url: `${BASE_URL}/en${path ? `/${path}` : ""}`,
-    lastModified: new Date(),
-    alternates: {
-      languages: {
-        hr: `${BASE_URL}${hrPaths[i] ? `/${hrPaths[i]}` : ""}`,
-        en: `${BASE_URL}/en${path ? `/${path}` : ""}`,
+  const enStaticEntries: MetadataRoute.Sitemap = staticPaths.map((path) => {
+    const hrUrl = `${BASE_URL}${path ? `/${path}` : ""}`;
+    const enUrl = `${BASE_URL}/en${path ? `/${path}` : ""}`;
+
+    return {
+      url: enUrl,
+      lastModified: now,
+      alternates: {
+        languages: {
+          hr: hrUrl,
+          en: enUrl,
+        },
       },
-    },
-  }));
+    };
+  });
 
-  return [...hrEntries, ...enEntries];
+  const hrServiceSitemapEntries: MetadataRoute.Sitemap = hrServiceEntries.map(
+    (entry) => {
+      const hrUrl = `${BASE_URL}/${entry.slug}`;
+      if (!entry.serviceId) {
+        return {
+          url: hrUrl,
+          lastModified: now,
+          alternates: {
+            languages: {
+              hr: hrUrl,
+            },
+          },
+        };
+      }
+
+      const enSlug = slugForService(enMessages, entry.serviceId);
+      const enUrl = `${BASE_URL}/en/${enSlug}`;
+
+      return {
+        url: hrUrl,
+        lastModified: now,
+        alternates: {
+          languages: {
+            hr: hrUrl,
+            en: enUrl,
+          },
+        },
+      };
+    },
+  );
+
+  const enServiceSitemapEntries: MetadataRoute.Sitemap = enServiceEntries.map(
+    (entry) => {
+      const enUrl = `${BASE_URL}/en/${entry.slug}`;
+      if (!entry.serviceId) {
+        return {
+          url: enUrl,
+          lastModified: now,
+          alternates: {
+            languages: {
+              en: enUrl,
+            },
+          },
+        };
+      }
+
+      const hrSlug = slugForService(hrMessages, entry.serviceId);
+      const hrUrl = `${BASE_URL}/${hrSlug}`;
+
+      return {
+        url: enUrl,
+        lastModified: now,
+        alternates: {
+          languages: {
+            hr: hrUrl,
+            en: enUrl,
+          },
+        },
+      };
+    },
+  );
+
+  return [
+    ...hrStaticEntries,
+    ...enStaticEntries,
+    ...hrServiceSitemapEntries,
+    ...enServiceSitemapEntries,
+  ];
 }

@@ -4,7 +4,7 @@ import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
 import { useTranslations } from "next-intl";
 
-type FormInputProps = {
+type InputFieldProps = {
   id: string;
   isRequired?: boolean;
   isTextArea?: boolean;
@@ -22,7 +22,7 @@ export function InputField({
   name,
   placeholder,
   type,
-}: FormInputProps) {
+}: InputFieldProps) {
   const [error, setError] = useState("");
   const t = useTranslations();
 
