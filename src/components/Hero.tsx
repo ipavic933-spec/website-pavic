@@ -2,11 +2,18 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { heroBadges } from "@/data/heroBadges";
 import { useTranslations } from "next-intl";
 import { type ServiceId } from "@/data/services";
+
+const HERO_IMAGES = [
+  { src: "/sv-duje.png", key: "1" },
+  { src: "/sv-duje.png", key: "2" },
+  { src: "/sv-duje.png", key: "3" },
+];
 
 type HeroProps = {
   serviceId?: ServiceId;
@@ -18,6 +25,23 @@ export function Hero({ serviceId }: HeroProps) {
   const subtitle = serviceId
     ? t(`services.${serviceId}.desc`)
     : t("hero.subtitle");
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    );
+
+    if (prefersReducedMotion.matches) return;
+
+    const intervalId = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % HERO_IMAGES.length);
+    }, 6000);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
 
   return (
     <section className="relative overflow-hidden bg-brand-900 pt-20">
@@ -62,13 +86,39 @@ export function Hero({ serviceId }: HeroProps) {
 
         <div className="relative flex-1">
           <div className="relative aspect-4/3 w-full overflow-hidden rounded-3xl bg-white/6 ring-1 ring-white/15 shadow-2xl shadow-black/20">
-            <Image
-              src="https://images.unsplash.com/photo-1670408735623-256a222bc5ef?q=80&w=687&auto=format&fit=crop"
-              alt={t("hero.imgAlt")}
-              fill
-              priority
-              className="object-cover"
-            />
+            {HERO_IMAGES.map((image, index) => (
+              <Image
+                key={image.key}
+                src={image.src}
+                alt={t("hero.imgAlt")}
+                fill
+                priority={index === 0}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                aria-hidden={index !== activeIndex}
+                className={`absolute inset-0 object-cover transition-opacity duration-700 ease-out motion-reduce:transition-none ${
+                  index === activeIndex ? "opacity-100" : "opacity-0"
+                }`}
+              />
+            ))}
+
+            <div className="absolute inset-x-0 bottom-4 flex items-center justify-center px-4">
+              <div className="flex items-center gap-2">
+                {HERO_IMAGES.map((_, index) => (
+                  <button
+                    key={`hero-slide-${index}`}
+                    type="button"
+                    onClick={() => setActiveIndex(index)}
+                    className={`h-2.5 w-2.5 rounded-full ring-1 ring-white/30 transition ${
+                      index === activeIndex
+                        ? "bg-white"
+                        : "bg-white/35 hover:bg-white/60"
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                    aria-current={index === activeIndex ? "true" : undefined}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
