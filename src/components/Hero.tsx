@@ -12,12 +12,15 @@ import { type ServiceId } from "@/data/services";
 const HERO_IMAGES = [
   {
     src: "https://images.unsplash.com/photo-1670408735623-256a222bc5ef?q=80&w=687&auto=format&fit=crop",
+    key: "1",
   },
   {
-    src: "https://images.unsplash.com/photo-1628095136549-f574c711d3cd?q=80&w=687&auto=format&fit=crop",
+    src: "https://images.unsplash.com/photo-1670408735623-256a222bc5ef?q=80&w=687&auto=format&fit=crop",
+    key: "2",
   },
   {
-    src: "https://images.unsplash.com/photo-1436450412740-6b988f486c6b?q=80&w=687&auto=format&fit=crop",
+    src: "https://images.unsplash.com/photo-1670408735623-256a222bc5ef?q=80&w=687&auto=format&fit=crop",
+    key: "3",
   },
 ];
 
@@ -94,7 +97,7 @@ export function Hero({ serviceId }: HeroProps) {
           <div className="relative aspect-4/3 w-full overflow-hidden rounded-3xl bg-white/6 ring-1 ring-white/15 shadow-2xl shadow-black/20">
             {HERO_IMAGES.map((image, index) => (
               <Image
-                key={image.src}
+                key={image.key}
                 src={image.src}
                 alt={t("hero.imgAlt")}
                 fill
