@@ -10,18 +10,9 @@ import { useTranslations } from "next-intl";
 import { type ServiceId } from "@/data/services";
 
 const HERO_IMAGES = [
-  {
-    src: "https://images.unsplash.com/photo-1670408735623-256a222bc5ef?q=80&w=687&auto=format&fit=crop",
-    key: "1",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1670408735623-256a222bc5ef?q=80&w=687&auto=format&fit=crop",
-    key: "2",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1670408735623-256a222bc5ef?q=80&w=687&auto=format&fit=crop",
-    key: "3",
-  },
+  { src: "/sv-duje.png", key: "1" },
+  { src: "/sv-duje.png", key: "2" },
+  { src: "/sv-duje.png", key: "3" },
 ];
 
 type HeroProps = {
