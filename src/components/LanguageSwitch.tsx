@@ -3,8 +3,8 @@
 import { Link, usePathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import {
-  getServiceIdBySlug,
   getServiceMessages,
+  getServiceSlugEntry,
   slugForService,
 } from "@/lib/service-slugs";
 import { useLocale } from "next-intl";
@@ -29,12 +29,17 @@ function getLocalizedHref(
 
   if (withoutLocale.length === 1) {
     const slug = withoutLocale[0];
-    const serviceId = getServiceIdBySlug(currentLocale, slug);
+    const entry = getServiceSlugEntry(currentLocale, slug);
 
-    if (serviceId) {
+    if (entry?.serviceId) {
       const messages = getServiceMessages(targetLocale);
-      const targetSlug = slugForService(messages, serviceId);
+      const targetSlug = slugForService(messages, entry.serviceId);
       return `/${targetSlug}`;
+    }
+
+    if (entry) {
+      const targetEntry = getServiceSlugEntry(targetLocale, slug);
+      return targetEntry ? `/${targetEntry.slug}` : "/";
     }
 
     return `/${slug}`;

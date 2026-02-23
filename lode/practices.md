@@ -28,6 +28,8 @@ Practices
 - Keep global layout concerns in `src/app/layout.tsx`.
 - Prefer Tailwind utilities for component styling; use `src/app/globals.css` for globals.
 - Place reusable UI in `src/components/`.
+- Keep the hero section in `src/components/Hero.tsx` on a solid dark brand background (`bg-brand-900`) with high-contrast white foreground text.
+- Keep the hero photo treatment minimal: image + gradient overlays only, without bottom-left identity badges or name chips.
 - Keep mobile menu links hidden by default and reveal them only when the header toggle state is open.
 - Render the opened mobile menu as a full-width overlay (`fixed inset-x-0 w-screen`) below the header.
 - For uncontrolled forms, use `name` attributes on inputs when reading values with `FormData`; `id` alone is not serialized.
