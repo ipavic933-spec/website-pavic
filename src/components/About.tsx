@@ -20,17 +20,14 @@ export function About() {
           <div className="flex items-start justify-center order-2 lg:justify-start lg:order-1">
             <div className="relative aspect-3/4 w-full max-w-sm overflow-hidden rounded-3xl border border-brand-200 bg-linear-to-br from-brand-50 to-white shadow-sm ring-1 ring-brand-200/50">
               <div className="absolute bottom-6 right-6">
-                <Badge
-                  variant="outline"
-                  className="flex flex-col px-4 py-3 rounded-2xl text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-700 border-brand-200/60"
-                >
-                  <p className="text-sm font-semibold text-ink-900">
+                <div className="rounded-2xl border border-white/25 bg-ink-900/55 px-4 py-3 backdrop-blur-sm">
+                  <p className="text-sm font-semibold text-white">
                     {t("aboutMe.cardName")}
                   </p>
-                  <p className="text-xs text-ink-600">
+                  <p className="text-xs text-white/70">
                     {t("aboutMe.cardRole")}
                   </p>
-                </Badge>
+                </div>
               </div>
               <div className="pointer-events-none absolute inset-3 rounded-2xl border border-brand-200/50" />
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-brand-700/30">

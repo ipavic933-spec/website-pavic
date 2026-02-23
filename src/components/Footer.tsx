@@ -10,9 +10,7 @@ export function Footer() {
   const t = useTranslations();
 
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-linear-to-b from-brand-900 to-brand-800 py-12 text-white">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.10),transparent_55%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(0,0,0,0.25),transparent_55%)]" />
+    <footer className="relative overflow-hidden border-t border-white/10 bg-brand-900 py-12 text-white">
       <div className="relative mx-auto max-w-6xl px-6">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           <div className="flex flex-col gap-4">
