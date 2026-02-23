@@ -12,7 +12,7 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-brand-900 pt-20">
-      <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6 py-16 lg:flex-row lg:items-center lg:gap-16 lg:py-24">
+      <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6 py-10 lg:flex-row lg:items-center lg:gap-16 lg:py-12">
         <div className="relative z-10 flex flex-1 flex-col items-start">
           <span className="mb-6 text-xs font-semibold uppercase tracking-[0.28em] text-white/65">
             {t("hero.eyebrow")}
