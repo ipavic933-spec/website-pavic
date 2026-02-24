@@ -19,7 +19,7 @@ export function About() {
 
         <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
           <div className="flex items-start justify-center order-2 lg:justify-start lg:order-1">
-            <div className="relative aspect-3/4 w-full max-w-md overflow-hidden rounded-3xl border border-brand-200 shadow-sm ring-1 ring-brand-200/50">
+            <div className="relative aspect-3/4 w-full max-w-md overflow-hidden rounded-3xl shadow-sm">
               <Image
                 src="/ivan-pavic-photo.jpg"
                 alt="Portrait photo"
@@ -41,7 +41,7 @@ export function About() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-7 order-1 lg:order-2">
+          <div className="order-1 flex flex-col gap-7 origin-top scale-[1.05] lg:order-2">
             <p className="max-w-lg text-base leading-relaxed text-ink-600">
               {t("aboutMe.lead")}
             </p>

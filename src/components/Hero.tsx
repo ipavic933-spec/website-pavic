@@ -2,7 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type MouseEvent,
+  type TouchEvent,
+  type WheelEvent,
+} from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { heroBadges } from "@/data/heroBadges";
@@ -26,6 +34,79 @@ export function Hero({ serviceId }: HeroProps) {
     ? t(`services.${serviceId}.desc`)
     : t("hero.subtitle");
   const [activeIndex, setActiveIndex] = useState(0);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const wheelLockUntilRef = useRef(0);
+
+  const goToNext = useCallback(() => {
+    setActiveIndex((current) => (current + 1) % HERO_IMAGES.length);
+  }, []);
+
+  const goToPrev = useCallback(() => {
+    setActiveIndex(
+      (current) => (current - 1 + HERO_IMAGES.length) % HERO_IMAGES.length,
+    );
+  }, []);
+
+  const handleCarouselClick = useCallback(
+    (event: MouseEvent<HTMLDivElement>) => {
+      const { left, width } = event.currentTarget.getBoundingClientRect();
+      const clickX = event.clientX - left;
+
+      if (clickX < width / 2) {
+        goToPrev();
+        return;
+      }
+
+      goToNext();
+    },
+    [goToNext, goToPrev],
+  );
+
+  const handleTouchStart = useCallback((event: TouchEvent<HTMLDivElement>) => {
+    setTouchStartX(event.touches[0]?.clientX ?? null);
+  }, []);
+
+  const handleTouchEnd = useCallback(
+    (event: TouchEvent<HTMLDivElement>) => {
+      if (touchStartX === null) return;
+
+      const endX = event.changedTouches[0]?.clientX;
+      if (typeof endX !== "number") {
+        setTouchStartX(null);
+        return;
+      }
+
+      const swipeDelta = touchStartX - endX;
+      setTouchStartX(null);
+
+      if (Math.abs(swipeDelta) < 40) return;
+      if (swipeDelta > 0) {
+        goToNext();
+        return;
+      }
+
+      goToPrev();
+    },
+    [goToNext, goToPrev, touchStartX],
+  );
+
+  const handleWheel = useCallback(
+    (event: WheelEvent<HTMLDivElement>) => {
+      if (Math.abs(event.deltaY) < 24) return;
+
+      const now = Date.now();
+      if (now < wheelLockUntilRef.current) return;
+      wheelLockUntilRef.current = now + 450;
+
+      if (event.deltaY > 0) {
+        goToNext();
+        return;
+      }
+
+      goToPrev();
+    },
+    [goToNext, goToPrev],
+  );
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -37,11 +118,11 @@ export function Hero({ serviceId }: HeroProps) {
     if (prefersReducedMotion.matches) return;
 
     const intervalId = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % HERO_IMAGES.length);
+      goToNext();
     }, 6000);
 
     return () => window.clearInterval(intervalId);
-  }, []);
+  }, [goToNext]);
 
   return (
     <section className="relative overflow-hidden bg-brand-900 pt-20">
@@ -85,7 +166,13 @@ export function Hero({ serviceId }: HeroProps) {
         </div>
 
         <div className="relative flex-1">
-          <div className="relative aspect-4/3 w-full overflow-hidden rounded-3xl bg-white/6 ring-1 ring-white/15 shadow-2xl shadow-black/20">
+          <div
+            className="relative aspect-4/3 w-full overflow-hidden rounded-3xl bg-white/6 ring-1 ring-white/15 shadow-2xl shadow-black/20"
+            onClick={handleCarouselClick}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+            onWheel={handleWheel}
+          >
             {HERO_IMAGES.map((image, index) => (
               <Image
                 key={image.key}
