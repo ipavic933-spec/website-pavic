@@ -145,7 +145,7 @@ export function Hero({ serviceId }: HeroProps) {
               <Badge
                 key={key}
                 variant="secondary"
-                className="rounded-full bg-white/12 px-3.5 py-1.5 text-xs font-medium text-white/85 ring-1 ring-white/10 backdrop-blur-sm hover:bg-white/12"
+                className="rounded-full bg-white/12 px-[0.92rem] py-[0.4rem] text-[0.79rem] font-medium text-white/85 ring-1 ring-white/10 backdrop-blur-sm hover:bg-white/12"
               >
                 {t(key)}
               </Badge>
