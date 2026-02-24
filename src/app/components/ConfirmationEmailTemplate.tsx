@@ -58,7 +58,7 @@ export const ConfirmationEmailTemplate: React.FC<
                   Odvjetnički ured
                 </Text>
                 <Text className="m-0! text-[21px] font-semibold leading-tight tracking-tight text-white">
-                  Ivan Pavic
+                  Ivan Pavić
                 </Text>
               </Column>
             </Row>
