@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Text, Section } from "@react-email/components";
+import { Text, Section, Heading } from "@react-email/components";
 
 interface EmailTemplateProps {
   name: string;
@@ -14,14 +14,11 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
 }) => (
   <Section>
     <Text>
-      <h1>A new messafe from a client</h1>
+      <Heading as="h1">A new messafe from a client</Heading>
       <div>
-        {name} has filled out the form and would like to scedule a meeting
-        <br />
-        To contact the user use the email: {email}
-        <br />
-        Message of the form:
-        <br />
+        <Text>{name} has filled out the form and would like to scedule a meeting</Text>
+        <Text>To contact the user use the email: {email}</Text>
+        <Text>Message of the form:</Text>
         {message}
       </div>
     </Text>
