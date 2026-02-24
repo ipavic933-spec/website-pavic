@@ -17,7 +17,6 @@ export function Contact() {
 
   const handleSubmit = useCallback(
     async (e: SubmitEvent<HTMLFormElement>) => {
-      console.log('1');
       setIsLoading(true);
       e.preventDefault();
       const form = e.currentTarget;
@@ -35,7 +34,6 @@ export function Contact() {
           },
           body: JSON.stringify(payload),
         });
-        console.log('2');
         if (res.status !== 200) {
           const data = await res.json();
           throw new Error(JSON.stringify(data.message));
