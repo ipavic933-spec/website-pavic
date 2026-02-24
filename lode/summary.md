@@ -48,7 +48,7 @@ Invariants
 - The home page lives at `src/app/page.tsx`.
 - Mobile navigation links render only after tapping the hamburger icon in `src/app/components/Header.tsx`.
 - Open mobile navigation is a full-width overlay dropdown and does not push page content down.
-- Hero carousel rotates three assets from `public/`: `sv-duje.png`, `lady-justice.jpg`, and `document-signing.jpg`; users can change slides with dot clicks, image left/right click zones, touch swipe, and mouse wheel over the carousel.
+- Hero carousel rotates three assets from `public/`: `sv-duje.png`, `lady-justice.jpg`, and `document-signing.jpg`; users can change slides with dot clicks and image left/right click zones, and dot clicks are isolated so they do not bubble into the zone-click navigation.
 - Hero pills (badge chips under the headline) are scaled up about 5% via custom `px/py/text` sizing.
 - Home content sections (`About`, `Services`, `Contact`) use unified vertical spacing `py-10 lg:py-12` to match the Hero section rhythm.
 - On large screens, the About section aligns text and portrait vertically with `lg:items-center` so copy sits centered relative to the photo.

@@ -5,11 +5,9 @@ import Link from "next/link";
 import {
   useCallback,
   useEffect,
-  useRef,
   useState,
   type MouseEvent,
   type TouchEvent,
-  type WheelEvent,
 } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -35,7 +33,6 @@ export function Hero({ serviceId }: HeroProps) {
     : t("hero.subtitle");
   const [activeIndex, setActiveIndex] = useState(0);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
-  const wheelLockUntilRef = useRef(0);
 
   const goToNext = useCallback(() => {
     setActiveIndex((current) => (current + 1) % HERO_IMAGES.length);
@@ -60,6 +57,14 @@ export function Hero({ serviceId }: HeroProps) {
       goToNext();
     },
     [goToNext, goToPrev],
+  );
+
+  const handleIndicatorClick = useCallback(
+    (event: MouseEvent<HTMLButtonElement>, index: number) => {
+      event.stopPropagation();
+      setActiveIndex(index);
+    },
+    [],
   );
 
   const handleTouchStart = useCallback((event: TouchEvent<HTMLDivElement>) => {
@@ -88,24 +93,6 @@ export function Hero({ serviceId }: HeroProps) {
       goToPrev();
     },
     [goToNext, goToPrev, touchStartX],
-  );
-
-  const handleWheel = useCallback(
-    (event: WheelEvent<HTMLDivElement>) => {
-      if (Math.abs(event.deltaY) < 24) return;
-
-      const now = Date.now();
-      if (now < wheelLockUntilRef.current) return;
-      wheelLockUntilRef.current = now + 450;
-
-      if (event.deltaY > 0) {
-        goToNext();
-        return;
-      }
-
-      goToPrev();
-    },
-    [goToNext, goToPrev],
   );
 
   useEffect(() => {
@@ -171,7 +158,6 @@ export function Hero({ serviceId }: HeroProps) {
             onClick={handleCarouselClick}
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
-            onWheel={handleWheel}
           >
             {HERO_IMAGES.map((image, index) => (
               <Image
@@ -188,13 +174,13 @@ export function Hero({ serviceId }: HeroProps) {
               />
             ))}
 
-            <div className="absolute inset-x-0 bottom-4 flex items-center justify-center px-4">
+            <div className="absolute inset-x-0 bottom-4 flex items-center justify-center px-4 z-10">
               <div className="flex items-center gap-2">
                 {HERO_IMAGES.map((_, index) => (
                   <button
                     key={`hero-slide-${index}`}
                     type="button"
-                    onClick={() => setActiveIndex(index)}
+                    onClick={(event) => handleIndicatorClick(event, index)}
                     className={`h-2.5 w-2.5 rounded-full ring-1 ring-white/30 transition ${
                       index === activeIndex
                         ? "bg-white"
