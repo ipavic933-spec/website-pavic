@@ -27,9 +27,9 @@ type HeroProps = {
 
 export function Hero({ serviceId }: HeroProps) {
   const t = useTranslations();
-  const title = serviceId ? t(`services.${serviceId}.title`) : t("hero.title");
+  const title = serviceId ? t(`services.${serviceId}.heroTitle`) : t("hero.title");
   const subtitle = serviceId
-    ? t(`services.${serviceId}.desc`)
+    ? t(`services.${serviceId}.heroDesc`)
     : t("hero.subtitle");
   const [activeIndex, setActiveIndex] = useState(0);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
