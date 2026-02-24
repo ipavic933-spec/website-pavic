@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Text, Section, Heading } from "@react-email/components";
+import { Text, Section, Heading, Container, Hr } from "@react-email/components";
 
 interface EmailTemplateProps {
   name: string;
@@ -13,15 +13,19 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
   message,
 }) => (
   <Section>
-    <Text>
-      <Heading as="h1">A new messafe from a client</Heading>
-      <div>
-        <Text>{name} has filled out the form and would like to scedule a meeting</Text>
-        <Text>To contact the user use the email: {email}</Text>
-        <Text>Message of the form:</Text>
-        {message}
-      </div>
-    </Text>
+    <Container>
+      <Heading as="h1">Novi upit s web stranice</Heading>
+      <Text>Zaprimljen je novi upit putem kontakt forme.</Text>
+      <Hr />
+      <Text>Ime i prezime: {name}</Text>
+      <Text>E-mail: {email}</Text>
+      <Text>Poruka:</Text>
+      <Text>{message}</Text>
+      <Hr />
+      <Text>
+        Ova poruka je automatski poslana s kontakt forme.
+      </Text>
+    </Container>
   </Section>
 );
 

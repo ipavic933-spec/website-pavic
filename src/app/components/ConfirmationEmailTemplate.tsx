@@ -37,7 +37,9 @@ export const ConfirmationEmailTemplate: React.FC<
 > = ({ name }) => (
   <Html>
     <Tailwind config={emailTailwindConfig}>
-      <Heading as="h1">Hvala Vam što ste se javili/Thank You for reaching out</Heading>
+      <Heading as="h1">
+        Zaprimili smo vaš upit / We&apos;ve received your message
+      </Heading>
       <Section>
         <Container className="mx-auto max-w-xl">
           <Section className="mb-4">
@@ -61,20 +63,18 @@ export const ConfirmationEmailTemplate: React.FC<
               </Column>
             </Row>
           </Section>
-          <Text className="m-0! mt-2">
-            Poštovani/a {name}, zahvaljujemo Vam što ste nas kontaktirali.
-          </Text>
+          <Text className="m-0! mt-2">Poštovani/Poštovana {name},</Text>
           <Text className="m-0! mb-2">
-            Odgovorit ćemo na Vaš upit u najkraćem mogućem roku (unutar dva
-            radna dana).
+            hvala vam što ste nas kontaktirali. Vaš upit je uspješno zaprimljen,
+            te ću Vam odgovorit u najkraćem mogućem roku, najkasnije u roku od
+            dva radna dana.
           </Text>
           <Hr className="border-dotted" />
-          <Text className="m-0! mt-2">
-            Dear {name}, we thank You for reaching out to us.
-          </Text>
+          <Text className="m-0! mt-2">Dear {name},</Text>
           <Text className="m-0! mb-2">
-            We will respond to Your inquiry as soon as possible (within two
-            working days).
+            Thank you for reaching out. Your message has been successfully
+            received, and I will respond to you as soon as possible, no later
+            than two business days.
           </Text>
         </Container>
       </Section>
