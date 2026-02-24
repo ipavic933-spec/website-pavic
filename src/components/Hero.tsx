@@ -2,7 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useState,
+  type MouseEvent,
+  type TouchEvent,
+} from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { heroBadges } from "@/data/heroBadges";
@@ -10,9 +16,9 @@ import { useTranslations } from "next-intl";
 import { type ServiceId } from "@/data/services";
 
 const HERO_IMAGES = [
-  { src: "/sv-duje.png", key: "1" },
-  { src: "/sv-duje.png", key: "2" },
-  { src: "/sv-duje.png", key: "3" },
+  { src: "/sv-duje.png", key: "sv-duje" },
+  { src: "/lady-justice.jpg", key: "lady-justice" },
+  { src: "/document-signing.jpg", key: "document-signing" },
 ];
 
 type HeroProps = {
@@ -26,6 +32,68 @@ export function Hero({ serviceId }: HeroProps) {
     ? t(`services.${serviceId}.desc`)
     : t("hero.subtitle");
   const [activeIndex, setActiveIndex] = useState(0);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+
+  const goToNext = useCallback(() => {
+    setActiveIndex((current) => (current + 1) % HERO_IMAGES.length);
+  }, []);
+
+  const goToPrev = useCallback(() => {
+    setActiveIndex(
+      (current) => (current - 1 + HERO_IMAGES.length) % HERO_IMAGES.length,
+    );
+  }, []);
+
+  const handleCarouselClick = useCallback(
+    (event: MouseEvent<HTMLDivElement>) => {
+      const { left, width } = event.currentTarget.getBoundingClientRect();
+      const clickX = event.clientX - left;
+
+      if (clickX < width / 2) {
+        goToPrev();
+        return;
+      }
+
+      goToNext();
+    },
+    [goToNext, goToPrev],
+  );
+
+  const handleIndicatorClick = useCallback(
+    (event: MouseEvent<HTMLButtonElement>, index: number) => {
+      event.stopPropagation();
+      setActiveIndex(index);
+    },
+    [],
+  );
+
+  const handleTouchStart = useCallback((event: TouchEvent<HTMLDivElement>) => {
+    setTouchStartX(event.touches[0]?.clientX ?? null);
+  }, []);
+
+  const handleTouchEnd = useCallback(
+    (event: TouchEvent<HTMLDivElement>) => {
+      if (touchStartX === null) return;
+
+      const endX = event.changedTouches[0]?.clientX;
+      if (typeof endX !== "number") {
+        setTouchStartX(null);
+        return;
+      }
+
+      const swipeDelta = touchStartX - endX;
+      setTouchStartX(null);
+
+      if (Math.abs(swipeDelta) < 40) return;
+      if (swipeDelta > 0) {
+        goToNext();
+        return;
+      }
+
+      goToPrev();
+    },
+    [goToNext, goToPrev, touchStartX],
+  );
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -37,11 +105,11 @@ export function Hero({ serviceId }: HeroProps) {
     if (prefersReducedMotion.matches) return;
 
     const intervalId = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % HERO_IMAGES.length);
+      goToNext();
     }, 6000);
 
     return () => window.clearInterval(intervalId);
-  }, []);
+  }, [goToNext]);
 
   return (
     <section className="relative overflow-hidden bg-brand-900 pt-20">
@@ -64,7 +132,7 @@ export function Hero({ serviceId }: HeroProps) {
               <Badge
                 key={key}
                 variant="secondary"
-                className="rounded-full bg-white/12 px-3.5 py-1.5 text-xs font-medium text-white/85 ring-1 ring-white/10 backdrop-blur-sm hover:bg-white/12"
+                className="rounded-full bg-white/12 px-[0.92rem] py-[0.4rem] text-[0.79rem] font-medium text-white/85 ring-1 ring-white/10 backdrop-blur-sm hover:bg-white/12"
               >
                 {t(key)}
               </Badge>
@@ -85,7 +153,12 @@ export function Hero({ serviceId }: HeroProps) {
         </div>
 
         <div className="relative flex-1">
-          <div className="relative aspect-4/3 w-full overflow-hidden rounded-3xl bg-white/6 ring-1 ring-white/15 shadow-2xl shadow-black/20">
+          <div
+            className="relative aspect-4/3 w-full overflow-hidden rounded-3xl bg-white/6 ring-1 ring-white/15 shadow-2xl shadow-black/20"
+            onClick={handleCarouselClick}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
             {HERO_IMAGES.map((image, index) => (
               <Image
                 key={image.key}
@@ -101,13 +174,13 @@ export function Hero({ serviceId }: HeroProps) {
               />
             ))}
 
-            <div className="absolute inset-x-0 bottom-4 flex items-center justify-center px-4">
+            <div className="absolute inset-x-0 bottom-4 flex items-center justify-center px-4 z-10">
               <div className="flex items-center gap-2">
                 {HERO_IMAGES.map((_, index) => (
                   <button
                     key={`hero-slide-${index}`}
                     type="button"
-                    onClick={() => setActiveIndex(index)}
+                    onClick={(event) => handleIndicatorClick(event, index)}
                     className={`h-2.5 w-2.5 rounded-full ring-1 ring-white/30 transition ${
                       index === activeIndex
                         ? "bg-white"
