@@ -55,7 +55,7 @@ export const ConfirmationEmailTemplate: React.FC<
               </Column>
               <Column>
                 <Text className="m-0! text-[13px] uppercase tracking-[0.15em] text-white/70">
-                  Odvjetnicki ured
+                  Odvjetnički ured
                 </Text>
                 <Text className="m-0! text-[21px] font-semibold leading-tight tracking-tight text-white">
                   Ivan Pavic
@@ -65,16 +65,16 @@ export const ConfirmationEmailTemplate: React.FC<
           </Section>
           <Text className="m-0! mt-2">Poštovani/Poštovana {name},</Text>
           <Text className="m-0! mb-2">
-            hvala vam što ste nas kontaktirali. Vaš upit je uspješno zaprimljen,
-            te ću Vam odgovorit u najkraćem mogućem roku, najkasnije u roku od
-            dva radna dana.
+            zahvaljujemo Vam na upitu. Potvrđujemo primitak Vaše poruke te ćemo
+            Vam odgovoriti u najkraćem mogućem roku, a najkasnije u roku od dva
+            radna dana.
           </Text>
           <Hr className="border-dotted" />
           <Text className="m-0! mt-2">Dear {name},</Text>
           <Text className="m-0! mb-2">
-            Thank you for reaching out. Your message has been successfully
-            received, and I will respond to you as soon as possible, no later
-            than two business days.
+            Thank you for your inquiry. We confirm receipt of your message and
+            will respond as soon as possible, no later than within two business
+            days.
           </Text>
         </Container>
       </Section>
