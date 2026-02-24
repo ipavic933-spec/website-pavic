@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { Badge } from "./ui/badge";
 import { generalInformation } from "@/data/generalInformation";
 import { pillList } from "@/data/pillList";
@@ -18,21 +19,26 @@ export function About() {
 
         <div className="grid gap-14 lg:grid-cols-2 lg:items-start">
           <div className="flex items-start justify-center order-2 lg:justify-start lg:order-1">
-            <div className="relative aspect-3/4 w-full max-w-sm overflow-hidden rounded-3xl border border-brand-200 bg-linear-to-br from-brand-50 to-white shadow-sm ring-1 ring-brand-200/50">
+            <div className="relative aspect-3/4 w-full max-w-sm overflow-hidden rounded-3xl border border-brand-200 shadow-sm ring-1 ring-brand-200/50">
+              <Image
+                src="/ivan-pavic-photo.jpg"
+                alt="Portrait photo"
+                fill
+                priority
+                sizes="(min-width: 1024px) 24rem, 100vw"
+                className="object-cover"
+              />
               <div className="absolute bottom-6 right-6">
-                <div className="rounded-2xl border border-white/25 bg-ink-900/55 px-4 py-3 backdrop-blur-sm">
-                  <p className="text-sm font-semibold text-white">
+                <div className="rounded-2xl border border-white/80 bg-white/60 px-4 py-3 backdrop-blur-sm">
+                  <p className="text-sm font-semibold text-ink-900">
                     {t("aboutMe.cardName")}
                   </p>
-                  <p className="text-xs text-white/70">
+                  <p className="text-xs text-ink-700">
                     {t("aboutMe.cardRole")}
                   </p>
                 </div>
               </div>
               <div className="pointer-events-none absolute inset-3 rounded-2xl border border-brand-200/50" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-brand-700/30">
-                <span className="text-[11px] text-brand-700/35">IMAGE</span>
-              </div>
             </div>
           </div>
 

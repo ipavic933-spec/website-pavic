@@ -1,6 +1,6 @@
 # Summary
 
-Website Pavic is a small Next.js 16 App Router site under `src/app` with a shared root layout (header + footer), a minimal home page, and Tailwind CSS v4 global styles; reusable sections live in `src/components`, and the header contains responsive navigation with a desktop inline menu and a mobile full-width overlay menu that toggles from a hamburger button.
+Website Pavic is a small Next.js 16 App Router site under `src/app` with a shared root layout (header + footer), a minimal home page, and Tailwind CSS v4 global styles; reusable sections live in `src/components`, the header contains responsive navigation with a desktop inline menu and a mobile full-width overlay menu, and the About section renders a portrait photo from `public/ivan-pavic-photo.jpg`.
 
 Related
 - [Terminology](terminology.md)
@@ -48,6 +48,7 @@ Invariants
 - The home page lives at `src/app/page.tsx`.
 - Mobile navigation links render only after tapping the hamburger icon in `src/app/components/Header.tsx`.
 - Open mobile navigation is a full-width overlay dropdown and does not push page content down.
+- The About image in `src/components/About.tsx` is rendered with `next/image` from `/ivan-pavic-photo.jpg` and has no placeholder overlay layer.
 
 Rationale
 - A simple layout keeps the site structure consistent while content evolves.
