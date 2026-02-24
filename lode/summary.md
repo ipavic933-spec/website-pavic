@@ -48,7 +48,10 @@ Invariants
 - The home page lives at `src/app/page.tsx`.
 - Mobile navigation links render only after tapping the hamburger icon in `src/app/components/Header.tsx`.
 - Open mobile navigation is a full-width overlay dropdown and does not push page content down.
-- The About image in `src/components/About.tsx` is rendered with `next/image` from `/ivan-pavic-photo.jpg` and has no placeholder overlay layer.
+- Hero carousel rotates three assets from `public/`: `sv-duje.png`, `lady-justice.jpg`, and `document-signing.jpg`.
+- Home content sections (`About`, `Services`, `Contact`) use unified vertical spacing `py-10 lg:py-12` to match the Hero section rhythm.
+- On large screens, the About section aligns text and portrait vertically with `lg:items-center` so copy sits centered relative to the photo.
+- The About image in `src/components/About.tsx` is rendered with `next/image` from `/ivan-pavic-photo.jpg`, uses a `max-w-md` 3:4 frame (`sizes` desktop target `28rem`), keeps its outer frame styling, and has no inner inset border overlay.
 
 Rationale
 - A simple layout keeps the site structure consistent while content evolves.

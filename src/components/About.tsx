@@ -8,7 +8,7 @@ export function About() {
   const t = useTranslations();
 
   return (
-    <section id="about" className="scroll-mt-20 bg-white py-16 md:py-20">
+    <section id="about" className="scroll-mt-20 bg-white py-10 lg:py-12">
       <div className="mx-auto max-w-6xl px-6">
         <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.25em] text-brand-700">
           {t("aboutMe.eyebrow")}
@@ -17,15 +17,15 @@ export function About() {
           {t("aboutMe.title")}
         </h2>
 
-        <div className="grid gap-14 lg:grid-cols-2 lg:items-start">
+        <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
           <div className="flex items-start justify-center order-2 lg:justify-start lg:order-1">
-            <div className="relative aspect-3/4 w-full max-w-sm overflow-hidden rounded-3xl border border-brand-200 shadow-sm ring-1 ring-brand-200/50">
+            <div className="relative aspect-3/4 w-full max-w-md overflow-hidden rounded-3xl border border-brand-200 shadow-sm ring-1 ring-brand-200/50">
               <Image
                 src="/ivan-pavic-photo.jpg"
                 alt="Portrait photo"
                 fill
                 priority
-                sizes="(min-width: 1024px) 24rem, 100vw"
+                sizes="(min-width: 1024px) 28rem, 100vw"
                 className="object-cover"
               />
               <div className="absolute bottom-6 right-6">
@@ -38,7 +38,6 @@ export function About() {
                   </p>
                 </div>
               </div>
-              <div className="pointer-events-none absolute inset-3 rounded-2xl border border-brand-200/50" />
             </div>
           </div>
 

@@ -17,7 +17,7 @@ export function Services({ serviceId }: ServicesProps) {
     : services;
 
   return (
-    <section id="services" className="scroll-mt-20 bg-brand-50 py-16 md:py-20">
+    <section id="services" className="scroll-mt-20 bg-brand-50 py-10 lg:py-12">
       <div className="mx-auto max-w-6xl px-6">
         <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.25em] text-brand-700">
           {t("services.eyebrow")}

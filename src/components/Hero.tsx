@@ -10,9 +10,9 @@ import { useTranslations } from "next-intl";
 import { type ServiceId } from "@/data/services";
 
 const HERO_IMAGES = [
-  { src: "/sv-duje.png", key: "1" },
-  { src: "/sv-duje.png", key: "2" },
-  { src: "/sv-duje.png", key: "3" },
+  { src: "/sv-duje.png", key: "sv-duje" },
+  { src: "/lady-justice.jpg", key: "lady-justice" },
+  { src: "/document-signing.jpg", key: "document-signing" },
 ];
 
 type HeroProps = {
