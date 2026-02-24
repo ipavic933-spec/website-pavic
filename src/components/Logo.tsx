@@ -7,7 +7,7 @@ type LogoProps = {
   href?: string;
 };
 
-export function Logo({ hideText = false, href = "#top" }: LogoProps) {
+export function Logo({ hideText = false, href = "/" }: LogoProps) {
   const t = useTranslations();
   return (
     <Link

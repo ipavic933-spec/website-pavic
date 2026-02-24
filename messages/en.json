@@ -47,27 +47,39 @@
     "desc": "I provide legal services to individuals and legal entities in the following areas:",
     "property": {
       "title": "Property & land registry law",
-      "desc": "Ownership, co-ownership, registrations and land registry regulation."
+      "desc": "Ownership, co-ownership, registrations and land registry regulation.",
+      "heroTitle": "Protect your rights in property and land registry matters",
+      "heroDesc": "We offer legal support in resolving ownership relations, contracts, and key property law situations."
     },
     "contract": {
       "title": "Contract law",
-      "desc": "Drafting and analysis of contracts and contractual disputes."
+      "desc": "Drafting and analysis of contracts and contractual disputes.",
+      "heroTitle": "Expert advice and representation in contract law",
+      "heroDesc": "We provide legal support in drafting and analyzing contracts, claims for damages, and other contractual relationships."
     },
     "inheritance": {
       "title": "Inheritance law",
-      "desc": "Counseling and representation in probate proceedings."
+      "desc": "Counseling and representation in probate proceedings.",
+      "heroTitle": "Legal protection in probate proceedings",
+      "heroDesc": "We advise and represent clients in all phases of probate proceedings and ensure effective protection of their rights."
     },
     "admin": {
       "title": "Administrative law",
-      "desc": "Representation in proceedings before competent authorities."
+      "desc": "Representation in proceedings before competent authorities.",
+      "heroTitle": "Representation in administrative proceedings and disputes",
+      "heroDesc": "We provide legal protection before competent authorities and courts in all types of administrative procedures."
     },
     "enforcement": {
       "title": "Enforcement law",
-      "desc": "Preparation and management of enforcement and debt collection."
+      "desc": "Preparation and management of enforcement and debt collection.",
+      "heroTitle": "Preparation and management of enforcement proceedings",
+      "heroDesc": "We help with debt collection and provide legal support through all phases of enforcement proceedings."
     },
     "labor": {
       "title": "Labor law",
-      "desc": "Counseling and representation of employers and employees."
+      "desc": "Counseling and representation of employers and employees.",
+      "heroTitle": "Legal certainty for employers and employees",
+      "heroDesc": "We provide expert support in regulating employment relationships, protecting employee rights, and representation before competent authorities."
     }
   },
   "contact": {

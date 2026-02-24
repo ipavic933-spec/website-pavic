@@ -47,27 +47,39 @@
     "desc": "Pružam pravne usluge fizičkim i pravnim osobama u sljedećim područjima:",
     "property": {
       "title": "Stvarno i zemljišnoknjižno pravo",
-      "desc": "Vlasništvo, suvlasništvo, uknjižbe i uređenje zemljišnoknjižnog stanja."
+      "desc": "Vlasništvo, suvlasništvo, uknjižbe i uređenje zemljišnoknjižnog stanja.",
+      "heroTitle": "Zaštitite svoja prava u imovinskim i zemljišnoknjižnim pitanjima",
+      "heroDesc": "Nudimo pravnu podršku pri rješavanju vlasničkih odnosa, ugovora i ključnih imovinskopravnih situacija."
     },
     "contract": {
       "title": "Obvezno pravo",
-      "desc": "Sastavljanje i analiza ugovora te sporovi iz ugovornih odnosa."
+      "desc": "Sastavljanje i analiza ugovora te sporovi iz ugovornih odnosa.",
+      "heroTitle": "Stručno savjetovanje i zastupanje u obveznom pravu",
+      "heroDesc": "Pružamo pravnu podršku u sastavljanju i analizi ugovora, naknadi štete te drugim obveznopravnim odnosima."
     },
     "inheritance": {
       "title": "Nasljedno pravo",
-      "desc": "Savjetovanje i zastupanje u ostavinskim postupcima."
+      "desc": "Savjetovanje i zastupanje u ostavinskim postupcima.",
+      "heroTitle": "Pravna zaštita u ostavinskim postupcima",
+      "heroDesc": "Savjetujemo i zastupamo stranke u svim fazama ostavinskog postupka te osiguravamo učinkovitu zaštitu njihovih prava."
     },
     "admin": {
       "title": "Upravno pravo",
-      "desc": "Zastupanje u postupcima i sporovima pred nadležnim tijelima."
+      "desc": "Zastupanje u postupcima i sporovima pred nadležnim tijelima.",
+      "heroTitle": "Zastupanje u upravnim postupcima i sporovima",
+      "heroDesc": "Pružamo pravnu zaštitu pred nadležnim tijelima i sudovima u svim vrstama upravnih postupaka."
     },
     "enforcement": {
       "title": "Ovršno pravo",
-      "desc": "Priprema i vođenje ovrha te naplata potraživanja."
+      "desc": "Priprema i vođenje ovrha te naplata potraživanja.",
+      "heroTitle": "Priprema i vođenje ovršnih postupaka",
+      "heroDesc": "Pomažemo u naplati potraživanja te pružamo pravnu podršku kroz sve faze ovršnog postupka."
     },
     "labor": {
       "title": "Radno pravo",
-      "desc": "Savjetovanje i zastupanje poslodavaca i radnika."
+      "desc": "Savjetovanje i zastupanje poslodavaca i radnika.",
+      "heroTitle": "Pravna sigurnost za poslodavce i radnike",
+      "heroDesc": "Pružamo stručnu pomoć u uređenju radnih odnosa, zaštiti prava zaposlenika i zastupanju pred nadležnim tijelima."
     }
   },
   "contact": {

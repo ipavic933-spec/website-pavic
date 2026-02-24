@@ -1,5 +1,6 @@
+import { ConfirmationEmailTemplate } from "../components/ConfirmationEmailTemplate";
+import { EmailTemplate } from "../components/EmailTemplate";
 import { render } from "@react-email/render";
-import { EmailTemplate } from '../components/EmailTemplate';
 import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
@@ -13,14 +14,20 @@ const transporter = nodemailer.createTransport({
 });
 
 interface SendEmailProps {
-  name: string,
-  email: string,
-  message: string,
+  name: string;
+  email: string;
+  message: string;
 }
 
-export const sendEmail = async ({name, email, message}: SendEmailProps) => {
+interface SendConfirmationEmailProps {
+  name: string;
+  email: string;
+}
 
-  const template = <EmailTemplate name={name} email={email} message={message}/>
+export const sendEmail = async ({ name, email, message }: SendEmailProps) => {
+  const template = (
+    <EmailTemplate name={name} email={email} message={message} />
+  );
 
   const emailHtml = await render(template);
 
@@ -30,4 +37,20 @@ export const sendEmail = async ({name, email, message}: SendEmailProps) => {
     subject: "Message from a client",
     html: emailHtml,
   });
-}
+};
+
+export const sendConfirmationEmail = async ({
+  name,
+  email,
+}: SendConfirmationEmailProps) => {
+  const template = <ConfirmationEmailTemplate name={name} />;
+
+  const emailHtml = await render(template);
+
+  await transporter.sendMail({
+    from: `${process.env.SMTP_USER}`,
+    to: email,
+    subject: "Confirmation email",
+    html: emailHtml,
+  });
+};

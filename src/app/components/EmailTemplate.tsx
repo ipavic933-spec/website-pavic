@@ -1,29 +1,32 @@
 import * as React from "react";
-import { Text, Section } from "@react-email/components";
+import { Text, Section, Heading, Container, Hr } from "@react-email/components";
 
 interface EmailTemplateProps {
   name: string;
-  email: string,
-  message: string,
+  email: string;
+  message: string;
 }
 
 export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
-  name, email, message
+  name,
+  email,
+  message,
 }) => (
-    <Section>
+  <Section>
+    <Container>
+      <Heading as="h1">Novi upit s web stranice</Heading>
+      <Text>Zaprimljen je novi upit putem kontakt forme.</Text>
+      <Hr />
+      <Text>Ime i prezime: {name}</Text>
+      <Text>E-mail: {email}</Text>
+      <Text>Poruka:</Text>
+      <Text>{message}</Text>
+      <Hr />
       <Text>
-        <h1>A new messafe from a client</h1>
-        <div>
-          {name} has filled out the form and would like to scedule a meeting
-          <br/>
-          To contact the user use the email: {email}
-          <br/>
-          Message of the form:
-          <br/>
-          {message}
-        </div>
+        Ova poruka je automatski poslana s kontakt forme.
       </Text>
-    </Section>
+    </Container>
+  </Section>
 );
 
 export default EmailTemplate;
