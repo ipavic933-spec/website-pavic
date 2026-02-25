@@ -16,7 +16,7 @@ export const contactItems = [
   {
     icon: MapPin,
     labelKey: "contact.addressLabel",
-    value: "Svaciceva 4, 21000, Split",
+    value: "Svačićeva 4, 21000, Split",
     href: "https://maps.app.goo.gl/w7Kv3WStw5GzXafE6",
   },
 ];
