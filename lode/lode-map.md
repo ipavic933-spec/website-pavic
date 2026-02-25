@@ -13,6 +13,8 @@ Plans
 Domains
 - [Internationalization](i18n/summary.md)
 - [Copy Editing](i18n/copy-editing.md)
+- [Services](services/summary.md)
+- [Contact Pipeline](contact/summary.md)
 
 Scratch
 - `tmp/` (session scraps, git-ignored)
@@ -25,6 +27,8 @@ graph TD
   LodeMap --> Plans["plans/current-plan.md"]
   LodeMap --> I18N["i18n/summary.md"]
   LodeMap --> I18NCopy["i18n/copy-editing.md"]
+  LodeMap --> Services["services/summary.md"]
+  LodeMap --> Contact["contact/summary.md"]
   LodeMap --> Tmp["tmp/"]
 ```
 

@@ -7,14 +7,20 @@ Related
 - [Terminology](terminology.md)
 - [Current Plan](plans/current-plan.md)
 - [Internationalization](i18n/summary.md)
+- [Services](services/summary.md)
+- [Contact Pipeline](contact/summary.md)
 
 ```mermaid
 flowchart TD
   HomePage["src/app/[locale]/page.tsx"] -->|uses| Sections["src/components/Hero/About/Services/Contact"]
+  ServicePage["src/app/[locale]/[serviceSlug]/page.tsx"] --> ServiceSlugLib["src/lib/service-slugs.ts"]
+  ServiceSlugLib --> LocalSlugConfig["src/data/local-service-slugs.json"]
   LocaleLayout["src/app/[locale]/layout.tsx"] --> IntlProvider["NextIntlClientProvider"]
   Header["src/components/Header.tsx"] --> Toggle["useState mobileOpen"]
   Toggle --> OverlayNav["max-height animated mobile menu"]
   Contact["src/components/Contact.tsx"] --> SendApi["/api/send"]
+  SendApi --> EmailHelper["src/app/helper/email.tsx"]
+  Sitemap["src/app/sitemap.ts"] --> ServiceSlugLib
 ```
 
 ```tsx
@@ -32,11 +38,14 @@ Practices
 - Keep the hero section in `src/components/Hero.tsx` on a solid dark brand background (`bg-brand-900`) with high-contrast white foreground text.
 - Keep the hero photo treatment minimal: image + gradient overlays only, without bottom-left identity badges or name chips.
 - In `src/components/About.tsx`, render the portrait with `next/image` using `/ivan-pavic-photo.jpg` from `public/` and remove placeholder-only layers once a real photo exists.
-- Keep the About name badge in `src/components/About.tsx` on a near-white translucent background (`bg-white/70`) with dark text (`text-ink-900`, `text-ink-700`) so it stays readable over dark photo areas.
+- Keep the About name badge in `src/components/About.tsx` on a translucent light surface (`bg-white/60`, `border-white/80`) with dark text (`text-ink-900`, `text-ink-700`) so it stays readable over dark photo areas.
 - Keep mobile menu links hidden by default and reveal them only when the header toggle state is open.
 - Keep locale message files symmetric: routine copy edits should update values, not keys.
+- Build service pages from `getServiceSlugEntries(locale)` with `dynamicParams = false` so unknown slugs 404 and valid slugs are statically generated.
+- When translating service URLs, resolve the target locale slug from `serviceId` in `LanguageSwitch` instead of carrying over the raw path segment.
+- For SEO city landing pages (`serviceId: null` in `local-service-slugs.json`), generate localized metadata from per-entry templates and keep at least HR alternates in sitemap.
 - For uncontrolled forms, use `name` attributes on inputs when reading values with `FormData`; `id` alone is not serialized.
-- In React form handlers, derive submit event type from `ComponentProps<"form">["onSubmit"]` to match JSX expectations exactly and avoid relying on potentially deprecated global aliases.
+- Contact form submit handlers currently use explicit `SubmitEvent<HTMLFormElement>` typing and process values from `new FormData(e.currentTarget)`.
 - In `@react-email/components`, keep block-level wrappers (`div`, `h1`, sections) outside `Text` because `Text` renders a `<p>` element and cannot contain nested block elements without hydration errors.
 - For email templates, prefer `Container`, `Section`, `Row`, `Column`, and `Text` over raw `div`/`span`, and use `Img` from `@react-email/components` instead of `next/image`.
 - Email image `src` values must be absolute public URLs (for example `${NEXT_PUBLIC_SITE_URL}/logo.png`); relative paths like `/logo.png` break in email clients.
