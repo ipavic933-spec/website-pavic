@@ -29,7 +29,7 @@ export default async function PrivacyPolicyPage() {
                 </a>
               ),
             })}
-          </p>{" "}
+          </p>
         </section>
 
         <section className="mt-8 space-y-4 text-sm leading-relaxed text-ink-700">
@@ -37,6 +37,7 @@ export default async function PrivacyPolicyPage() {
             2. {t("sections.collectedData.title")}
           </h2>
           <p>{t("sections.collectedData.body")}</p>
+          <p>{t("sections.collectedData.body2")}</p>
         </section>
 
         <section className="mt-8 space-y-4 text-sm leading-relaxed text-ink-700">
@@ -48,27 +49,39 @@ export default async function PrivacyPolicyPage() {
             <li>{t("sections.purposeAndBasis.bullet1")}</li>
             <li>{t("sections.purposeAndBasis.bullet2")}</li>
             <li>{t("sections.purposeAndBasis.bullet3")}</li>
+            <li>{t("sections.purposeAndBasis.bullet4")}</li>
           </ul>
           <p>{t("sections.purposeAndBasis.legalBasis")}</p>
         </section>
 
         <section className="mt-8 space-y-4 text-sm leading-relaxed text-ink-700">
           <h2 className="text-base font-semibold text-ink-900">
-            4. {t("sections.retention.title")}
+            4. {t("sections.cookiesAndAnalytics.title")}
+          </h2>
+          <p>{t("sections.cookiesAndAnalytics.body1")}</p>
+          <p>{t("sections.cookiesAndAnalytics.body2")}</p>
+          <p>{t("sections.cookiesAndAnalytics.body3")}</p>
+          <p>{t("sections.cookiesAndAnalytics.body4")}</p>
+          <p>{t("sections.cookiesAndAnalytics.body5")}</p>
+        </section>
+
+        <section className="mt-8 space-y-4 text-sm leading-relaxed text-ink-700">
+          <h2 className="text-base font-semibold text-ink-900">
+            5. {t("sections.retention.title")}
           </h2>
           <p>{t("sections.retention.body")}</p>
         </section>
 
         <section className="mt-8 space-y-4 text-sm leading-relaxed text-ink-700">
           <h2 className="text-base font-semibold text-ink-900">
-            5. {t("sections.sharing.title")}
+            6. {t("sections.sharing.title")}
           </h2>
           <p>{t("sections.sharing.body")}</p>
         </section>
 
         <section className="mt-8 space-y-4 text-sm leading-relaxed text-ink-700">
           <h2 className="text-base font-semibold text-ink-900">
-            6. {t("sections.rights.title")}
+            7. {t("sections.rights.title")}
           </h2>
           <p>{t("sections.rights.body1")}</p>
           <p>{t("sections.rights.body2")}</p>
@@ -76,21 +89,21 @@ export default async function PrivacyPolicyPage() {
 
         <section className="mt-8 space-y-4 text-sm leading-relaxed text-ink-700">
           <h2 className="text-base font-semibold text-ink-900">
-            7. {t("sections.security.title")}
+            8. {t("sections.security.title")}
           </h2>
           <p>{t("sections.security.body")}</p>
         </section>
 
         <section className="mt-8 space-y-4 text-sm leading-relaxed text-ink-700">
           <h2 className="text-base font-semibold text-ink-900">
-            8. {t("sections.externalLinks.title")}
+            9. {t("sections.externalLinks.title")}
           </h2>
           <p>{t("sections.externalLinks.body")}</p>
         </section>
 
         <section className="mt-8 space-y-4 text-sm leading-relaxed text-ink-700">
           <h2 className="text-base font-semibold text-ink-900">
-            9. {t("sections.contact.title")}
+            10. {t("sections.contact.title")}
           </h2>
           <p>
             {t.rich("sections.contact.body", {

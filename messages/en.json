@@ -114,7 +114,7 @@
   },
   "privacyPolicy": {
     "title": "Privacy Policy",
-    "updated": "Last updated: February 13, 2026",
+    "updated": "Last updated: February 25, 2026",
     "sections": {
       "controller": {
         "title": "Data Controller",
@@ -122,15 +122,25 @@
       },
       "collectedData": {
         "title": "What We Collect",
-        "body": "Through the contact form or direct communication, we may collect your full name, email address, phone number, and the information you provide in your message."
+        "body": "Through the contact form or direct communication, we may collect your full name, email address, phone number, and the information you provide in your message.",
+        "body2": "When you use this website, certain technical data may also be collected automatically through analytics tools, such as your IP address, browser type, device type, access time, and visited pages."
       },
       "purposeAndBasis": {
         "title": "Purpose and Legal Basis",
         "intro": "We process personal data to:",
         "bullet1": "respond to inquiries and provide legal information,",
         "bullet2": "prepare or perform legal services where applicable,",
-        "bullet3": "meet legal and professional obligations.",
+        "bullet3": "meet legal and professional obligations,",
+        "bullet4": "analyze website usage and improve its functionality and content.",
         "legalBasis": "Legal bases may include consent, pre-contractual measures, performance of a contract, legitimate interests, and compliance with legal obligations."
+      },
+      "cookiesAndAnalytics": {
+        "title": "Cookies and Analytics",
+        "body1": "This website uses Google Analytics and Google Search Console.",
+        "body2": "Google Analytics uses cookies to collect anonymous statistical data about how the website is used (e.g., number of visitors, most visited pages, time spent on pages). This data helps us understand user behavior and improve content and services.",
+        "body3": "Google Search Console is used to monitor the technical health and search visibility of the website and does not enable direct identification of individual users.",
+        "body4": "Data may be processed on servers outside the Republic of Croatia, including in the United States, in accordance with applicable data protection regulations.",
+        "body5": "More detailed information about how Google processes data is available in Google's privacy policy."
       },
       "retention": {
         "title": "Data Retention",
@@ -138,7 +148,7 @@
       },
       "sharing": {
         "title": "Sharing of Data",
-        "body": "We do not sell personal data. Data may be shared only with trusted service providers when necessary for website operation, and with competent authorities where legally required."
+        "body": "We do not sell personal data. Data may be shared only with trusted service providers when necessary for website operation (including analytics providers), and with competent authorities where legally required."
       },
       "rights": {
         "title": "Your Rights",

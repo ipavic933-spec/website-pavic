@@ -34,7 +34,7 @@
     "bullet2": "Pravosudni ispit položen 2021.",
     "bullet3": "Rad temeljim na odgovornosti, povjerljivosti i jasnoj komunikaciji",
     "focusLabel": "Fokus",
-    "focus": "Stvarno i zemljisnoknjižno pravo, obvezno pravo i sastavljanje/analiza ugovora te zastupanje u sudskim i izvansudskim postupcima.",
+    "focus": "Stvarno i zemljišnoknjižno pravo, obvezno pravo i sastavljanje/analiza ugovora te zastupanje u sudskim i izvansudskim postupcima.",
     "expertise": "Stručnost",
     "confidentiality": "Povjerljivost",
     "dedication": "Posvećenost",
@@ -114,7 +114,7 @@
   },
   "privacyPolicy": {
     "title": "Pravila privatnosti",
-    "updated": "Ažurirano: 13. veljače 2026.",
+    "updated": "Ažurirano: 25. veljače 2026.",
     "sections": {
       "controller": {
         "title": "Voditelj obrade",
@@ -122,15 +122,25 @@
       },
       "collectedData": {
         "title": "Koje podatke prikupljamo",
-        "body": "Putem kontakt obrasca ili izravne komunikacije možemo prikupljati vaše ime i prezime, adresu e-pošte, broj telefona i informacije koje navedete u poruci."
+        "body": "Putem kontakt obrasca ili izravne komunikacije možemo prikupljati vaše ime i prezime, adresu e-pošte, broj telefona i informacije koje navedete u poruci.",
+        "body2": "Također, prilikom korištenja web stranice automatski se mogu prikupljati određeni tehnički podaci, poput IP adrese, vrste preglednika, vrste uređaja, vremena pristupa i posjećenih stranica, putem alata za analitiku."
       },
       "purposeAndBasis": {
         "title": "Svrha i pravna osnova obrade",
         "intro": "Osobne podatke obrađujemo kako bismo:",
         "bullet1": "odgovorili na upite i pružili pravne informacije,",
         "bullet2": "pripremili ili pružili pravne usluge kada je to primjenjivo,",
-        "bullet3": "ispunili zakonske i profesionalne obveze.",
+        "bullet3": "ispunili zakonske i profesionalne obveze,",
+        "bullet4": "analizirali korištenje web stranice i unaprijedili njezinu funkcionalnost i sadržaj.",
         "legalBasis": "Pravne osnove mogu uključivati privolu, poduzimanje radnji prije sklapanja ugovora, izvršavanje ugovora, legitimne interese i ispunjavanje zakonskih obveza."
+      },
+      "cookiesAndAnalytics": {
+        "title": "Kolačići i analitika",
+        "body1": "Ova web stranica koristi alate Google Analytics i Google Search Console.",
+        "body2": "Google Analytics koristi kolačiće za prikupljanje anonimnih statističkih podataka o načinu korištenja web stranice (npr. broj posjetitelja, najposjećenije stranice, vrijeme zadržavanja). Ti podaci pomažu nam u razumijevanju ponašanja korisnika i poboljšanju sadržaja i usluga.",
+        "body3": "Google Search Console služi za praćenje tehničke ispravnosti i vidljivosti web stranice u tražilicama te ne omogućuje izravnu identifikaciju pojedinih korisnika.",
+        "body4": "Podaci se mogu obrađivati na poslužiteljima izvan Republike Hrvatske, uključujući Sjedinjene Američke Države, u skladu s primjenjivim propisima o zaštiti podataka.",
+        "body5": "Detaljnije informacije o načinu na koji Google obrađuje podatke dostupne su u pravilima privatnosti društva Google."
       },
       "retention": {
         "title": "Rok čuvanja podataka",
@@ -138,7 +148,7 @@
       },
       "sharing": {
         "title": "Dijeljenje podataka",
-        "body": "Ne prodajemo osobne podatke. Podaci se mogu dijeliti samo s pouzdanim pružateljima usluga kada je to nužno za rad web stranice te s nadležnim tijelima kada to zahtijeva zakon."
+        "body": "Ne prodajemo osobne podatke. Podaci se mogu dijeliti samo s pouzdanim pružateljima usluga kada je to nužno za rad web stranice (uključujući pružatelje analitičkih usluga) te s nadležnim tijelima kada to zahtijeva zakon."
       },
       "rights": {
         "title": "Vaša prava",
