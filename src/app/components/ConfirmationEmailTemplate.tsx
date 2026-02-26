@@ -11,6 +11,7 @@ import {
   Column,
 } from "@react-email/components";
 import { Tailwind } from "@react-email/tailwind";
+import { contactItems } from "@/data/contactItems";
 
 interface EmailTemplateProps {
   name: string;
@@ -76,6 +77,25 @@ export const ConfirmationEmailTemplate: React.FC<
             will respond as soon as possible, no later than within two business
             days.
           </Text>
+          <Section className="mb-4">
+            <Row className="bg-brand-900 p-2 flex">
+              {contactItems.map((item) => {
+                return (
+                  <Column key={item.labelKey} className="align-middle pr-4">
+                    <a
+                      href={item.href}
+                      target={"_blank"}
+                      rel={"noreferrer"}
+                      className="inline-flex w-fit items-center gap-2 text-xs text-white/75"
+                      style={{ textDecoration: "underline", color: "#fff" }}
+                    >
+                      {item.value}
+                    </a>
+                  </Column>
+                );
+              })}
+            </Row>
+          </Section>
         </Container>
       </Section>
     </Tailwind>
