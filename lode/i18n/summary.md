@@ -1,11 +1,13 @@
 # Internationalization
 
-The app uses `next-intl` with `localePrefix: "as-needed"`, so Croatian (`hr`) is the default locale at unprefixed URLs (for example `/`) while English uses an explicit `/en` prefix; locale routing is applied through `src/proxy.ts` and users switch language from header locale links.
+The app uses `next-intl` with `localePrefix: "as-needed"`, so Croatian (`hr`) is the default locale at unprefixed URLs (for example `/`) while English uses an explicit `/en` prefix; locale routing is applied through `src/proxy.ts`, request-time message loading is handled by `src/i18n/request.ts`, and language switching is provided by `src/components/LanguageSwitch.tsx`, including locale-aware mapping for service slug routes via `src/lib/service-slugs.ts`.
 
 Related
 - [../summary.md](../summary.md)
 - [../terminology.md](../terminology.md)
 - [../practices.md](../practices.md)
+- [copy-editing.md](copy-editing.md)
+- [../services/summary.md](../services/summary.md)
 
 ```mermaid
 flowchart TD
@@ -13,14 +15,18 @@ flowchart TD
   Routing --> LocaleLayout["src/app/[locale]/layout.tsx"]
   LocaleLayout --> Request["src/i18n/request.ts"]
   Request --> Messages["messages/hr.json + messages/en.json"]
-  LocaleLayout --> Navigation["src/app/components/Navigation.tsx"]
+  LanguageSwitch["src/components/LanguageSwitch.tsx"] --> NavigationHelpers["src/i18n/navigation.ts"]
+  LanguageSwitch --> ServiceSlugLookup["src/lib/service-slugs.ts"]
+  ServiceSlugLookup --> Messages
+  NavigationHelpers --> Routing
 ```
 
 ```ts
 export const routing = defineRouting({
   locales: ["hr", "en"],
   defaultLocale: "hr",
-  localePrefix: "as-needed"
+  localePrefix: "as-needed",
+  localeDetection: false
 });
 ```
 
@@ -33,4 +39,5 @@ Invariants
 Contracts
 - `src/proxy.ts` applies `next-intl` routing using the shared `routing` config.
 - `src/i18n/request.ts` resolves a valid locale and loads matching messages.
-- `Navigation.tsx` provides explicit `HR` and `EN` locale switch links.
+- Locale switch UI uses localized navigation helpers from `src/i18n/navigation.ts`.
+- Locale switch keeps service detail routes translated by resolving target slug from `serviceId` when a matching service slug exists.

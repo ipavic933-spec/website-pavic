@@ -1,6 +1,6 @@
 # Current Plan
 
-Short-term plan for shaping the Website Pavic site.
+Short-term operating plan for maintaining localized SEO routes, translation consistency, and contact form reliability.
 
 Related
 - [Summary](../summary.md)
@@ -9,32 +9,27 @@ Related
 
 ```mermaid
 flowchart LR
-  Discover["Clarify content + brand"] --> Structure["Define sections + nav"]
-  Structure --> Build["Implement sections"]
-  Build --> Polish["Refine styles + responsiveness"]
+  Copy["Update copy values in hr/en"] --> VerifyLocales["Verify / and /en"]
+  VerifyLocales --> VerifyServiceRoutes["Verify key /[serviceSlug] and /en/[serviceSlug]"]
+  VerifyServiceRoutes --> Contact["Validate contact form + email flow"]
+  Contact --> DeployReady["Build + lint pass"]
 ```
 
 ```tsx
-export default function Home() {
-  return (
-    <main>
-      <section id="hero" />
-      <section id="services" />
-      <section id="about" />
-      <section id="contact" />
-    </main>
-  );
+async function saveCopy() {
+  // Values may change, key paths stay stable across locales.
 }
 ```
 
 Plan
-1. Clarify target content and visual direction for the homepage.
-2. Define navigation structure and route map.
-3. Replace placeholder header and footer content.
-4. Build homepage sections (hero, services, about, contact).
-5. Align global styles with brand (colors, typography, spacing).
-6. Verify responsive layout and accessibility basics.
+1. Keep `messages/hr.json` and `messages/en.json` key structure aligned.
+2. Treat copy updates as value-only changes unless component requirements change.
+3. Verify locale rendering at `/` and `/en` for each content update.
+4. Verify representative service routes in both locales (for example one base service slug and one HR local SEO slug).
+5. Keep contact form operational by validating `.env` SMTP values (`SMTP_*`, `EMAIL_TO`, `NEXT_PUBLIC_SITE_URL`) in each environment.
+6. Run lint and production build before shipping substantial updates.
 
 Invariants
-- The root layout continues to wrap all pages.
-- Home page remains the main entry point.
+- Localized routes continue to be served through `src/app/[locale]/`.
+- Contact form posting contract (`name`, `email`, `message`) stays stable for `/api/send`.
+- Service slug generation remains deterministic per locale and backed by `messages/*.json` plus `src/data/local-service-slugs.json`.
