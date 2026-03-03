@@ -18,7 +18,7 @@ interface EmailTemplateProps {
 }
 
 const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://website-pavic.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://website-pavic-5dqu.vercel.app";
 
 const LOGO_SRC = `${BASE_URL.replace(/\/$/, "")}/logo.png`;
 const emailTailwindConfig = {
