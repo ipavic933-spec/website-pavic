@@ -6,7 +6,7 @@ import {
 } from "@/lib/service-slugs";
 
 const BASE_URL =
-process.env.NEXT_PUBLIC_SITE_URL ?? "https://website-pavic.vercel.app";
+process.env.NEXT_PUBLIC_SITE_URL ?? "https://website-pavic-5dqu.vercel.app";
 
 const now = new Date();
 const staticPaths = ["", "privacy-policy"];
